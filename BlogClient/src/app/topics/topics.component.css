@@ -1,0 +1,20 @@
+.titre-topic {
+    font-family:Inter,-apple-system,BlinkMacSystemFont,Helvetica Neue,Segoe UI,Helvetica,Roboto,Arial,sans-serif;
+    font-size: 1rem;
+    font-weight: 700;
+    line-height: 1.6;
+    color: #212529;
+    text-align: left;
+    padding: 0 16px;
+    text-transform: uppercase;
+}
+.texte-item {
+    color: #adb5bd;
+}
+.texte-item:hover {
+    color: #212529;
+}
+.texte-item:active {
+        color: #FF4B82;
+        font-weight: 700;
+}

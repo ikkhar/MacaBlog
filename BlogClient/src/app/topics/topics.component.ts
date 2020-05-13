@@ -6,9 +6,9 @@ import { MatListModule } from '@angular/material';
   templateUrl: './topics.component.html',
   styleUrls: ['./topics.component.css']
 })
-export class TopicsComponent implements OnInit, MatListModule{
+export class TopicsComponent implements OnInit, MatListModule {
 
-  topics=['topic1',' topic2', 'topic3']
+  topics: string[] =['Angular','Bases de données', 'Conception','Développement mobile', 'HTML & CSS', 'Intégration continue', 'Java', 'Javascript', 'Linux', 'Management', '.NET', 'PHP', 'Pyton', 'Sécurité', 'XML']
 
   constructor() { }
 
