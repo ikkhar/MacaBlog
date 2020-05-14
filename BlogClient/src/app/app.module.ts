@@ -12,6 +12,7 @@ import { BlogListComponent } from './blog-list/blog-list.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {BlogComponent} from './blog/blog.component';
 import {MatProgressBarModule} from '@angular/material';
+import {FlexLayoutModule} from '@angular/flex-layout';
 
 
 
@@ -43,6 +44,8 @@ const blogRoutes: Routes = [
     HttpClientModule,
     RouterModule.forRoot(blogRoutes),
     MatProgressBarModule,
+    FlexLayoutModule,
+
   ],
   providers: [],
   bootstrap: [AppComponent]
