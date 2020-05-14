@@ -1,6 +1,6 @@
-import {Component, HostListener, Input, OnInit} from '@angular/core';
+import {Component, HostListener, OnInit} from '@angular/core';
 import {ActivatedRoute, Router} from '@angular/router';
-import {ThemePalette} from '@angular/material';
+
 
 
 @Component({
@@ -9,7 +9,7 @@ import {ThemePalette} from '@angular/material';
   styleUrls: ['./blog.component.scss']
 })
 export class BlogComponent implements OnInit {
-  @Input() color: ThemePalette;
+
   progresValue: number;
   rangeArray: number[];
   constructor(private route: ActivatedRoute, private router: Router) {
