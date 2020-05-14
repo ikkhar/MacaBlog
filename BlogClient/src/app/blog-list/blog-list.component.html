@@ -1,5 +1,5 @@
 <div class="scroll-bar" style=""></div>
-<div class="divBlogList" *ngFor="let blog of blogs | slice:0:[max]" >
+<div class="divBlogList" *ngFor="let blog of blogs | slice:0:max" >
 <mat-card class="mat-elevation-z0">
   <mat-card-title>{{blog.title}}</mat-card-title>
   <mat-card-subtitle>{{blog.date}}</mat-card-subtitle>
