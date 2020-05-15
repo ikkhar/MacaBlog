@@ -14,6 +14,10 @@ import {MatButtonModule} from '@angular/material/button';
 import {MatIconModule} from '@angular/material/icon';
 import {MatProgressBarModule} from '@angular/material/progress-bar';
 import {FlexLayoutModule} from '@angular/flex-layout';
+import { BlogEntryComponent } from './blog/blog-entry/blog-entry.component';
+import { ShareComponent } from './blog/share/share.component';
+import { LastEntriesComponent } from './blog/last-entries/last-entries.component';
+
 
 
 
@@ -34,6 +38,9 @@ const blogRoutes: Routes = [
     BlogListComponent,
     HomeComponent,
     BlogComponent,
+    BlogEntryComponent,
+    ShareComponent,
+    LastEntriesComponent,
 
 
   ],
@@ -47,6 +54,7 @@ const blogRoutes: Routes = [
     RouterModule.forRoot(blogRoutes),
     MatProgressBarModule,
     FlexLayoutModule,
+
 
   ],
   providers: [],
