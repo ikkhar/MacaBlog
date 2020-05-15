@@ -1,19 +1,23 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
-import {RouterModule, Routes} from '@angular/router';
-import {HttpClientModule} from '@angular/common/http';
+import { RouterModule, Routes } from '@angular/router';
+import { HttpClientModule } from '@angular/common/http';
 
 import { AppComponent } from './app.component';
 import { HomeComponent } from './home/home.component';
+import { HeaderComponent } from './home/header/header.component';
+import { FooterComponent } from './home/footer/footer.component';
 import { BlogListComponent } from './blog-list/blog-list.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import {BlogComponent} from './blog/blog.component';
-import {MatCardModule} from '@angular/material/card';
-import {MatButtonModule} from '@angular/material/button';
-import {MatIconModule} from '@angular/material/icon';
-import {MatProgressBarModule} from '@angular/material/progress-bar';
-import {FlexLayoutModule} from '@angular/flex-layout';
+import { BlogComponent } from './blog/blog.component';
+import { MatCardModule } from '@angular/material/card';
+import { MatButtonModule } from '@angular/material/button';
+import { MatIconModule } from '@angular/material/icon';
+import { MatProgressBarModule } from '@angular/material/progress-bar';
+import { FlexLayoutModule } from '@angular/flex-layout';
+import { MatMenuModule } from '@angular/material/menu';
+import { MatToolbarModule } from '@angular/material/toolbar';
 
 
 
@@ -34,6 +38,8 @@ const blogRoutes: Routes = [
     BlogListComponent,
     HomeComponent,
     BlogComponent,
+    HeaderComponent,
+    FooterComponent,
 
 
   ],
@@ -47,6 +53,8 @@ const blogRoutes: Routes = [
     RouterModule.forRoot(blogRoutes),
     MatProgressBarModule,
     FlexLayoutModule,
+    MatMenuModule,
+    MatToolbarModule,
 
   ],
   providers: [],
