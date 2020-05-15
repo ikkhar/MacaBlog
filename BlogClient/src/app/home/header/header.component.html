@@ -1,0 +1,29 @@
+<header>
+  <div class="logoMacablog" >
+      <a [routerLink]="['/home']"><img src="/assets/pictures/logoMacablog.jpg " class="img-fluid img-brand" alt= "logo " style="width: 45px; "></a>
+  </div>
+    <div class="menuTrigger">
+      <button mat-button [matMenuTriggerFor]="menu" class="boutonMenu">
+      </button>
+      <mat-menu #menu="matMenu" class="menuHeader">
+          <a mat-menu-item [routerLink]="['/home']">Home</a>
+          <a mat-menu-item [routerLink]="['/blog']">Blog</a>
+
+      </mat-menu>
+  </div>
+      <div class="navbar">
+          <mat-toolbar class="toolbar positionToolbar" fxLayout.md="row" fxLayout.lt-md="column" fxLayoutAlign="center center">
+              <div class="menu">
+                  <div class="menuDisp" fxLayout="row" fxLayoutAlign="end">
+                      <div class="button">
+                          <a [routerLink]="['/home']" mat-button>Home</a>
+                      </div>
+                      <div class="button">
+                          <a [routerLink]="['/blog']" mat-button>Blog</a>
+                      </div>
+                  </div>
+              </div>
+          </mat-toolbar>
+      </div>
+  <div></div>
+</header>
