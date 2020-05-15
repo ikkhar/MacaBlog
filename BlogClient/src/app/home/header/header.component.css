@@ -1,0 +1,97 @@
+header{
+  display: grid;
+  position: relative;
+  grid-template-columns: 100px 60px 1fr 270px 0;
+  grid-column-gap: 0px;
+  grid-row-gap: 0px;
+
+
+}
+
+.boutonMenu{
+  display: none;
+
+}
+
+.toolbar a{
+  font-size: 1.0rem;
+}
+.toolbar {
+  height: 100px;
+}
+
+.cursor {
+  cursor: pointer;
+}
+
+
+@media screen and (max-width: 770px){
+  .boutonMenu{
+      display: block;
+      margin-left: 37px;
+  }
+  mat-toolbar a{
+      display: none;
+  }
+}
+@media (min-width: 591px) and (max-width: 900px){
+header{
+  display: grid;
+  grid-template-columns: 50px 60px 0.7fr 130px 0px;
+  grid-column-gap: 0px;
+  grid-row-gap: 0px;
+}
+}
+@media screen and (max-width: 590px){
+header{
+  display: grid;
+  grid-template-columns: 50px 60px 0.7fr 180px 150px;
+  grid-column-gap: 0px;
+  grid-row-gap: 0px;
+}
+}
+
+@media screen and (min-width: 952px) {
+  .positionToolbar {
+      display: flex;
+      justify-content: end !important;
+  }
+}
+
+.img-brand. {
+  width: 47px;
+  height: 47px;
+  transition: all .25s ease-out;
+}
+
+.mat-toolbar {
+   background: transparent;
+
+}
+
+img {
+  border-style: none;
+  vertical-align: middle;
+  margin-left: 120px;
+  margin-top: 50px;
+  border-radius: 8px
+}
+
+.navbar {
+  position: relative;
+  padding: 1.25rem;
+}
+
+.mat-menu-item{
+  background: transparent;
+}
+
+.menuDisp{
+  color: #adb5bd;
+  font-weight: 700;
+}
+
+.mat-button{
+  font-size: 15px;
+  font-weight: 700;
+}
