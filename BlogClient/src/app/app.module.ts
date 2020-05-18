@@ -20,6 +20,8 @@ import { ShareComponent } from './blog/share/share.component';
 import { LastEntriesComponent } from './blog/last-entries/last-entries.component';
 import { MatMenuModule } from '@angular/material/menu';
 import { MatToolbarModule } from '@angular/material/toolbar';
+import {MatListModule} from '@angular/material/list';
+import { TopicsComponent } from './home/topics/topics.component';
 
 
 
@@ -45,6 +47,7 @@ const blogRoutes: Routes = [
     LastEntriesComponent,
     HeaderComponent,
     FooterComponent,
+    TopicsComponent,
 
 
   ],
@@ -60,6 +63,7 @@ const blogRoutes: Routes = [
     FlexLayoutModule,
     MatMenuModule,
     MatToolbarModule,
+    MatListModule,
 
 
   ],
