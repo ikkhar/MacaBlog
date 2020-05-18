@@ -9,7 +9,7 @@
     </div>
   </div>
   <div fxLayout.lt-md="column" fxLayout="row" class="insideBlog">
-    <p class="paragraphBlog" fxFlex="60">{{entry.paragraph}}</p>
+    <div class="paragraphBlog" fxFlex="60" [innerHTML]="blogParagraph"></div>
     <div fxLayout="column" class="shareBlog" fxFlex="40">
       <app-share></app-share>
       <app-last-entries class="spaceShareLastEntries"></app-last-entries>
