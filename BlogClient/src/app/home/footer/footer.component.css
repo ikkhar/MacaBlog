@@ -1,3 +1,12 @@
+footer {
+  display: flex;
+  position: sticky;
+  position: relative;
+  left: 0;
+  bottom: 0;
+
+}
+
 .iconSocial  {
   width: 22px;
   height: 22px;
@@ -11,20 +20,12 @@ height: 22px;
 padding-top: 7px;
 }
 
-footer {
-  position: sticky;
-  position: relative;
-  left: 0;
-  bottom: 0;
-  width: 100%;
-  padding-bottom: 3rem!important;
-}
 
 .mat-toolbar {
   background: transparent;
 }
 
-.menu p{
+.menuFooter p{
   font-size: 15px;
   margin-left: 120px;
   color: #adb5bd;
@@ -32,7 +33,7 @@ footer {
 }
 
 .logoSocial{
-  margin-left: 750px;
+  margin-left: 700px;
 
 }
 
@@ -42,3 +43,35 @@ footer {
   color: #adb5bd;
   font-weight: 700;
 }
+
+@media (min-width: 591px) and (max-width: 900px){
+  footer{
+    display: flex;
+
+    margin-left: -4rem;
+  }
+  }
+  @media screen and (max-width: 590px){
+  footer{
+    display: flex;
+    justify-content: space-between;
+
+
+  }
+  }
+
+  @media screen and (max-width: 590px){
+    .logoSocial{
+      display: flex;
+
+    }
+  }
+
+  @media (min-width: 591px) and (max-width: 900px){
+    .logoSocial{
+      display: flex;
+
+
+    }
+    }
+

@@ -28,26 +28,25 @@ header{
 @media screen and (max-width: 770px){
   .boutonMenu{
       display: block;
-      margin-left: 37px;
+      margin-left: 90px;
   }
   mat-toolbar a{
       display: none;
   }
 }
+
 @media (min-width: 591px) and (max-width: 900px){
 header{
-  display: grid;
-  grid-template-columns: 50px 60px 0.7fr 130px 0px;
-  grid-column-gap: 0px;
-  grid-row-gap: 0px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
 }
 }
 @media screen and (max-width: 590px){
 header{
-  display: grid;
-  grid-template-columns: 50px 60px 0.7fr 180px 150px;
-  grid-column-gap: 0px;
-  grid-row-gap: 0px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
 }
 }
 
@@ -94,4 +93,10 @@ img {
 .mat-button{
   font-size: 15px;
   font-weight: 700;
+}
+
+.menuTrigger{
+  display: flex;
+    align-items: flex-end;
+    margin-left: 20px;
 }

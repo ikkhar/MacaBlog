@@ -3,12 +3,12 @@
       <a [routerLink]="['/home']"><img src="/assets/pictures/logoMacablog.jpg " class="img-fluid img-brand" alt= "logo " style="width: 45px; "></a>
   </div>
     <div class="menuTrigger">
-      <button mat-button [matMenuTriggerFor]="menu" class="boutonMenu">
-      </button>
+      <button mat-button [matMenuTriggerFor]="menu" class="boutonMenu"><i class="material-icons" >
+        dehaze
+    </i></button>
       <mat-menu #menu="matMenu" class="menuHeader">
           <a mat-menu-item [routerLink]="['/home']">Home</a>
           <a mat-menu-item [routerLink]="['/blog']">Blog</a>
-
       </mat-menu>
   </div>
       <div class="navbar">
