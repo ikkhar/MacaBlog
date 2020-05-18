@@ -1,0 +1,6 @@
+<mat-nav-list>
+    <h3 class="titre-topic">Topics</h3>
+    <mat-list-item *ngFor="let topic of topics" class="texte-item">
+        <a matLine href="topics/{{ topic }}">{{ topic }} </a>
+    </mat-list-item>
+</mat-nav-list>
