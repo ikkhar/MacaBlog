@@ -1,6 +1,5 @@
-.mat-list-base {
-    padding-left: 20%;
-    padding-right: 20%;
+.mat-form-field + .mat-form-field {
+    margin-left: 8px;
 }
 .titre-topic {
     font-family:Inter,-apple-system,BlinkMacSystemFont,Helvetica Neue,Segoe UI,Helvetica,Roboto,Arial,sans-serif;
@@ -11,6 +10,9 @@
     text-align: left;
     padding: 0 16px;
     text-transform: uppercase;
+}
+.topicsPhone {
+    border: 1px solid #dadada;
 }
 .texte-item {
     color: #adb5bd;
