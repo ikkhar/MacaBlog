@@ -2,6 +2,8 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { HttpClientModule } from '@angular/common/http';
+import {MatExpansionModule} from '@angular/material/expansion';
+
 
 import { AppComponent } from './app.component';
 import { HomeComponent } from './home/home.component';
@@ -22,6 +24,7 @@ import { MatMenuModule } from '@angular/material/menu';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import {MatListModule} from '@angular/material/list';
 import { TopicsComponent } from './home/topics/topics.component';
+import { TopicsPhoneComponent } from './home/topics/topics-phone/topics-phone.component';
 
 
 
@@ -48,6 +51,7 @@ const blogRoutes: Routes = [
     HeaderComponent,
     FooterComponent,
     TopicsComponent,
+    TopicsPhoneComponent,
 
 
   ],
@@ -64,6 +68,7 @@ const blogRoutes: Routes = [
     MatMenuModule,
     MatToolbarModule,
     MatListModule,
+    MatExpansionModule,
 
 
   ],
