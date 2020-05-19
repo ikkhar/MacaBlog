@@ -2,18 +2,18 @@ import { Component, OnInit } from '@angular/core';
 import {MatListModule} from '@angular/material/list';
 
 @Component({
-  selector: 'app-topics',
-  templateUrl: './topics.component.html',
-  styleUrls: ['./topics.component.scss']
+  selector: 'app-topics-phone',
+  templateUrl: './topics-phone.component.html',
+  styleUrls: ['./topics-phone.component.scss']
 })
-export class TopicsComponent implements OnInit, MatListModule {
+export class TopicsPhoneComponent implements OnInit, MatListModule  {
+  panelOpenState = false;
 
   topics: string[] =['Angular','Bases de données', 'Conception','Développement mobile', 'HTML & CSS', 'Intégration continue', 'Java', 'Javascript', 'Linux', 'Management', '.NET', 'PHP', 'Pyton', 'Sécurité', 'XML']
 
   constructor() { }
 
-  ngOnInit() {
+  ngOnInit(): void{
   }
-
+isNotDesktop(){return true;}
 }
-

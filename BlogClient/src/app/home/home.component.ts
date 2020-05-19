@@ -13,4 +13,7 @@ export class HomeComponent implements OnInit {
   ngOnInit() {
   }
 
+  isMobile (){return false;}
+  isNotDesktop (){return true;}
+  isNotMobile (){return true;}
 }
