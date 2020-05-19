@@ -13,9 +13,12 @@
 }
 .topicsPhone {
     border: 1px solid #dadada;
+    background-color: #f1f1f1;
+    margin: auto;
+    width:85%;
 }
 .texte-item {
-    color: #adb5bd;
+    color: #949ca5; /* Avant color: #adb5bd;*/
 }
 .texte-item:hover {
     color: #212529;
