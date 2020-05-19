@@ -1,21 +1,17 @@
 header{
-  display: grid;
+  display: inline;
   position: relative;
-  grid-template-columns: 100px 60px 1fr 270px 0;
-  grid-column-gap: 0px;
-  grid-row-gap: 0px;
-
 
 }
 
 .boutonMenu{
   display: none;
-
 }
 
 .toolbar a{
   font-size: 1.0rem;
 }
+
 .toolbar {
   height: 100px;
 }
@@ -25,35 +21,9 @@ header{
 }
 
 
-@media screen and (max-width: 770px){
-  .boutonMenu{
-      display: block;
-      margin-left: 90px;
-  }
-  mat-toolbar a{
-      display: none;
-  }
-}
-
-@media (min-width: 591px) and (max-width: 900px){
-header{
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-start;
-}
-}
-@media screen and (max-width: 590px){
-header{
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-start;
-}
-}
-
 @media screen and (min-width: 952px) {
   .positionToolbar {
-      display: flex;
-      justify-content: end !important;
+      display: inline-block;
   }
 }
 
@@ -69,16 +39,18 @@ header{
 }
 
 img {
-  border-style: none;
-  vertical-align: middle;
-  margin-left: 120px;
+  position: static;
+  float: left;
+  margin-left: 6%;
   margin-top: 50px;
   border-radius: 8px
 }
 
 .navbar {
   position: relative;
+  display: inline-block;
   padding: 1.25rem;
+
 }
 
 .mat-menu-item{
@@ -88,6 +60,7 @@ img {
 .menuDisp{
   color: #adb5bd;
   font-weight: 700;
+  padding-bottom: 25px;
 }
 
 .mat-button{
@@ -96,7 +69,6 @@ img {
 }
 
 .menuTrigger{
-  display: flex;
-    align-items: flex-end;
-    margin-left: 20px;
+  display: inline-block;
+  position: relative;
 }
