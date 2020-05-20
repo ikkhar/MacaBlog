@@ -1,0 +1,18 @@
+<div *ngFor="let entry of entries">
+  <div fxLayout="column" class="fondGris">
+    <div class="oneBlog">
+      <h1>{{entry.title}}</h1>
+      <div class="divider bg-medium-primary"></div>
+      <div fxLayout="row">
+        <a href="#"><p>{{entry.keywords | uppercase}}</p></a><span class="point">.</span><p>{{entry.date}}</p>
+      </div>
+    </div>
+  </div>
+  <div fxLayout.lt-md="column" fxLayout="row" class="insideBlog">
+    <div class="paragraphBlog" fxFlex="60" [innerHTML]="blogParagraph"></div>
+    <div fxLayout="column" class="shareBlog" fxFlex="40">
+      <app-share></app-share>
+      <app-last-entries class="spaceShareLastEntries"></app-last-entries>
+    </div>
+  </div>
+</div>

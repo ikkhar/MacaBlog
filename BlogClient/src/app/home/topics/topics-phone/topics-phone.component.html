@@ -1,0 +1,19 @@
+<mat-accordion [fxHide.sm]="isNotDesktop()"[fxHide.md]="isNotDesktop()"[fxHide.lg]="isNotDesktop()"[fxHide.xl]="isNotDesktop()">
+    
+    <mat-expansion-panel class="mat-elevation-z0 topicsPhone" (open)="panelOpenState = true"
+                         (closed)="panelOpenState = false">
+      <mat-expansion-panel-header>
+        <mat-panel-title>
+            <h3 class="titre-topic">Topics</h3>
+        </mat-panel-title>
+        <!--<mat-panel-description>
+          Currently I am {{panelOpenState ? 'open' : 'closed'}}
+        </mat-panel-description>-->
+      </mat-expansion-panel-header>
+      <mat-nav-list>
+        <mat-list-item *ngFor="let topic of topics" class="texte-item">
+            <a matLine href="topics/{{ topic }}">{{ topic }} </a>
+        </mat-list-item>
+    </mat-nav-list>
+    </mat-expansion-panel>
+  </mat-accordion>

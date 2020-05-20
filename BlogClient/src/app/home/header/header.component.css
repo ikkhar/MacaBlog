@@ -1,0 +1,74 @@
+header{
+  display: inline;
+  position: relative;
+
+}
+
+.boutonMenu{
+  display: none;
+}
+
+.toolbar a{
+  font-size: 1.0rem;
+}
+
+.toolbar {
+  height: 100px;
+}
+
+.cursor {
+  cursor: pointer;
+}
+
+
+@media screen and (min-width: 952px) {
+  .positionToolbar {
+      display: inline-block;
+  }
+}
+
+.img-brand. {
+  width: 47px;
+  height: 47px;
+  transition: all .25s ease-out;
+}
+
+.mat-toolbar {
+   background: transparent;
+
+}
+
+img {
+  position: static;
+  float: left;
+  margin-left: 6%;
+  margin-top: 50px;
+  border-radius: 8px
+}
+
+.navbar {
+  position: relative;
+  display: inline-block;
+  padding: 1.25rem;
+
+}
+
+.mat-menu-item{
+  background: transparent;
+}
+
+.menuDisp{
+  color: #adb5bd;
+  font-weight: 700;
+  padding-bottom: 25px;
+}
+
+.mat-button{
+  font-size: 15px;
+  font-weight: 700;
+}
+
+.menuTrigger{
+  display: inline-block;
+  position: relative;
+}

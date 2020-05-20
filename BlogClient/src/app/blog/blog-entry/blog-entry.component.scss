@@ -1,0 +1,63 @@
+.oneBlog{
+  width: 85%;
+  margin: auto;
+}
+.bg-medium-primary {
+  background-color: rgba(124,77,255,.1);
+}
+.divider {
+  width: 3.125rem !important;
+  height: .25rem;
+  border-radius: .25rem !important;
+  margin-top: 1.5rem;
+  margin-bottom: 1.5rem;
+}
+.point{
+  color: #FF4B82 !important;
+  font-size: 30px;
+  position: relative;
+  top: -1px;
+  margin: 0 0.5rem 0 .5rem;
+  font-weight: 400;
+}
+a{
+
+  font-weight: 600;
+  transition: all .25s ease-out;
+  color: #FF4B82;
+  background-color: transparent;
+  text-decoration: none;
+
+
+}
+a p:hover{
+  border-bottom: 2px solid #FF4B82;
+}
+a p{
+  margin-bottom: 0;
+  border-bottom: 2px solid rgba(124,77,255,.1);
+}
+
+.fondGris{
+background-color: rgba(124,77,255,.03);
+}
+.insideBlog{
+  padding: 10px;
+}
+.paragraphBlog{
+  margin-top: 0;
+  padding: 20px;
+}
+.shareBlog{
+  padding-top: 20px;
+}
+.spaceShareLastEntries{
+  margin-top: 20px;
+}
+
+@media (min-width: 520px) and (max-width: 959px){
+  .shareBlog{
+    width: 70%;
+    margin: auto;
+  }
+}
