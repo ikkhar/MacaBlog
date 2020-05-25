@@ -1,7 +1,7 @@
 [
   {
     "id": 1,
-    "firstName": "Mazen mazen",
+    "firstName": "Mazen",
     "lastName": "Gharbi",
     "email": "hey@macademia.fr",
     "mobileNumber":"+33 7 66 16 15 16",
@@ -9,7 +9,7 @@
    	"organisation":"Macademia ",
     "qualification": " Formateur, Devellopeur Fullstack en free lance", 
     "photo": false,
-    "articlesList": [{"id": 1},{"id": 2},{"id": 4},{"id": 5},{"id": 8},{"id": 9}]
+    "articles": [{"id": 1},{"id": 2}]
     
 },
   {
@@ -22,6 +22,6 @@
    	"organisation":"Macademia ",
     "qualification": " Formateur, Devellopeur Fullstack en free lance", 
     "photo": false,
-    "articlesList": [{"id": 3},{"id": 6},{"id": 7},{"id": 10}]
+    "articles": [{"id": 3}]
     }
 ]
