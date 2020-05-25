@@ -65,7 +65,7 @@ public class JSONLoader<T> {
             final Gson gson = this.getGson();
             System.out.println("OK");
             List<T> elements =  Arrays.asList(gson.fromJson(reader, this.arrayType));
-            System.out.println("OKkkkkkkkkkkkkkkkkkkkkkkk");
+            System.out.println("OKkkkkkkkkkkkkkkkkkkkkkkk"+elements);
             this.repository.saveAll(elements);
             this.repository.findAll().forEach(System.out::println);
             return elements;

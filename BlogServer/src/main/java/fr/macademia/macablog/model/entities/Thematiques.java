@@ -26,21 +26,22 @@ public class Thematiques {
 	private String name;
 	
 	// relation persistance des données : une thematique a plusieurs articles
-	@OneToMany(fetch = FetchType.EAGER, cascade = CascadeType.PERSIST)
+	@OneToMany(mappedBy = "thematiques", cascade = {CascadeType.ALL}, fetch = FetchType.EAGER)
 	@NotFound(action=NotFoundAction.IGNORE)
 	@JsonIgnore
-	private Set<Articles> articles = new HashSet<>();
+	@JsonBackReference
+	private Set<Articles> articles = new HashSet<Articles>();
 	// relation perstistance des données : plusieurs thématique peuvent avoir plusieurs mots clée , differentes thematiques peuvent avoir les meme mot clée
 	@ManyToMany(fetch = FetchType.EAGER, cascade = CascadeType.PERSIST)
 	@NotFound(action=NotFoundAction.IGNORE)
 	@JsonIgnore
 	private Set<Keywords> keywords = new HashSet<>();
 	
-	@OneToMany(cascade = CascadeType.ALL, fetch = FetchType.EAGER,mappedBy ="thematiques")
-	//@JsonBackReference
+	@OneToMany(mappedBy = "thematiques", cascade = {CascadeType.PERSIST}, fetch = FetchType.EAGER)
+	@JsonBackReference
 	@NotFound(action=NotFoundAction.IGNORE)
 	@JsonIgnore
-	private Set<SubThematiques> subThematiques = new HashSet<>();
+	private Set<SubThematiques> subThematiques = new HashSet<SubThematiques>();
 	
 	
 	// Les constructeur : vide, globale, avec nom, avec nom+ articles, avec nom+keywords/////////
@@ -152,8 +153,7 @@ public class Thematiques {
 
 	@Override
 	public String toString() {
-		return "Thematiques [id=" + id + ", name=" + name + ", articles=" + articles + ", keywords=" + keywords
-				+ ", subThematiques=" + subThematiques + "]";
+		return "Thematiques [id=" + id + ", name=" + name  + ", keywords=" + keywords+ "]";
 	}
 
 
