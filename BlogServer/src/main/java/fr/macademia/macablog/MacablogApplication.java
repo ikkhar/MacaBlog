@@ -81,7 +81,7 @@ public class MacablogApplication {
 			ApplicationRunner initArticlesRepository(ArticlesRepository articlesRepository) {
 				return args -> {
 					if (articlesRepository.findAll().isEmpty()) {
-						new JSONLoader<>("src/main/resources/data/articlesold.json",Articles[].class,articlesRepository).load();
+						new JSONLoader<>("src/main/resources/data/articles.json",Articles[].class,articlesRepository).load();
 
 								
 					}
