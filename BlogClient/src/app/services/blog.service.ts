@@ -1,28 +1,25 @@
-import { Injectable } from '@angular/core';
+import {Injectable} from '@angular/core';
 import {Blog} from '../models/blog';
 import {ApiHelperService} from './api-helpers.service';
+import {ActivatedRoute} from '@angular/router';
 
 @Injectable({
   providedIn: 'root'
 })
 export class BlogService {
+  public blogDetails: Blog;
+  public blog: Blog[];
+
   public blogs = Blog;
-  constructor(private api: ApiHelperService) { }
-  // Import depuis le Backend
-  public findAll(): Promise<any> {
-    let promise = new Promise((resolve, reject) => {
-      this.api.get({ endpoint: '', queryParams: {  } })
-        .then(
-          res => {
-            resolve(res);
-          },
-          msg => {
-            reject(msg);
-          }
-        ).catch((error) => {
-      });
-    });
-    return promise;
+
+  constructor(private api: ApiHelperService, private route: ActivatedRoute) {
+    this.blog = [];
   }
 
+  public findAll(): Promise<any> {
+    return this.api.get({endpoint: '/articles'});
+  }
 }
+
+
+
