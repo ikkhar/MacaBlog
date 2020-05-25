@@ -36,7 +36,7 @@ public class SubThematiques {
 	@OneToMany(fetch = FetchType.EAGER, cascade = CascadeType.PERSIST)
 	@NotFound(action=NotFoundAction.IGNORE)
 	@JsonIgnore
-	private Set<Articles> articles = new HashSet<>();
+	private Set<Articles> articles = new HashSet<Articles>();
 	
 	@ManyToMany(fetch = FetchType.EAGER, cascade = CascadeType.PERSIST)
 	@NotFound(action=NotFoundAction.IGNORE)
@@ -200,12 +200,14 @@ public class SubThematiques {
 
 
 
-
+	@Override
+	public int hashCode() {
+		return Objects.hash(id,subName);
+	}
 
 	@Override
 	public String toString() {
-		return "SubThematiques [id=" + id + ", subName=" + subName + ", articles=" + articles + ", keywords=" + keywords
-				+ ", thematiques=" + thematiques + "]";
+		return "SubThematiques [id=" + id + ", subName=" + subName + ", thematiques=" + thematiques + "]";
 	}
 
 	

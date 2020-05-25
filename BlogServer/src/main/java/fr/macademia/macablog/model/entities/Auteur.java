@@ -36,7 +36,7 @@ public class Auteur {
 	// plusieurs auteurs ont plusieur articles
 	@ManyToMany(cascade = { CascadeType.ALL }, fetch = FetchType.EAGER)
 	@JsonIgnore
-	private Set<Articles> articles = new HashSet<>();
+	private Set<Articles> articlesList = new HashSet<>();
 	
 	///////////////////////////:
 	public Auteur() {
@@ -48,7 +48,7 @@ public class Auteur {
 			@Size(min = 2, max = 20, message = "lastName must be between 2 and 20 characters") String lastName,
 			@NotNull(message = "Email cannot be null") @Email(message = "Email should be valid") String email,
 			String mobileNumber, String adresse, String qualification, String organisation, boolean photo,
-			Set<Articles> articles) {
+			Set<Articles> articlesList) {
 		super();
 		this.id = id;
 		this.firstName = firstName;
@@ -59,47 +59,18 @@ public class Auteur {
 		this.qualification = qualification;
 		this.organisation = organisation;
 		this.photo = photo;
-		this.articles = articles;
-	}
-
-	public Auteur(@Size(min = 2, max = 20, message = "firstName must be between 2 and 20 characters") String firstName,
-			@Size(min = 2, max = 20, message = "lastName must be between 2 and 20 characters") String lastName,
-			@NotNull(message = "Email cannot be null") @Email(message = "Email should be valid") String email,
-			String mobileNumber, String adresse, String qualification, String organisation, Set<Articles> articles) {
-		super();
-		this.firstName = firstName;
-		this.lastName = lastName;
-		this.email = email;
-		this.mobileNumber = mobileNumber;
-		this.adresse = adresse;
-		this.qualification = qualification;
-		this.organisation = organisation;
-		this.articles = articles;
+		this.articlesList = articlesList;
 	}
 
 	public Auteur(Long id,
 			@Size(min = 2, max = 20, message = "firstName must be between 2 and 20 characters") String firstName,
 			@Size(min = 2, max = 20, message = "lastName must be between 2 and 20 characters") String lastName,
-			Set<Articles> articles) {
+			Set<Articles> articlesList) {
 		super();
 		this.id = id;
 		this.firstName = firstName;
 		this.lastName = lastName;
-		this.articles = articles;
-	}
-
-	public Auteur(@Size(min = 2, max = 20, message = "firstName must be between 2 and 20 characters") String firstName,
-			@Size(min = 2, max = 20, message = "lastName must be between 2 and 20 characters") String lastName) {
-		super();
-		this.firstName = firstName;
-		this.lastName = lastName;
-	}
-
-	public Auteur(Long id,
-			@Size(min = 2, max = 20, message = "lastName must be between 2 and 20 characters") String lastName) {
-		super();
-		this.id = id;
-		this.lastName = lastName;
+		this.articlesList = articlesList;
 	}
 
 	public Long getId() {
@@ -174,22 +145,22 @@ public class Auteur {
 		this.photo = photo;
 	}
 
-	public Set<Articles> getArticles() {
-		return articles;
+	public Set<Articles> getArticlesList() {
+		return articlesList;
 	}
 
-	public void setArticles(Set<Articles> articles) {
-		this.articles = articles;
+	public void setArticlesList(Set<Articles> articlesList) {
+		this.articlesList = articlesList;
 	}
 
-//	@Override
-//	public String toString() {
-//		return "Auteur [id=" + id + ", firstName=" + firstName + ", lastName=" + lastName + ", email=" + email
-//				+ ", mobileNumber=" + mobileNumber + ", adresse=" + adresse + ", qualification=" + qualification
-//				+ ", organisation=" + organisation + ", photo=" + photo + ", articles=" + articles + "]";
-//	}
+	@Override
+	public String toString() {
+		return "Auteur [id=" + id + ", firstName=" + firstName + ", lastName=" + lastName + ", email=" + email
+				+ ", mobileNumber=" + mobileNumber + ", adresse=" + adresse + ", qualification=" + qualification
+				+ ", organisation=" + organisation + ", photo=" + photo + ", articlesList=" + articlesList + "]";
+	}
 
-
+	
 	
 	
 
