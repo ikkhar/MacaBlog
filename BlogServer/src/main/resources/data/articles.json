@@ -4,7 +4,7 @@
 		"title": "Pipe ou Observable, quoi choisir ?",
 		"datePublication": "May 15, 2020 9:00:00 AM",
 		"contenent": " As you can see above,:",
-		"photo": true,
+		"photo": false,
 		"auteurList": [
 			{
 				"id": 1
@@ -38,7 +38,7 @@
 		"title": "Optimiser les performances d'une application Angular",
 		"datePublication": "May 15, 2020 10:00:00 AM",
 		"contenent": " tggfhhrh",
-		"photo": true,
+		"photo": false,
 		"auteurList": [
 			{
 				"id": 1
