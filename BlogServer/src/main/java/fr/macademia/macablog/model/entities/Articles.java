@@ -1,116 +1,83 @@
 package fr.macademia.macablog.model.entities;
 
-import java.time.LocalDateTime;
+import java.util.Date;
 import java.util.HashSet;
 import java.util.Objects;
 import java.util.Set;
 
 import javax.persistence.*;
-import javax.swing.text.html.HTML;
-import javax.validation.constraints.NotNull;
+import javax.validation.constraints.PastOrPresent;
 
 import org.hibernate.annotations.NotFound;
 import org.hibernate.annotations.NotFoundAction;
 
-import com.fasterxml.jackson.annotation.JsonBackReference;
 import com.fasterxml.jackson.annotation.JsonIgnore;
-
-
-
+import com.fasterxml.jackson.annotation.JsonManagedReference;
 
 @Entity
-@Table(name="articles")
+@Table(name = "articlesList")
 public class Articles {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
 	private String title;
-	private LocalDateTime datePublication;
-	//private String contenent;
+	@PastOrPresent
+	private Date datePublication;
+
+	@Column(columnDefinition = "TEXT")
+	private String contenent;
+
 	private boolean photo = false;
 
-	@ManyToMany(fetch = FetchType.EAGER, cascade = { CascadeType.PERSIST},mappedBy ="articles")
-	@JsonIgnore
+	@ManyToMany(fetch = FetchType.EAGER, cascade = { CascadeType.PERSIST }, mappedBy = "articlesList")
+	// @JsonIgnore
 	private Set<Auteur> auteurList = new HashSet<Auteur>();
-	
-	@ManyToMany(cascade = { CascadeType.ALL }, fetch = FetchType.EAGER)
-	@NotFound(action=NotFoundAction.IGNORE)
+
+	@ManyToMany(fetch = FetchType.EAGER, cascade = CascadeType.PERSIST)
 	@JsonIgnore
-	//@JsonBackReference
 	private Set<Keywords> keywords = new HashSet<>();
-	
-	@ManyToOne(cascade = {CascadeType.ALL}, fetch = FetchType.EAGER)
-	//@JsonBackReference
-	@NotFound(action=NotFoundAction.IGNORE)
-	@JsonIgnore
+
+	@ManyToOne(cascade = { CascadeType.PERSIST }, fetch = FetchType.EAGER)
+	@JoinColumn(name = "thematiques_id")
+	@JsonManagedReference
 	private Thematiques thematiques;
-	
-	@ManyToOne(cascade = { CascadeType.ALL }, fetch = FetchType.EAGER)
-	//@JsonBackReference
-	@NotFound(action=NotFoundAction.IGNORE)
-	@JsonIgnore
+
+	@ManyToOne(fetch = FetchType.EAGER, cascade = { CascadeType.PERSIST })
+	@NotFound(action = NotFoundAction.IGNORE)
+	@JoinColumn(name = "sub_thematiques_id")
 	private SubThematiques subThematiques;
-  
-	
-	public Articles(Long id, String title, LocalDateTime datePublication, boolean photo, Set<Auteur> auteurList,
-			 Set<Keywords> keywords, Thematiques thematiques,
-			 SubThematiques subThematiques) {
-		super();
-		this.id = id;
-		this.title = title;
-		this.datePublication = datePublication;
-		this.photo = photo;
-		this.auteurList = auteurList;
-		this.keywords = keywords;
-		this.thematiques = thematiques;
-		this.subThematiques = subThematiques;
-	}
-
-
-
-	public Articles(String title, LocalDateTime datePublication, boolean photo, Set<Auteur> auteurList,
-			 Set<Keywords> keywords,  Thematiques thematiques,
-			 SubThematiques subThematiques) {
-		super();
-		this.title = title;
-		this.datePublication = datePublication;
-		this.photo = photo;
-		this.auteurList = auteurList;
-		this.keywords = keywords;
-		this.thematiques = thematiques;
-		this.subThematiques = subThematiques;
-	}
-
-
-
-
-	public Articles(String title, LocalDateTime datePublication) {
-		super();
-		this.title = title;
-		this.datePublication = datePublication;
-	}
-
-
-
-
-	public Articles(String title, Set<Auteur> auteurList,  Set<Keywords> keywords,
-			 SubThematiques subThematiques) {
-		super();
-		this.title = title;
-		this.auteurList = auteurList;
-		this.keywords = keywords;
-		this.subThematiques = subThematiques;
-	}
-
-
-
 
 	public Articles() {
 		super();
 	}
 
-	
-	
+	public Articles(Long id, String title, Date datePublication, String contenent, boolean photo,
+			Set<Auteur> auteurList, Set<Keywords> keywords, Thematiques thematiques, SubThematiques subThematiques) {
+		super();
+		this.id = id;
+		this.title = title;
+		this.datePublication = datePublication;
+		this.contenent = contenent;
+		this.photo = photo;
+		this.auteurList = auteurList;
+		this.keywords = keywords;
+		this.thematiques = thematiques;
+		this.subThematiques = subThematiques;
+	}
+
+	public Articles(Long id, String title, String contenent) {
+		super();
+		this.id = id;
+		this.title = title;
+		this.contenent = contenent;
+	}
+
+	public Articles(String title, String contenent) {
+		super();
+		this.title = title;
+		this.contenent = contenent;
+	}
+
 	public Long getId() {
 		return id;
 	}
@@ -119,20 +86,28 @@ public class Articles {
 		this.id = id;
 	}
 
-	public String gettitle() {
+	public String getTitle() {
 		return title;
 	}
 
-	public void settitle(String title) {
+	public void setTitle(String title) {
 		this.title = title;
 	}
 
-	public LocalDateTime getDatePublication() {
+	public Date getDatePublication() {
 		return datePublication;
 	}
 
-	public void setDatePublication(LocalDateTime datePublication) {
+	public void setDatePublication(Date datePublication) {
 		this.datePublication = datePublication;
+	}
+
+	public String getContenent() {
+		return contenent;
+	}
+
+	public void setContenent(String contenent) {
+		this.contenent = contenent;
 	}
 
 	public boolean isPhoto() {
@@ -142,34 +117,6 @@ public class Articles {
 	public void setPhoto(boolean photo) {
 		this.photo = photo;
 	}
-
-	public String getTitle() {
-		return title;
-	}
-
-
-
-
-	public void setTitle(String title) {
-		this.title = title;
-	}
-
-
-
-
-//	public String getContenent() {
-//		return contenent;
-//	}
-//
-//
-//
-//
-//	public void setContenent(String contenent) {
-//		this.contenent = contenent;
-//	}
-
-
-
 
 	public Set<Auteur> getAuteurList() {
 		return auteurList;
@@ -195,52 +142,24 @@ public class Articles {
 		this.thematiques = thematiques;
 	}
 
-
-
-
 	public SubThematiques getSubThematiques() {
 		return subThematiques;
 	}
-
-
-
 
 	public void setSubThematiques(SubThematiques subThematiques) {
 		this.subThematiques = subThematiques;
 	}
 
-
-
-
-//	@Override
-//	public String toString() {
-//		return "Articles [id=" + id + ", title=" + title + ", datePublication=" + datePublication + ", photo=" + photo
-//				+ ", auteurList=" + auteurList + ", keywords=" + keywords + ", Thematiques=" + thematiques
-//				+ ", subThematiques=" + subThematiques + "]";
-//	}
-
-	
 	@Override
 	public int hashCode() {
-		return Objects.hash(id,title);
+		return Objects.hash(id, title);
 	}
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
+
+	@Override
+	public String toString() {
+		return "Articles [id=" + id + ", title=" + title + ", datePublication=" + datePublication + ", contenent="
+				+ contenent + ", photo=" + photo + ", auteurList=" + auteurList + ", keywords=" + keywords
+				+ ", thematiques=" + thematiques + ", subThematiques=" + subThematiques + "]";
+	}
+
 }

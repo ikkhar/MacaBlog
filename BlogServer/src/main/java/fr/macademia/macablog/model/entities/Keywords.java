@@ -14,7 +14,7 @@ import com.fasterxml.jackson.annotation.JsonIgnore;
 
 
 import fr.macademia.macablog.model.entities.Articles;
-import fr.macademia.macablog.model.entities.Auteur;
+
 import fr.macademia.macablog.model.entities.SubThematiques;
 import fr.macademia.macablog.model.entities.Thematiques;
 
@@ -39,7 +39,8 @@ public class Keywords {
 	@ManyToMany(fetch = FetchType.EAGER, cascade = { CascadeType.PERSIST},mappedBy ="keywords")
 	@JsonIgnore
 	@NotFound(action=NotFoundAction.IGNORE)
-	private Set<SubThematiques> subthematiques = new HashSet<SubThematiques>();
+	private Set<SubThematiques> subThematiques = new HashSet<SubThematiques>();
+	
 	
 	@ManyToMany(fetch = FetchType.EAGER, cascade = { CascadeType.PERSIST},mappedBy ="keywords")
 	@JsonIgnore
@@ -51,83 +52,107 @@ public class Keywords {
 		super();
 	}
 
-	public Keywords(Long id, String name, Set<Thematiques> thematiques, Set<Articles> articles) {
-		super();
-		this.id = id;
-		this.name = name;
-		this.thematiques = thematiques;
-		this.articles = articles;
-		
-	}
-
-	public Keywords(Long id, String name) {
+	
+	public Keywords(@NotNull Long id, @NotNull String name) {
 		super();
 		this.id = id;
 		this.name = name;
 	}
 
-	public Keywords(String name, Set<Thematiques> thematiques, Set<Articles> articles) {
+
+	public Keywords(@NotNull String name, Set<Thematiques> thematiques) {
 		super();
 		this.name = name;
 		this.thematiques = thematiques;
-		this.articles = articles;
-		
 	}
+
+
+	public Keywords(@NotNull Long id, @NotNull String name, Set<Articles> articles) {
+		super();
+		this.id = id;
+		this.name = name;
+		this.articles = articles;
+	}
+
+
+	public Keywords(@NotNull String name, Set<Thematiques> thematiques, Set<SubThematiques> subThematiques,
+			Set<Articles> articles) {
+		super();
+		this.name = name;
+		this.thematiques = thematiques;
+		this.subThematiques = subThematiques;
+		this.articles = articles;
+	}
+
+
+	public Keywords(@NotNull Long id, @NotNull String name, Set<Thematiques> thematiques,
+			Set<SubThematiques> subThematiques, Set<Articles> articles) {
+		super();
+		this.id = id;
+		this.name = name;
+		this.thematiques = thematiques;
+		this.subThematiques = subThematiques;
+		this.articles = articles;
+	}
+
 
 	public Long getId() {
 		return id;
 	}
 
+
 	public void setId(Long id) {
 		this.id = id;
 	}
+
 
 	public String getName() {
 		return name;
 	}
 
+
 	public void setName(String name) {
 		this.name = name;
 	}
+
 
 	public Set<Thematiques> getThematiques() {
 		return thematiques;
 	}
 
+
 	public void setThematiques(Set<Thematiques> thematiques) {
 		this.thematiques = thematiques;
 	}
+
+
+	public Set<SubThematiques> getSubThematiques() {
+		return subThematiques;
+	}
+
+
+	public void setSubThematiques(Set<SubThematiques> subThematiques) {
+		this.subThematiques = subThematiques;
+	}
+
 
 	public Set<Articles> getArticles() {
 		return articles;
 	}
 
-	public Set<SubThematiques> getSubthematiques() {
-		return subthematiques;
-	}
-
-	public void setSubthematiques(Set<SubThematiques> subthematiques) {
-		this.subthematiques = subthematiques;
-	}
 
 	public void setArticles(Set<Articles> articles) {
 		this.articles = articles;
 	}
-
 	
-
 	@Override
 	public int hashCode() {
 		return Objects.hash(id,name);
 	}
-	
-
 	@Override
 	public String toString() {
-		return "Keywords [id=" + id + ", name=" + name + ", thematiques=" + thematiques + ", articles=" + articles
-				+  "]";
+		return "Keywords [id=" + id + ", name=" + name +  "]";
 	}
-	
 	
 	
 	
