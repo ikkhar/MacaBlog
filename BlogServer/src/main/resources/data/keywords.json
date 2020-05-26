@@ -175,10 +175,6 @@
     "name": "PHP"
   },
   {
-    "id": 44,
-    "name": "Objet"
-  },
-  {
     "id": 45,
     "name": "Symphony"
   },
@@ -200,7 +196,7 @@
   },
   {
     "id": 50,
-    "name": "Objet"
+    "name": "jjjjjj"
   } ,
   {
     "id": 51,
@@ -216,7 +212,7 @@
   },
   {
     "id": 54,
-    "name": "Programation"
+    "name": "Programation orientée objet"
   },
   {
     "id": 55,
@@ -232,7 +228,7 @@
   }
   ,
   {
-    "id": 58,
+    "id": 57,
     "name": "Full-Stack"
   }
 ]
