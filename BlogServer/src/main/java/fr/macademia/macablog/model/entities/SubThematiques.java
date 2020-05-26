@@ -19,6 +19,7 @@ import javax.validation.constraints.NotNull;
 import org.hibernate.annotations.NotFound;
 import org.hibernate.annotations.NotFoundAction;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 
 
@@ -26,14 +27,14 @@ import com.fasterxml.jackson.annotation.JsonIgnore;
 
 
 @Entity
-@Table(name="sub_thematiques")
+@Table(name="subThematiques")
 public class SubThematiques {
 	
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
 	private String  subName;
-	@OneToMany(fetch = FetchType.EAGER, cascade = CascadeType.PERSIST)
+	@OneToMany(mappedBy = "subThematiques", cascade = {CascadeType.PERSIST}, fetch = FetchType.EAGER)
 	@NotFound(action=NotFoundAction.IGNORE)
 	@JsonIgnore
 	private Set<Articles> articles = new HashSet<Articles>();

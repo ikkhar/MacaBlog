@@ -22,7 +22,6 @@ import fr.macademia.macablog.tool.json.ArticlesAdapter;
 import fr.macademia.macablog.tool.json.ArticlesAdapterBis;
 import fr.macademia.macablog.tool.json.JSONLoader;
 
-
 @SpringBootApplication
 @EnableAsync
 public class MacablogApplication {
@@ -31,9 +30,9 @@ public class MacablogApplication {
 		SpringApplication.run(MacablogApplication.class, args);
 	}
 //	
-	
+
 	@Bean
-	@Profile({"dev", "test"})
+	@Profile({ "dev", "test" })
 	ApplicationRunner initKeywordsRepository(KeywordsRepository keywordsRepository) {
 		return args -> {
 			if (keywordsRepository.findAll().isEmpty()) {
@@ -41,8 +40,33 @@ public class MacablogApplication {
 			}
 		};
 	}
+
 	@Bean
-	@Profile({"dev", "test"})
+	@Profile({ "dev", "test" })
+	ApplicationRunner initThematiquesRepository(ThematiquesRepository thematiquesRepository) {
+		return args -> {
+			if (thematiquesRepository.findAll().isEmpty()) {
+				new JSONLoader<>("src/main/resources/data/thematiques.json", Thematiques[].class, thematiquesRepository)
+						.load();
+			}
+		};
+	}
+
+	@Bean
+	@Profile({ "dev", "test" })
+	ApplicationRunner initSubThematiquesRepository(SubThematiquesRepository subThematiquesRepository) {
+		return args -> {
+			if (subThematiquesRepository.findAll().isEmpty()) {
+				new JSONLoader<>("src/main/resources/data/subThematiques.json", SubThematiques[].class,
+						subThematiquesRepository).load();
+			}
+		};
+	}
+
+	
+
+	@Bean
+	@Profile({ "dev", "test" })
 	ApplicationRunner initAuteurRepository(AuteurRepository auteurRepository) {
 		return args -> {
 			if (auteurRepository.findAll().isEmpty()) {
@@ -50,44 +74,17 @@ public class MacablogApplication {
 			}
 		};
 	}
-	
-	
-	
-	@Bean
-	@Profile({"dev", "test"})
-	ApplicationRunner initThematiquesRepository(ThematiquesRepository thematiquesRepository) {
-		return args -> {
-			if (thematiquesRepository.findAll().isEmpty()) {
-				new JSONLoader<>("src/main/resources/data/thematiques.json", Thematiques[].class, thematiquesRepository).load();
-			}
-		};
-	}
-	
-	
-	
-			@Bean
-			@Profile({"dev", "test"})
-			ApplicationRunner initSubThematiquesRepository(SubThematiquesRepository subThematiquesRepository) {
-				return args -> {
-					if (subThematiquesRepository.findAll().isEmpty()) {
-						new JSONLoader<>("src/main/resources/data/subThematiques.json", SubThematiques[].class, subThematiquesRepository).load();
-					}
-				};
-			}
-	
 	// Load articles.json sans ArticlesAdapter
-			@Bean
-			@Profile({"dev", "test"})
-			ApplicationRunner initArticlesRepository(ArticlesRepository articlesRepository) {
-				return args -> {
-					if (articlesRepository.findAll().isEmpty()) {
-						new JSONLoader<>("src/main/resources/data/articles.json",Articles[].class,articlesRepository).load();
+		@Bean
+		@Profile({ "dev", "test" })
+		ApplicationRunner initArticlesRepository(ArticlesRepository articlesRepository) {
+			return args -> {
+				if (articlesRepository.findAll().isEmpty()) {
+					new JSONLoader<>("src/main/resources/data/articles.json", Articles[].class, articlesRepository).load();
 
-								
-					}
-				};
-			}	
-	
+				}
+			};
+		}
 // Load article.json avec ArticlesAdapter			
 //			@Bean
 //			@Profile({"dev", "test"})
@@ -105,7 +102,5 @@ public class MacablogApplication {
 //					}
 //				};
 //			}		
-			
-			
-			
+
 }

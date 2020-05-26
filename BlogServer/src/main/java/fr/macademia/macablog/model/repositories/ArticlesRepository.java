@@ -17,6 +17,13 @@ public interface ArticlesRepository extends JpaRepository <Articles, Long>{
 	Optional<Articles> findById(Long id);
 	List<Articles> findAll();
 	
+	//Methodes pour trouver la liste des articles par ID  thematiques ou sous thematiques
+		Optional<List<Articles>> findByThematiquesId(Long id);
+
+		Optional<List<Articles>> findBySubThematiquesId(Long id);
+	
+	
+	
 	//Methodes pour trouver la liste des articles par thematiques ou sous thematiques
 	Optional<List<Articles>> findByThematiquesName(String thematiques);
 

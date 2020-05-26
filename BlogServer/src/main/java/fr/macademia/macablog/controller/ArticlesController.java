@@ -23,6 +23,7 @@ import fr.macademia.macablog.model.services.ArticlesService;
 
 
 
+
 @CrossOrigin(origins = "*")
 @RestController
 @RequestMapping("/articles")
@@ -80,6 +81,24 @@ public class ArticlesController {
 					);
 		return new ResponseEntity<Articles>(articlesFromDb, HttpStatus.OK);
 	}
+	
+//Trouver un article par l'id d'une thematique	
+	 @GetMapping(value = "/thematique/{thematiqueId}")
+	    public ResponseEntity<List<Articles>> getAllArticlesByThematiquesId(@PathVariable(value = "thematiqueId") Long thematiqueId) {
+	        List<Articles>listArticleByThemId = this.articlesService.getArticlesByThematiquesId(thematiqueId)
+	                .orElseThrow(() -> new ResponseStatusException(HttpStatus.NOT_FOUND, "Aucun article trouvé avec l'id de la thematique : " +thematiqueId));
+	        return new ResponseEntity<List<Articles>>(listArticleByThemId, HttpStatus.OK);
+	    }
+	
+	//Trouver un article par l'id d'une subthematique	
+		 @GetMapping(value = "/subthematique/{sub_thematiqueId}")
+		    public ResponseEntity<List<Articles>> getAllArticlesBySubThematiquesId(@PathVariable(value = "sub_thematiqueId") Long sub_thematiqueId) {
+		        List<Articles>listArticleBySubThemId = this.articlesService.getArticlesBySubThematiquesId(sub_thematiqueId)
+		                .orElseThrow(() -> new ResponseStatusException(HttpStatus.NOT_FOUND, "Aucun article trouvé avec l'id de la subthematique : " +sub_thematiqueId));
+		        return new ResponseEntity<List<Articles>>(listArticleBySubThemId, HttpStatus.OK);
+		    }
+			 
+	 
 // Trouver un artciles par nom de thematiques
 	@GetMapping(value = "/{thematiques}")
 	public ResponseEntity<List<Articles>> getAllArticlesByThematiquesName(@PathVariable(value = "thematiques") String thematiques) {
