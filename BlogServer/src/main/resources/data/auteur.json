@@ -6,10 +6,10 @@
     "email": "hey@macademia.fr",
     "mobileNumber":"+33 7 66 16 15 16",
     "adresse":"7 Chemin Valentin 060600 Antibes",
-   	"organisation":"Macademia ",
-    "qualification": " Formateur, Devellopeur Fullstack en free lance", 
+   	"qualification": "Formateur, Devellopeur Fullstack en free lance", 
+   	"organisation":"Macademia ", 
     "photo": false,
-    "articles": [{"id": 1},{"id": 2}]
+    "articlesList": []
     
 },
   {
@@ -19,9 +19,9 @@
     "email": "hey@macademia.fr",
     "mobileNumber":"+33 7 66 16 15 16",
     "adresse":"7 Chemin Valentin 060600 Antibes",
+   	"qualification": "Formateur, Devellopeur Fullstack en free lance", 
    	"organisation":"Macademia ",
-    "qualification": " Formateur, Devellopeur Fullstack en free lance", 
     "photo": false,
-    "articles": [{"id": 3}]
+    "articlesList": []
     }
 ]
