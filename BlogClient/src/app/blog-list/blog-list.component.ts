@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import {ActivatedRoute, Router} from '@angular/router';
+import {ActivatedRoute, Data, Router} from '@angular/router';
+import {BlogService} from '../services/blog.service';
+import {Blog} from '../models/blog';
 
 @Component({
   selector: 'app-blog-list',
@@ -136,11 +138,12 @@ export class BlogListComponent implements OnInit {
     },
   ];
 
-  constructor(private route: ActivatedRoute, private router: Router) { }
-
-  ngOnInit() {
+  constructor(private blog: BlogService, private route: ActivatedRoute, private router: Router) {
   }
-
+  ngOnInit(){
+    this.blog.findAll()
+      .then((res) => this.blogs = res);
+  }
   showMore() {
     this.max = this.max + 5;
   }
