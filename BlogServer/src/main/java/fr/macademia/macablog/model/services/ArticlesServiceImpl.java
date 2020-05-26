@@ -32,13 +32,13 @@ public class ArticlesServiceImpl implements ArticlesService {
 
 	@Override
 	public Optional<Articles> getArticlesById(long id) {
-		// TODO Auto-generated method stub
+		
 		return articlesRepository.findById(id);
 	}
 
 	@Override
 	public List<Articles> getAllArticles() {
-		// TODO Auto-generated method stub
+		
 		return articlesRepository.findAll();
 	}
 
@@ -50,19 +50,19 @@ public class ArticlesServiceImpl implements ArticlesService {
 
 	@Override
 	public Optional<Articles> getArticlesByTitle(String title) {
-		// TODO Auto-generated method stub
+		
 		return articlesRepository.findByTitle(title);
 	}
 
 	@Override
 	public Optional<List<Articles>> getArticlesByThematiquesName(String thematiques) {
-		// TODO Auto-generated method stub
+		
 		return articlesRepository.findByThematiquesName(thematiques);
 	}
 
 	@Override
 	public Optional<List<Articles>> getArticlesBySubThematiquesSubName(String subThematiques) {
-		// TODO Auto-generated method stub
+		
 		return articlesRepository.findBySubThematiquesSubName(subThematiques);
 	}
 
@@ -76,6 +76,18 @@ public class ArticlesServiceImpl implements ArticlesService {
 		 }
 		return listeLastTenArticles;
 		
+	}
+
+	@Override
+	public Optional<List<Articles>> getArticlesByThematiquesId(Long id) {
+		
+		return articlesRepository.findByThematiquesId(id);
+	}
+
+	@Override
+	public Optional<List<Articles>> getArticlesBySubThematiquesId(Long id) {
+		
+		return articlesRepository.findBySubThematiquesId(id);
 	}
 	
 

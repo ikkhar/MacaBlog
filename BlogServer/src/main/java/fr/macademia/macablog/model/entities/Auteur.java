@@ -1,6 +1,7 @@
 package fr.macademia.macablog.model.entities;
 
 import java.util.HashSet;
+import java.util.Objects;
 import java.util.Set;
 import javax.persistence.*;
 import javax.validation.constraints.Size;
@@ -14,7 +15,7 @@ import javax.validation.constraints.NotNull;
 /// Classe Auteur par article (qui peut servir à recherche par mot clée (a voir))
 
 @Entity
-@Table(name="auteur")
+@Table(name="auteurList")
 public class Auteur {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -34,9 +35,11 @@ public class Auteur {
 	private String organisation;
 	private boolean photo = false;
 	// plusieurs auteurs ont plusieur articles
-	@ManyToMany(cascade = { CascadeType.ALL }, fetch = FetchType.EAGER)
+	
+	@ManyToMany(fetch = FetchType.EAGER, cascade = { CascadeType.PERSIST }, mappedBy = "auteurList")
+	// @JsonIgnore
 	@JsonIgnore
-	private Set<Articles> articlesList = new HashSet<>();
+	private Set<Articles> articlesList = new HashSet<Articles>();
 	
 	///////////////////////////:
 	public Auteur() {
@@ -154,10 +157,15 @@ public class Auteur {
 	}
 
 	@Override
+	public int hashCode() {
+		return Objects.hash(id, lastName);
+	}
+	
+	@Override
 	public String toString() {
 		return "Auteur [id=" + id + ", firstName=" + firstName + ", lastName=" + lastName + ", email=" + email
 				+ ", mobileNumber=" + mobileNumber + ", adresse=" + adresse + ", qualification=" + qualification
-				+ ", organisation=" + organisation + ", photo=" + photo + ", articlesList=" + articlesList + "]";
+				+ ", organisation=" + organisation + "]";
 	}
 
 	

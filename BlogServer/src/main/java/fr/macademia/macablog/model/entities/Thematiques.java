@@ -26,10 +26,9 @@ public class Thematiques {
 	private String name;
 	
 	// relation persistance des données : une thematique a plusieurs articles
-	@OneToMany(mappedBy = "thematiques", cascade = {CascadeType.ALL}, fetch = FetchType.EAGER)
-	@NotFound(action=NotFoundAction.IGNORE)
-	@JsonIgnore
+	@OneToMany(mappedBy = "thematiques", cascade = {CascadeType.PERSIST}, fetch = FetchType.EAGER)
 	@JsonBackReference
+	@NotFound(action=NotFoundAction.IGNORE)
 	private Set<Articles> articles = new HashSet<Articles>();
 	// relation perstistance des données : plusieurs thématique peuvent avoir plusieurs mots clée , differentes thematiques peuvent avoir les meme mot clée
 	@ManyToMany(fetch = FetchType.EAGER, cascade = CascadeType.PERSIST)
