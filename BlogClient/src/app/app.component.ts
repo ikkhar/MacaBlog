@@ -1,4 +1,7 @@
-import {Component, HostListener} from '@angular/core';
+import { Component, HostListener } from '@angular/core';
+import { Router } from '@angular/router';
+import { ArticleService } from './services/articles.service';
+import { ApiHelperService } from './services/api-helpers.service';
 
 
 
@@ -8,6 +11,9 @@ import {Component, HostListener} from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
+  constructor(private router: Router, private api: ApiHelperService, private articleService: ArticleService){
+
+  }
 
   isShow: boolean;
   topPosToStartShowing = 100;

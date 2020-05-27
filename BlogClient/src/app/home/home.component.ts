@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {ActivatedRoute, Router} from '@angular/router';
-import {BlogService} from '../services/blog.service';
+import {ArticleService} from '../services/articles.service';
 
 
 @Component({
@@ -9,7 +9,7 @@ import {BlogService} from '../services/blog.service';
   styleUrls: ['./home.component.css']
 })
 export class HomeComponent implements OnInit {
-  constructor(private route: ActivatedRoute, private router: Router) { }
+  constructor(private route: ActivatedRoute, private router: Router, private articleService: ArticleService) { }
 
   ngOnInit() {
   }
