@@ -9,7 +9,7 @@ export class BlogEntryComponent implements OnInit {
 
   entries = [
     {
-      title: 'Blog n°0',
+      title: 'Article n°0',
       keywords: '#jaimepasjava',
       date: '12/12/19',}
   ];

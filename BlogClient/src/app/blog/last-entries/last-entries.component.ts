@@ -8,37 +8,37 @@ import {Component, Input, OnInit} from '@angular/core';
 export class LastEntriesComponent implements OnInit {
   lasts = [
     {
-      title: 'Blog n°0',
+      title: 'Article n°0',
     },
     {
-      title: 'Blog n°1',
+      title: 'Article n°1',
     },
     {
-      title: 'Blog n°2',
+      title: 'Article n°2',
     },
     {
-      title: 'Blog n°3',
+      title: 'Article n°3',
     },
     {
-      title: 'Blog n°4',
+      title: 'Article n°4',
     },
     {
-      title: 'Blog n°5',
+      title: 'Article n°5',
     },
     {
-      title: 'Blog n°6',
+      title: 'Article n°6',
     },
     {
-      title: 'Blog n°7',
+      title: 'Article n°7',
     },
     {
-      title: 'Blog n°8',
+      title: 'Article n°8',
     },
     {
-      title: 'Blog n°9',
+      title: 'Article n°9',
     },
     {
-      title: 'Blog n°10',
+      title: 'Article n°10',
     },
     ];
   constructor() { }
