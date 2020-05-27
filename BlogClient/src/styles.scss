@@ -10,7 +10,28 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
   color: white;
   border: 1px solid #FF4B82
 }
+
+// Code pour mots mis en avant dans texte paragraphe
+.rose /*code:not([class*="language-"])*/{
+  padding: .2rem .4rem;
+  background-color:#fdf5fc; /* Avant : #f8f9fa;*/
+  color: #FF4B82;
+  font-weight: bold;
+  font-size: .935rem;
+  border-radius: .25rem;
+  margin: 0 .05em;
+  -moz-tab-size: 2;
+  -o-tab-size: 2;
+  tab-size: 2;
+  letter-spacing: .75px;
+  -webkit-hyphens: none;
+  -moz-hyphens: none;
+  -ms-hyphens: none;
+  hyphens: none;
+}
+/*
 .rose{
   color: #FF4B82;
   font-weight: bold;
 }
+*/
