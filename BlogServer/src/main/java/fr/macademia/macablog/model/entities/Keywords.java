@@ -149,10 +149,10 @@ public class Keywords {
 	public int hashCode() {
 		return Objects.hash(id,name);
 	}
-	@Override
-	public String toString() {
-		return "Keywords [id=" + id + ", name=" + name +  "]";
-	}
+//	@Override
+//	public String toString() {
+//		return "Keywords [id=" + id + ", name=" + name +  "]";
+//	}
 	
 	
 	

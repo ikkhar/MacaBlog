@@ -192,10 +192,10 @@ public class Articles {
 		return Objects.hash(id, title);
 	}
 
-	@Override
-	public String toString() {
-		return "Articles [id=" + id + ", title=" + title + ", datePublication=" + datePublication + ", contenent="
-				+ contenent + "]";
-	}
+//	@Override
+//	public String toString() {
+//		return "Articles [id=" + id + ", title=" + title + ", datePublication=" + datePublication + ", contenent="
+//				+ contenent + "]";
+//	}
 
 }

@@ -31,6 +31,8 @@ build/
 .vscode/
 ##########################
 ###Back_file to ignore#######
+./skillful_network_server/
+
 .idea/
 .DS_Store
 .metadata
