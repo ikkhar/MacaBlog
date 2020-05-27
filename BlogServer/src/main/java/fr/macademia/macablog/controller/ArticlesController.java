@@ -110,7 +110,7 @@ public class ArticlesController {
 		return new ResponseEntity<>(listArticleParThem, HttpStatus.OK);
 	}
 // Trouver un artciles par nom de sous thematiques
-		@GetMapping(value = "subThematiquesName/{subThematiquesName}")
+		@GetMapping(value = "/subThematiquesName/{subThematiquesName}")
 		public ResponseEntity<List<Articles>> getAllArticlesByThematiquesSubName(@PathVariable(value = "subThematiques") String subThematiques) {
 			List<Articles> listArticleParSubThem = this.articlesService.getArticlesBySubThematiquesSubName(subThematiques)
 					.orElseThrow(() -> new ResponseStatusException(HttpStatus.NOT_FOUND,
