@@ -149,11 +149,11 @@ public class Thematiques {
 	}
 
 
-
-	@Override
-	public String toString() {
-		return "Thematiques [id=" + id + ", name=" + name  + ", keywords=" + keywords+ "]";
-	}
+//
+//	@Override
+//	public String toString() {
+//		return "Thematiques [id=" + id + ", name=" + name  + ", keywords=" + keywords+ "]";
+//	}
 
 
 

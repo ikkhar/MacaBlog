@@ -206,10 +206,10 @@ public class SubThematiques {
 		return Objects.hash(id,subName);
 	}
 
-	@Override
-	public String toString() {
-		return "SubThematiques [id=" + id + ", subName=" + subName + ", thematiques=" + thematiques + "]";
-	}
+//	@Override
+//	public String toString() {
+//		return "SubThematiques [id=" + id + ", subName=" + subName + ", thematiques=" + thematiques + "]";
+//	}
 
 	
 	

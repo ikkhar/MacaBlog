@@ -46,7 +46,9 @@ public class ArticlesController {
 		super();
 		this.articlesRepository = articlesRepository;
 	}
-
+//	@GetMapping(value = "")
+//	public List<Articles> getAllArticles() {
+//		return articlesService.getAllArticles();}
 // requette pour trouver la liste des articles
 	@GetMapping(value = "")
 	public ResponseEntity<List<Articles>> getAllArticles() {
@@ -73,7 +75,7 @@ public class ArticlesController {
 	
 	
 // requette pour trouver un article par son titre : sous reserve car le titre est une chaine de caractere (phrase )	
-	@GetMapping(value = "/{title}")
+	@GetMapping(value = "/title/{title}")
 	public ResponseEntity<Articles> getArticlesByName(@PathVariable(value = "title") String title) {
 		Articles articlesFromDb = this.articlesService.getArticlesByTitle(title)
 				.orElseThrow(
@@ -100,7 +102,7 @@ public class ArticlesController {
 			 
 	 
 // Trouver un artciles par nom de thematiques
-	@GetMapping(value = "/{thematiques}")
+	@GetMapping(value = "/thematiquesName/{thematiques}")
 	public ResponseEntity<List<Articles>> getAllArticlesByThematiquesName(@PathVariable(value = "thematiques") String thematiques) {
 		List<Articles> listArticleParThem = this.articlesService.getArticlesByThematiquesName(thematiques)
 				.orElseThrow(() -> new ResponseStatusException(HttpStatus.NOT_FOUND,
@@ -108,7 +110,7 @@ public class ArticlesController {
 		return new ResponseEntity<>(listArticleParThem, HttpStatus.OK);
 	}
 // Trouver un artciles par nom de sous thematiques
-		@GetMapping(value = "/{subThematiques}")
+		@GetMapping(value = "/subThematiquesName/{subThematiquesName}")
 		public ResponseEntity<List<Articles>> getAllArticlesByThematiquesSubName(@PathVariable(value = "subThematiques") String subThematiques) {
 			List<Articles> listArticleParSubThem = this.articlesService.getArticlesBySubThematiquesSubName(subThematiques)
 					.orElseThrow(() -> new ResponseStatusException(HttpStatus.NOT_FOUND,
