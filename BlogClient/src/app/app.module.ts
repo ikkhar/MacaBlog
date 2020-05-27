@@ -8,7 +8,7 @@ import { AppComponent } from './app.component';
 import { HomeComponent } from './home/home.component';
 import { HeaderComponent } from './home/header/header.component';
 import { FooterComponent } from './home/footer/footer.component';
-import { BlogListComponent } from './blog-list/blog-list.component';
+import { ArticleListComponent } from './article-list/article-list.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { BlogComponent } from './blog/blog.component';
 import { MatCardModule } from '@angular/material/card';
@@ -24,6 +24,7 @@ import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatListModule } from '@angular/material/list';
 import { TopicsComponent } from './home/topics/topics.component';
 import { TopicsPhoneComponent } from './home/topics/topics-phone/topics-phone.component';
+import { ArticleService } from './services/articles.service';
 
 
 
@@ -34,6 +35,7 @@ import { TopicsPhoneComponent } from './home/topics/topics-phone/topics-phone.co
 const blogRoutes: Routes = [
 { path: 'home', component: HomeComponent },
 { path: 'blog', component: BlogComponent },
+{ path: 'articles', component: ArticleListComponent},
 { path: '', redirectTo: 'home', pathMatch: 'full' },
 { path: '**', redirectTo: 'home' }
 ];
@@ -41,7 +43,7 @@ const blogRoutes: Routes = [
 @NgModule({
   declarations: [
     AppComponent,
-    BlogListComponent,
+    ArticleListComponent,
     HomeComponent,
     BlogComponent,
     BlogEntryComponent,
@@ -71,7 +73,9 @@ const blogRoutes: Routes = [
 
 
   ],
-  providers: [],
+  providers: [
+    ArticleService,
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
