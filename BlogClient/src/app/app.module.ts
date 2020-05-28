@@ -31,7 +31,6 @@ import { ArticleService } from './services/articles.service';
 
 
 
-
 const blogRoutes: Routes = [
 { path: 'home', component: HomeComponent },
 { path: 'blog', component: BlogComponent },
@@ -75,6 +74,7 @@ const blogRoutes: Routes = [
   ],
   providers: [
     ArticleService,
+    HighlightService,
   ],
   bootstrap: [AppComponent]
 })
