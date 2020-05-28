@@ -193,3 +193,4 @@ BlogServer/src/main/resources/data/Articles.json
 BlogServer/src/main/resources/data/Keywords.json
 BlogServer/src/main/resources/data/SubThematiques.json
 BlogServer/src/main/resources/data/Thematiques.json
+BlogServer/src/main/resources/.DS_Store
