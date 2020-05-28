@@ -1,11 +1,16 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, AfterViewChecked } from '@angular/core';
+
+import { HighlightService } from '../../services/highlight.service'
 
 @Component({
   selector: 'app-blog-entry',
   templateUrl: './blog-entry.component.html',
   styleUrls: ['./blog-entry.component.scss']
 })
-export class BlogEntryComponent implements OnInit {
+export class BlogEntryComponent implements OnInit, AfterViewChecked {
+  
+  blogEntry: any;
+  highlighted: boolean = false;
 
   entries = [
     {
@@ -51,9 +56,21 @@ export class BlogEntryComponent implements OnInit {
     'Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut ' +
     'aliquid ex ea commodi consequatur? Quis autem vel eum iure reprehenderit qui in ea voluptate velit ' +
     'esse quam nihil molestiae consequatur, vel illum qui dolorem eum fugiat quo';
-  constructor() { }
+  constructor(private highlightService: HighlightService) {
+  }
+  /**
+   * Highlight blog post when it's ready
+   */
+  ngAfterViewChecked() {
+    if (this.blogEntry && !this.highlighted) {
+      this.highlightService.highlightAll();
+      this.highlighted = true;
+    }
+  }
+
 
   ngOnInit(): void {
+    
   }
 
 }

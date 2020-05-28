@@ -26,7 +26,7 @@
 				},
 				{
 					"id": 53,
-					"name": "Vidéos"
+					"name": "Vidï¿½os"
 				}
 				
 			],
@@ -34,12 +34,12 @@
 		},
 		{
 			"id": 2,
-			"name": "Base de données",
+			"name": "Base de donnï¿½es",
 			"articles": [],
 			"keywords": [
 				{
 					"id": 4,
-					"name": " Base de Données"
+					"name": " Base de Donnï¿½es"
 				},
 				{
 					"id": 5,
@@ -59,7 +59,7 @@
 				},
 				{
 					"id": 53,
-					"name": "Vidéos"
+					"name": "Vidï¿½os"
 				}
 			],
 			"subThematiques":[]
@@ -75,7 +75,7 @@
 				},
 				{
 					"id": 8,
-					"name": "Conception orientée objet"
+					"name": "Conception orientï¿½e objet"
 				},
 				{
 					"id": 9,
@@ -91,7 +91,7 @@
 				},
 				{
 					"id": 53,
-					"name": "Vidéos"
+					"name": "Vidï¿½os"
 				}
 			],
 			"subThematiques":[]
@@ -119,7 +119,7 @@
 				},
 				{
 					"id": 53,
-					"name": "Vidéos"
+					"name": "Vidï¿½os"
 				}
 			],
 			"subThematiques":[]
@@ -160,7 +160,7 @@
 				},
 				{
 					"id": 53,
-					"name": "Vidéos"
+					"name": "Vidï¿½os"
 				}
 			],
 			"subThematiques":[]
@@ -209,7 +209,7 @@
 				},
 				{
 					"id": 53,
-					"name": "Vidéos"
+					"name": "Vidï¿½os"
 				}
 			],
 			"subThematiques":[]
@@ -254,11 +254,11 @@
 				},
 				{
 					"id": 53,
-					"name": "Vidéos"
+					"name": "Vidï¿½os"
 				},
 				{
 					"id": 54,
-					"name": "Programation orientée objet"
+					"name": "Programation orientï¿½e objet"
 				}
 			],
 			"subThematiques":[]
@@ -279,7 +279,7 @@
 				},
 				{
 					"id": 32,
-					"name": "Réact"
+					"name": "Rï¿½act"
 				},
 				{
 					"id": 33,
@@ -303,7 +303,7 @@
 				},
 				{
 					"id": 53,
-					"name": "Vidéos"
+					"name": "Vidï¿½os"
 				}
 			],
 			"subThematiques":[]
@@ -332,7 +332,7 @@
 				},
 				{
 					"id": 53,
-					"name": "Vidéos"
+					"name": "Vidï¿½os"
 				}
 			],
 			"subThematiques":[]
@@ -344,7 +344,7 @@
 			"keywords": [
 				{
 					"id": 38,
-					"name": "Méthode Agil"
+					"name": "Mï¿½thode Agil"
 				},
 				{
 					"id": 39,
@@ -360,7 +360,7 @@
 				},
 				{
 					"id": 53,
-					"name": "Vidéos"
+					"name": "Vidï¿½os"
 				}
 			],
 			"subThematiques":[]
@@ -393,11 +393,11 @@
 				},
 				{
 					"id": 53,
-					"name": "Vidéos"
+					"name": "Vidï¿½os"
 				},
 				{
 					"id": 54,
-					"name": "Programation orientée objet"
+					"name": "Programation orientï¿½e objet"
 				}
 			],
 			"subThematiques":[]
@@ -425,11 +425,11 @@
 				},
 				{
 					"id": 53,
-					"name": "Vidéos"
+					"name": "Vidï¿½os"
 				},
 				{
 					"id": 54,
-					"name": "Programation orientée objet"
+					"name": "Programation orientï¿½e objet"
 				}
 			],
 			"subThematiques":[]
@@ -449,7 +449,7 @@
 				},
 				{
 					"id": 48,
-					"name": "Sécurité"
+					"name": "Sï¿½curitï¿½"
 				},
 				{
 					"id": 51,
@@ -461,18 +461,18 @@
 				},
 				{
 					"id": 53,
-					"name": "Vidéos"
+					"name": "Vidï¿½os"
 				},
 				{
 					"id": 54,
-					"name": "Programation orientée objet"
+					"name": "Programation orientï¿½e objet"
 				}
 			],
 			"subThematiques":[]
 		},
 		{
 			"id": 14,
-			"name": "Sécurité",
+			"name": "Sï¿½curitï¿½",
 			"articles": [],
 			"keywords": [
 				{
@@ -481,7 +481,7 @@
 				},
 				{
 					"id": 48,
-					"name": "Sécurité"
+					"name": "Sï¿½curitï¿½"
 				},
 				{
 					"id": 54,
@@ -497,7 +497,7 @@
 				},
 				{
 					"id": 53,
-					"name": "Vidéos"
+					"name": "Vidï¿½os"
 				}
 			],
 			"subThematiques":[]
@@ -521,7 +521,7 @@
 				},
 				{
 					"id": 53,
-					"name": "Vidéos"
+					"name": "Vidï¿½os"
 				}
 			],
 			"subThematiques":[]
@@ -529,4 +529,3 @@
 	
 ]
 	
-
