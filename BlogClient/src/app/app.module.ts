@@ -25,7 +25,7 @@ import { MatListModule } from '@angular/material/list';
 import { TopicsComponent } from './home/topics/topics.component';
 import { TopicsPhoneComponent } from './home/topics/topics-phone/topics-phone.component';
 import { ArticleService } from './services/articles.service';
-
+import { HighlightService } from './services/highlight.service';
 
 
 
@@ -75,6 +75,7 @@ const blogRoutes: Routes = [
   ],
   providers: [
     ArticleService,
+    HighlightService,
   ],
   bootstrap: [AppComponent]
 })
