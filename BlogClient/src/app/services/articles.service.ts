@@ -7,13 +7,13 @@ import {ActivatedRoute} from '@angular/router';
   providedIn: 'root'
 })
 export class ArticleService {
-  public blogDetails: Article;
-  public blog: Article[];
+  public articleDetails: Article;
+  public article: Article[];
 
   public articles = Article;
 
   constructor(private api: ApiHelperService, private route: ActivatedRoute) {
-    this.blog = [];
+    this.article = [];
   }
 
   public findAll(): Promise<any> {
