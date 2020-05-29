@@ -2,8 +2,9 @@
 <div class="divBlogList" *ngFor="let article of articles | slice:0:max" >
 <mat-card  class="mat-elevation-z0">
   <mat-card-title >{{article.title}}</mat-card-title>
-  <mat-card-subtitle>{{article.date}}</mat-card-subtitle>
-  <mat-card-content>{{article.description}}</mat-card-content>
+  <mat-card-subtitle>{{article.datePublication | date:'dd / MM / yyyy'}}</mat-card-subtitle>
+  <mat-card-content>{{article.resume}}</mat-card-content>
+  <mat-card-content>{{article.auteur}}</mat-card-content>
   <a href="#">Learn more</a>
 </mat-card>
 </div>
