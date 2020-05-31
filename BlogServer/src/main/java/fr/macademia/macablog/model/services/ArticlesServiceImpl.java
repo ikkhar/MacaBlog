@@ -1,6 +1,7 @@
 package fr.macademia.macablog.model.services;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 import java.util.Optional;
 
@@ -36,6 +37,9 @@ public class ArticlesServiceImpl implements ArticlesService {
 		return articlesRepository.findById(id);
 	}
 
+	
+	
+	
 	@Override
 	public List<Articles> getAllArticles() {
 		
@@ -73,23 +77,64 @@ public class ArticlesServiceImpl implements ArticlesService {
 		 ArrayList<Articles> listeLastTenArticles=new ArrayList<Articles>();
 		 for (int i = listeAllArticles.size()-10; i < listeAllArticles.size(); i++) {
 			 listeLastTenArticles.add(listeAllArticles.get(i)) ;
+			 
 		 }
+		 Collections.reverse(listeLastTenArticles);
 		return listeLastTenArticles;
 		
 	}
-
 	@Override
-	public Optional<List<Articles>> getArticlesByThematiquesId(Long id) {
-		
-		return articlesRepository.findByThematiquesId(id);
+	public List<Articles> getArticlesByThematiquesId(Long id) {
+		 ArrayList<Articles> listeAllArticlesByThem=new ArrayList<Articles>();
+		 listeAllArticlesByThem.addAll(this.articlesRepository.findByThematiquesId(id));
+		 
+	Collections.reverse(listeAllArticlesByThem);
+		return listeAllArticlesByThem;
 	}
 
 	@Override
-	public Optional<List<Articles>> getArticlesBySubThematiquesId(Long id) {
-		
-		return articlesRepository.findBySubThematiquesId(id);
+	public List<Articles> getArticlesBySubThematiquesId(Long id) {
+		 ArrayList<Articles> listeAllArticlesBySubThem=new ArrayList<Articles>();
+		 listeAllArticlesBySubThem.addAll(this.articlesRepository.findBySubThematiquesId(id));
+		 
+	Collections.reverse(listeAllArticlesBySubThem);
+		return listeAllArticlesBySubThem;
 	}
-	
+//	@Override
+//	public <List<Articles>> ArrayList<Articles> getArticlesByThematiquesId(Long id) {
+//		 ArrayList<Articles> listeAllArticlesByThem=new ArrayList<Articles>();
+//		 listeAllArticlesByThem.addAll(this.articlesRepository.findByThematiquesId(id));
+//		 
+//		Collections.reverse(listeAllArticlesByThem);
+//		return listeAllArticlesByThem;
+//	}
+
+//	@Override
+//	public Optional<List<Articles>> getArticlesBySubThematiquesId(Long id) {
+//		
+//		return articlesRepository.findBySubThematiquesId(id);
+//	}
+
+
+
+
+	@Override
+	public List<Articles> getAllChronologicArticles() {
+		 ArrayList<Articles> listeAllArticles=new ArrayList<Articles>();
+		 listeAllArticles.addAll(this.articlesRepository.findAll());
+		 
+		Collections.reverse(listeAllArticles);
+//		 for (int i = listChronologicalArticles.size()-1; i >= 0; i--) {
+//			 listChronologicalArticles.add(listeAllArticles.get(i)) ;
+//		 }
+		return listeAllArticles;
+	}
+
+
+
+
+
+
 
 	
 	
