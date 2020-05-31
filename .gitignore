@@ -32,6 +32,10 @@ build/
 ##########################
 ###Back_file to ignore#######
 ./skillful_network_server/
+./skillful_network_server/
+./spring-boot-rest-security/
+./springboot-projet3-dto/
+./tp-restapi-spring-boot/
 
 .idea/
 .DS_Store
