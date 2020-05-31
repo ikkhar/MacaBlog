@@ -46,9 +46,12 @@ public class ArticlesController {
 		super();
 		this.articlesRepository = articlesRepository;
 	}
-//	@GetMapping(value = "")
-//	public List<Articles> getAllArticles() {
-//		return articlesService.getAllArticles();}
+	// requette pour trouver la liste des articles
+		@GetMapping(value = "/chronological_order")
+		public ResponseEntity<List<Articles>> getAllArticlesByChronologicalOrder() {
+			List<Articles> listOrderedArticles = this.articlesService.getAllChronologicArticles();
+			return new ResponseEntity<List<Articles>>(listOrderedArticles, HttpStatus.OK);
+		}
 // requette pour trouver la liste des articles
 	@GetMapping(value = "")
 	public ResponseEntity<List<Articles>> getAllArticles() {
@@ -87,16 +90,16 @@ public class ArticlesController {
 //Trouver un article par l'id d'une thematique	
 	 @GetMapping(value = "/thematique/{thematiqueId}")
 	    public ResponseEntity<List<Articles>> getAllArticlesByThematiquesId(@PathVariable(value = "thematiqueId") Long thematiqueId) {
-	        List<Articles>listArticleByThemId = this.articlesService.getArticlesByThematiquesId(thematiqueId)
-	                .orElseThrow(() -> new ResponseStatusException(HttpStatus.NOT_FOUND, "Aucun article trouvé avec l'id de la thematique : " +thematiqueId));
+	        List<Articles>listArticleByThemId = this.articlesService.getArticlesByThematiquesId(thematiqueId);
+	        	
+//	                .orElseThrow(() -> new ResponseStatusException(HttpStatus.NOT_FOUND, "Aucun article trouvé avec l'id de la thematique : " +thematiqueId));
 	        return new ResponseEntity<List<Articles>>(listArticleByThemId, HttpStatus.OK);
 	    }
 	
 	//Trouver un article par l'id d'une subthematique	
 		 @GetMapping(value = "/subthematique/{sub_thematiqueId}")
 		    public ResponseEntity<List<Articles>> getAllArticlesBySubThematiquesId(@PathVariable(value = "sub_thematiqueId") Long sub_thematiqueId) {
-		        List<Articles>listArticleBySubThemId = this.articlesService.getArticlesBySubThematiquesId(sub_thematiqueId)
-		                .orElseThrow(() -> new ResponseStatusException(HttpStatus.NOT_FOUND, "Aucun article trouvé avec l'id de la subthematique : " +sub_thematiqueId));
+		        List<Articles>listArticleBySubThemId = this.articlesService.getArticlesBySubThematiquesId(sub_thematiqueId);
 		        return new ResponseEntity<List<Articles>>(listArticleBySubThemId, HttpStatus.OK);
 		    }
 			 
