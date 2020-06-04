@@ -2,7 +2,11 @@ package fr.macademia.macablog.model.services;
 
 import java.util.*;
 
+import org.springframework.data.domain.Page;
+
 import fr.macademia.macablog.model.entities.Articles;
+import fr.macademia.macablog.tool.page.PageTool;
+
 
 
 public interface ArticlesService {
@@ -26,4 +30,7 @@ public interface ArticlesService {
 	
 	Optional<List<String>> searchArticles(String keyword);
 	
+	
+	Page<Articles> getPageOfEntities(PageTool pageTool);
+	Page<Articles> getPageOfEntitiesByThematiques(PageTool pageTool, Long id);
 }

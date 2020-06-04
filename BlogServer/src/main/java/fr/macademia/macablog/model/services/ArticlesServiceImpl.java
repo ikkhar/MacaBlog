@@ -1,17 +1,22 @@
 package fr.macademia.macablog.model.services;
 
 import java.util.ArrayList;
+import java.util.Collection;
 import java.util.Collections;
 import java.util.List;
 import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Page;
 
 import fr.macademia.macablog.model.entities.Articles;
 import fr.macademia.macablog.model.repositories.ArticlesRepository;
 import fr.macademia.macablog.model.repositories.KeywordsRepository;
 import fr.macademia.macablog.model.repositories.SubThematiquesRepository;
 import fr.macademia.macablog.model.repositories.ThematiquesRepository;
+import fr.macademia.macablog.tool.page.PageTool;
+import org.springframework.data.domain.Sort;
+
 import org.springframework.stereotype.Service;
 
 @Service(value = "articlesService")
@@ -43,7 +48,7 @@ public class ArticlesServiceImpl implements ArticlesService {
 	@Override
 	public List<Articles> getAllArticles() {
 		
-		return articlesRepository.findAll();
+		return articlesRepository.findAllByOrderByIdDesc();
 	}
 
 	@Override
@@ -83,6 +88,8 @@ public class ArticlesServiceImpl implements ArticlesService {
 		return listeLastTenArticles;
 		
 	}
+	
+	
 	@Override
 	public List<Articles> getArticlesByThematiquesId(Long id) {
 		 ArrayList<Articles> listeAllArticlesByThem=new ArrayList<Articles>();
@@ -91,7 +98,14 @@ public class ArticlesServiceImpl implements ArticlesService {
 	Collections.reverse(listeAllArticlesByThem);
 		return listeAllArticlesByThem;
 	}
-
+//	@Override
+//	public Optional<ArrayList<Articles>> getArticlesByThematiquesId(Long id) {
+//		 Optional<ArrayList<Articles>> listeAllArticlesByThem=new Optional<ArrayList<Articles>>;
+//		 listeAllArticlesByThem.addAll(this.articlesRepository.findByThematiquesId(id));
+//		 
+//	Collections.reverse(listeAllArticlesByThem);
+//		return listeAllArticlesByThem;
+//	}
 	@Override
 	public List<Articles> getArticlesBySubThematiquesId(Long id) {
 		 ArrayList<Articles> listeAllArticlesBySubThem=new ArrayList<Articles>();
@@ -121,14 +135,62 @@ public class ArticlesServiceImpl implements ArticlesService {
 	@Override
 	public List<Articles> getAllChronologicArticles() {
 		 ArrayList<Articles> listeAllArticles=new ArrayList<Articles>();
-		 listeAllArticles.addAll(this.articlesRepository.findAll());
+		 listeAllArticles.addAll(this.articlesRepository.findAllByOrderByIdDesc());
 		 
-		Collections.reverse(listeAllArticles);
+		//Collections.reverse(listeAllArticles);
 //		 for (int i = listChronologicalArticles.size()-1; i >= 0; i--) {
 //			 listChronologicalArticles.add(listeAllArticles.get(i)) ;
 //		 }
 		return listeAllArticles;
 	}
+
+
+//	@SuppressWarnings("unchecked")
+//	@Override
+//	public Page<Articles> getPageOfEntities(PageTool pageTool) {
+//		 ArrayList<Articles> listeAllArticles=new ArrayList<Articles>();
+//		 listeAllArticles.addAll(this.articlesRepository.findAll(pageTool.requestPage()));
+//		 
+//		Collections.reverse(listeAllArticles);
+////		 for (int i = listChronologicalArticles.size()-1; i >= 0; i--) {
+////			 listChronologicalArticles.add(listeAllArticles.get(i)) ;
+////		 }
+//		return (Page<Articles>) listeAllArticles;
+//
+//	}
+
+	@Override
+	public Page<Articles> getPageOfEntities(PageTool pageTool) {
+		// TODO Auto-generated method stub
+		return articlesRepository.findAllByOrderByIdDesc(pageTool.requestPage()) ;
+	}
+
+
+
+
+	@Override
+	public Page<Articles> getPageOfEntitiesByThematiques(PageTool pageTool, Long id) {
+		// TODO Auto-generated method stub
+		return articlesRepository.findByThematiquesId(pageTool.requestPage(),id);
+	}
+	//repository.findAll(Sort.by(Sort.Direction.DESC, id));
+
+//	private Sort orderByIdAsc() {
+//	    return new Sort(Sort.Direction.ASC, "id")
+//	                ;
+//	
+
+
+//	@Override
+//	public Page<Articles> getPageOfEntitiesByThematiques(PageTool pageTool) {
+//		// TODO Auto-generated method stub
+//		return articlesRepository.findBySubThematiquesId(pageTool.requestPage()) ;
+//	}
+
+
+
+
+	
 
 
 

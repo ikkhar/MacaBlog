@@ -4,7 +4,10 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 
+import javax.validation.Valid;
+
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Page;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.util.MimeTypeUtils;
@@ -19,6 +22,8 @@ import org.springframework.web.server.ResponseStatusException;
 import fr.macademia.macablog.model.entities.Articles;
 import fr.macademia.macablog.model.repositories.ArticlesRepository;
 import fr.macademia.macablog.model.services.ArticlesService;
+import fr.macademia.macablog.tool.page.PageTool;
+
 
 
 
@@ -26,7 +31,8 @@ import fr.macademia.macablog.model.services.ArticlesService;
 
 @CrossOrigin(origins = "*")
 @RestController
-@RequestMapping("/articles")
+//@RequestMapping("/articles")
+@RequestMapping(value="/articles", produces = {"application/json; charset=UTF-8","*/*;charset=UTF-8"})
 public class ArticlesController {
 	
 	@Autowired
@@ -52,7 +58,7 @@ public class ArticlesController {
 			List<Articles> listOrderedArticles = this.articlesService.getAllChronologicArticles();
 			return new ResponseEntity<List<Articles>>(listOrderedArticles, HttpStatus.OK);
 		}
-// requette pour trouver la liste des articles
+// requette pour trouver la liste des articles dans l'ordre decroissant 
 	@GetMapping(value = "")
 	public ResponseEntity<List<Articles>> getAllArticles() {
 		List<Articles> listArticles = this.articlesService.getAllArticles();
@@ -86,16 +92,29 @@ public class ArticlesController {
 					);
 		return new ResponseEntity<Articles>(articlesFromDb, HttpStatus.OK);
 	}
-	
+
+	//Trouver un article par l'id d'une thematique	
+//		 @GetMapping(value = "/thematique/{thematiqueId}")
+//		    public ResponseEntity<List<Articles>> getAllArticlesByThematiquesId(@PathVariable(value = "thematiqueId") Long thematiqueId) {
+//		        List<Articles>listArticleByThemId = this.articlesService.getArticlesByThematiquesId(thematiqueId);
+//		        	
+////		                .orElseThrow(() -> new ResponseStatusException(HttpStatus.NOT_FOUND, "Aucun article trouvé avec l'id de la thematique : " +thematiqueId));
+//		        return new ResponseEntity<List<Articles>>(listArticleByThemId, HttpStatus.OK);
+//		    }	
+//	
 //Trouver un article par l'id d'une thematique	
 	 @GetMapping(value = "/thematique/{thematiqueId}")
 	    public ResponseEntity<List<Articles>> getAllArticlesByThematiquesId(@PathVariable(value = "thematiqueId") Long thematiqueId) {
 	        List<Articles>listArticleByThemId = this.articlesService.getArticlesByThematiquesId(thematiqueId);
-	        	
-//	                .orElseThrow(() -> new ResponseStatusException(HttpStatus.NOT_FOUND, "Aucun article trouvé avec l'id de la thematique : " +thematiqueId));
-	        return new ResponseEntity<List<Articles>>(listArticleByThemId, HttpStatus.OK);
-	    }
-	
+	        if ( listArticleByThemId.size()!=0 ){
+				return new ResponseEntity<List<Articles>>(listArticleByThemId, HttpStatus.OK);
+	        } else if (listArticleByThemId.size()==0 ) {
+				throw new ResponseStatusException(HttpStatus.NOT_FOUND, "Il n'ya pas d'article pour cette thématique");
+			}
+		 else {
+			throw new ResponseStatusException(HttpStatus.BAD_REQUEST, "Aucune article trouvé");
+		}
+	}
 	//Trouver un article par l'id d'une subthematique	
 		 @GetMapping(value = "/subthematique/{sub_thematiqueId}")
 		    public ResponseEntity<List<Articles>> getAllArticlesBySubThematiquesId(@PathVariable(value = "sub_thematiqueId") Long sub_thematiqueId) {
@@ -132,5 +151,25 @@ public class ArticlesController {
 			return new ResponseEntity<List<String>>(listArticles, HttpStatus.OK);
 	}
 
-
+//Route générique : Get Articles 10 By 10 with PageTool
+	@GetMapping(value = "/page")
+	public ResponseEntity<Page<Articles>> getArticlesPerPage(@Valid PageTool pageTool) {
+		if (pageTool != null) {
+			Page<Articles> listArticlesByPage = articlesService.getPageOfEntities(pageTool);
+			return new ResponseEntity<Page<Articles>>(listArticlesByPage, HttpStatus.OK);
+		} else {
+			throw new ResponseStatusException(HttpStatus.BAD_REQUEST, "Données en paramètre non valides");
+		}
+	}
+	
+	//Route générique : Get Articles 10 By 10 with PageTool
+	@GetMapping(value = "/page/subthematique/{sub_thematiqueId}")
+	public ResponseEntity<Page<Articles>> getArticlesByThematiquesPerPage(@PathVariable(value = "sub_thematiqueId") Long sub_thematiqueId,@Valid PageTool pageTool) {
+		if (pageTool != null) {
+			Page<Articles> listArticlesByThematiquesByPage = articlesService.getPageOfEntitiesByThematiques(pageTool, sub_thematiqueId);
+			return new ResponseEntity<Page<Articles>>(listArticlesByThematiquesByPage, HttpStatus.OK);
+		} else {
+			throw new ResponseStatusException(HttpStatus.BAD_REQUEST, "Données en paramètre non valides");
+		}
+	}
 }
