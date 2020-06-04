@@ -1,24 +1,29 @@
 import {Injectable} from '@angular/core';
-import {Blog} from '../models/blog';
+import {Article} from '../models/article';
 import {ApiHelperService} from './api-helpers.service';
 import {ActivatedRoute} from '@angular/router';
 
 @Injectable({
   providedIn: 'root'
 })
-export class BlogService {
-  public blogDetails: Blog;
-  public blog: Blog[];
+export class ArticleService {
+  public articleDetails: Article;
+  public article: Article[];
 
-  public blogs = Blog;
+  public articles = Article;
 
   constructor(private api: ApiHelperService, private route: ActivatedRoute) {
-    this.blog = [];
+    this.article = [];
   }
 
   public findAll(): Promise<any> {
     return this.api.get({endpoint: '/articles'});
   }
+
+  public findById(id: number): Article {
+    return this.articles[id];
+  }
+
 }
 
 

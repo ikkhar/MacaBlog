@@ -1,7 +1,7 @@
 package fr.macademia.macablog.model.services;
 
 import java.util.ArrayList;
-import java.util.Collection;
+
 import java.util.Collections;
 import java.util.List;
 import java.util.Optional;
@@ -88,8 +88,7 @@ public class ArticlesServiceImpl implements ArticlesService {
 		return listeLastTenArticles;
 		
 	}
-	
-	
+
 	@Override
 	public List<Articles> getArticlesByThematiquesId(Long id) {
 		 ArrayList<Articles> listeAllArticlesByThem=new ArrayList<Articles>();
@@ -98,6 +97,7 @@ public class ArticlesServiceImpl implements ArticlesService {
 	Collections.reverse(listeAllArticlesByThem);
 		return listeAllArticlesByThem;
 	}
+
 //	@Override
 //	public Optional<ArrayList<Articles>> getArticlesByThematiquesId(Long id) {
 //		 Optional<ArrayList<Articles>> listeAllArticlesByThem=new Optional<ArrayList<Articles>>;
@@ -141,8 +141,27 @@ public class ArticlesServiceImpl implements ArticlesService {
 //		 for (int i = listChronologicalArticles.size()-1; i >= 0; i--) {
 //			 listChronologicalArticles.add(listeAllArticles.get(i)) ;
 //		 }
-		return listeAllArticles;
-	}
+		return listeAllArticles;}
+
+
+
+//	@Override
+//	public <List<Articles>> ArrayList<Articles> getArticlesByThematiquesId(Long id) {
+//		 ArrayList<Articles> listeAllArticlesByThem=new ArrayList<Articles>();
+//		 listeAllArticlesByThem.addAll(this.articlesRepository.findByThematiquesId(id));
+//		 
+//		Collections.reverse(listeAllArticlesByThem);
+//		return listeAllArticlesByThem;
+//	}
+
+//	@Override
+//	public Optional<List<Articles>> getArticlesBySubThematiquesId(Long id) {
+//		
+//		return articlesRepository.findBySubThematiquesId(id);
+//	}
+
+
+
 
 
 //	@SuppressWarnings("unchecked")
@@ -160,10 +179,17 @@ public class ArticlesServiceImpl implements ArticlesService {
 //	}
 
 	@Override
-	public Page<Articles> getPageOfEntities(PageTool pageTool) {
+    public Page<Articles> getPageOfEntities(PageTool pageTool) {
 		// TODO Auto-generated method stub
 		return articlesRepository.findAllByOrderByIdDesc(pageTool.requestPage()) ;
+
+//		 for (int i = listChronologicalArticles.size()-1; i >= 0; i--) {
+//			 listChronologicalArticles.add(listeAllArticles.get(i)) ;
+//		 }
+	
+
 	}
+
 
 
 
@@ -191,7 +217,6 @@ public class ArticlesServiceImpl implements ArticlesService {
 
 
 	
-
 
 
 

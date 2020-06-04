@@ -23,6 +23,7 @@ public interface ArticlesRepository extends JpaRepository <Articles, Long>{
 //	List<Articles> findTop10ByOrderByLevelDesc();
 	
 	
+	
 	//Methodes pour trouver la liste des articles par ID  thematiques ou sous thematiques
 		List<Articles> findByThematiquesId(Long id);
 

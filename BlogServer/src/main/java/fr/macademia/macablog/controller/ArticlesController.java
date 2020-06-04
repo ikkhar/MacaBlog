@@ -58,7 +58,9 @@ public class ArticlesController {
 			List<Articles> listOrderedArticles = this.articlesService.getAllChronologicArticles();
 			return new ResponseEntity<List<Articles>>(listOrderedArticles, HttpStatus.OK);
 		}
+
 // requette pour trouver la liste des articles dans l'ordre decroissant 
+
 	@GetMapping(value = "")
 	public ResponseEntity<List<Articles>> getAllArticles() {
 		List<Articles> listArticles = this.articlesService.getAllArticles();
@@ -106,6 +108,7 @@ public class ArticlesController {
 	 @GetMapping(value = "/thematique/{thematiqueId}")
 	    public ResponseEntity<List<Articles>> getAllArticlesByThematiquesId(@PathVariable(value = "thematiqueId") Long thematiqueId) {
 	        List<Articles>listArticleByThemId = this.articlesService.getArticlesByThematiquesId(thematiqueId);
+
 	        if ( listArticleByThemId.size()!=0 ){
 				return new ResponseEntity<List<Articles>>(listArticleByThemId, HttpStatus.OK);
 	        } else if (listArticleByThemId.size()==0 ) {
@@ -115,6 +118,8 @@ public class ArticlesController {
 			throw new ResponseStatusException(HttpStatus.BAD_REQUEST, "Aucune article trouvé");
 		}
 	}
+
+	
 	//Trouver un article par l'id d'une subthematique	
 		 @GetMapping(value = "/subthematique/{sub_thematiqueId}")
 		    public ResponseEntity<List<Articles>> getAllArticlesBySubThematiquesId(@PathVariable(value = "sub_thematiqueId") Long sub_thematiqueId) {
