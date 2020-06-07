@@ -8,6 +8,8 @@ import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
+import org.springframework.data.domain.PageRequest;
+import org.springframework.data.domain.Pageable;
 
 import fr.macademia.macablog.model.entities.Articles;
 import fr.macademia.macablog.model.repositories.ArticlesRepository;
@@ -144,55 +146,15 @@ public class ArticlesServiceImpl implements ArticlesService {
 		return listeAllArticles;}
 
 
-
-//	@Override
-//	public <List<Articles>> ArrayList<Articles> getArticlesByThematiquesId(Long id) {
-//		 ArrayList<Articles> listeAllArticlesByThem=new ArrayList<Articles>();
-//		 listeAllArticlesByThem.addAll(this.articlesRepository.findByThematiquesId(id));
-//		 
-//		Collections.reverse(listeAllArticlesByThem);
-//		return listeAllArticlesByThem;
-//	}
-
-//	@Override
-//	public Optional<List<Articles>> getArticlesBySubThematiquesId(Long id) {
-//		
-//		return articlesRepository.findBySubThematiquesId(id);
-//	}
-
-
-
-
-
-//	@SuppressWarnings("unchecked")
-//	@Override
-//	public Page<Articles> getPageOfEntities(PageTool pageTool) {
-//		 ArrayList<Articles> listeAllArticles=new ArrayList<Articles>();
-//		 listeAllArticles.addAll(this.articlesRepository.findAll(pageTool.requestPage()));
-//		 
-//		Collections.reverse(listeAllArticles);
-////		 for (int i = listChronologicalArticles.size()-1; i >= 0; i--) {
-////			 listChronologicalArticles.add(listeAllArticles.get(i)) ;
-////		 }
-//		return (Page<Articles>) listeAllArticles;
-//
-//	}
-
+	// Affiche la liste de tout les articles dans l'ordre decroissant par id d'articles
 	@Override
     public Page<Articles> getPageOfEntities(PageTool pageTool) {
-		// TODO Auto-generated method stub
 		return articlesRepository.findAllByOrderByIdDesc(pageTool.requestPage()) ;
-
-//		 for (int i = listChronologicalArticles.size()-1; i >= 0; i--) {
-//			 listChronologicalArticles.add(listeAllArticles.get(i)) ;
-//		 }
-	
-
 	}
+//*****************************/////*********************///////*********************////*************
+// Toute les methodes qui appel la clase page affiche la liste par 10 articles par page	
 
-
-
-
+	// Affiche dans l'ordre croissant par Id de thematiques
 
 	@Override
 	public Page<Articles> getPageOfEntitiesByThematiques(PageTool pageTool, Long id) {
@@ -201,18 +163,33 @@ public class ArticlesServiceImpl implements ArticlesService {
 	}
 	//repository.findAll(Sort.by(Sort.Direction.DESC, id));
 
-//	private Sort orderByIdAsc() {
-//	    return new Sort(Sort.Direction.ASC, "id")
-//	                ;
-//	
 
 
-//	@Override
-//	public Page<Articles> getPageOfEntitiesByThematiques(PageTool pageTool) {
-//		// TODO Auto-generated method stub
-//		return articlesRepository.findBySubThematiquesId(pageTool.requestPage()) ;
-//	}
+// Affiche dans l'ordre decroissant par Id de thematiques
+	@Override
+	public Page<Articles> getPageOfEntitiesByThematiquesOrderDesc(PageTool pageTool, Long id) {
+		// TODO Auto-generated method stub
+		return articlesRepository.findByThematiquesIdOrderByIdDesc(pageTool.requestPage(),id);
+	}
 
+
+
+
+	@Override
+	public Page<Articles> getPageOfEntitiesBySubThematiquesOrderDesc(PageTool pageTool, Long id) {
+		// TODO Auto-generated method stub
+		return articlesRepository.findBySubThematiquesIdOrderByIdDesc(pageTool.requestPage(),id);
+	}
+
+
+
+
+	
+
+
+
+
+	
 
 
 

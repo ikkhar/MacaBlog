@@ -45,7 +45,13 @@ public interface ArticlesRepository extends JpaRepository <Articles, Long>{
 	Optional<Articles> findByTitle(String title);
 //	Page<Articles> findBySubThematiquesId(Pageable requestPage);
 	Page<Articles> findAllByOrderByIdDesc(Pageable requestPage);
-	Page<Articles>findByThematiquesId(Pageable requestPage,Long id);
-	Page<Articles>findBySubThematiquesId(Pageable requestPage,Long id);
+	Page<Articles>findByThematiquesId(Pageable requestPage,Long id);// affiche dans l'ordre croissant
 	
+	
+	Page<Articles>findBySubThematiquesId(Pageable requestPage,Long id);// affiche dans l'ordre croissant
+	
+	Page<Articles>findByThematiquesIdOrderByIdDesc(Pageable requestPage,Long id);// affiche dans l'ordre decroissant 
+
+	Page<Articles>findBySubThematiquesIdOrderByIdDesc(Pageable requestPage,Long id);// affiche dans l'ordre decroissant 
+
 }

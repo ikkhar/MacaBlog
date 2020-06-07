@@ -85,22 +85,6 @@ public class MacablogApplication {
 				}
 			};
 		}
-// Load article.json avec ArticlesAdapter			
-//			@Bean
-//			@Profile({"dev", "test"})
-//			ApplicationRunner initArticlesRepository(ArticlesRepository articlesRepository) {
-//				return args -> {
-//					if (articlesRepository.findAll().isEmpty()) {
-//						new JSONLoader<>(
-//								"src/main/resources/data/articles.json", 
-//								Articles[].class,
-//								Articles.class,
-//								articlesRepository,
-//								new ArticlesAdapter()
-//								).load();
-//						
-//					}
-//				};
-//			}		
+	
 
 }

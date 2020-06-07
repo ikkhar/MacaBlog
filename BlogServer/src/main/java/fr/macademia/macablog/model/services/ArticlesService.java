@@ -32,5 +32,14 @@ public interface ArticlesService {
 	
 	
 	Page<Articles> getPageOfEntities(PageTool pageTool);
+	// afiche dans l'ordre croissant
 	Page<Articles> getPageOfEntitiesByThematiques(PageTool pageTool, Long id);
+	
+
+
+
+// affiche dans l'ordre decroissant
+	Page<Articles> getPageOfEntitiesByThematiquesOrderDesc(PageTool pageTool, Long id);
+	Page<Articles> getPageOfEntitiesBySubThematiquesOrderDesc(PageTool pageTool, Long id);
+	
 }
