@@ -8,7 +8,7 @@ import { HighlightService } from '../../services/highlight.service'
   styleUrls: ['./blog-entry.component.scss']
 })
 export class BlogEntryComponent implements OnInit, AfterViewChecked {
-  
+
   blogEntry: any;
   highlighted: boolean = false;
 
@@ -62,7 +62,7 @@ export class BlogEntryComponent implements OnInit, AfterViewChecked {
    * Highlight blog post when it's ready
    */
   ngAfterViewChecked() {
-    if (this.blogEntry && !this.highlighted) {
+     {
       this.highlightService.highlightAll();
       this.highlighted = true;
     }
@@ -70,7 +70,7 @@ export class BlogEntryComponent implements OnInit, AfterViewChecked {
 
 
   ngOnInit(): void {
-    
+
   }
 
 }
