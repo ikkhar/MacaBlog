@@ -5,6 +5,7 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 import java.util.Optional;
+import java.util.Set;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
@@ -12,6 +13,7 @@ import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Pageable;
 
 import fr.macademia.macablog.model.entities.Articles;
+import fr.macademia.macablog.model.entities.Auteur;
 import fr.macademia.macablog.model.repositories.ArticlesRepository;
 import fr.macademia.macablog.model.repositories.KeywordsRepository;
 import fr.macademia.macablog.model.repositories.SubThematiquesRepository;
@@ -182,6 +184,23 @@ public class ArticlesServiceImpl implements ArticlesService {
 	}
 
 
+
+
+	@Override
+	public Optional<List<Articles>> getArticlesByAuteurId(Long id) {
+		// TODO Auto-generated method stub
+		return articlesRepository.findByAuteurListId(id);
+	}
+
+
+
+
+	
+
+
+
+
+	
 
 
 	

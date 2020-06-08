@@ -5,6 +5,7 @@ import java.util.*;
 import org.springframework.data.domain.Page;
 
 import fr.macademia.macablog.model.entities.Articles;
+import fr.macademia.macablog.model.entities.Auteur;
 import fr.macademia.macablog.tool.page.PageTool;
 
 
@@ -15,7 +16,7 @@ public interface ArticlesService {
 	
 	
 	
-	
+	Optional<List<Articles>>getArticlesByAuteurId(Long id);
 	Optional<Articles> getArticlesById(long id);
 	 ArrayList<Articles> getLastTenArticles();
 	Optional<Articles> getArticlesByTitle(String title);
@@ -41,5 +42,9 @@ public interface ArticlesService {
 // affiche dans l'ordre decroissant
 	Page<Articles> getPageOfEntitiesByThematiquesOrderDesc(PageTool pageTool, Long id);
 	Page<Articles> getPageOfEntitiesBySubThematiquesOrderDesc(PageTool pageTool, Long id);
+
+
+
+	
 	
 }

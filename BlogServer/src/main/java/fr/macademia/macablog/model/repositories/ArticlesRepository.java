@@ -3,6 +3,7 @@ package fr.macademia.macablog.model.repositories;
 
 import java.util.List;
 import java.util.Optional;
+import java.util.Set;
 
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
@@ -11,6 +12,7 @@ import org.springframework.data.jpa.repository.Query;
 import org.springframework.stereotype.Repository;
 import org.springframework.data.repository.query.Param;
 import fr.macademia.macablog.model.entities.Articles;
+import fr.macademia.macablog.model.entities.Auteur;
 
 
 
@@ -20,8 +22,9 @@ public interface ArticlesRepository extends JpaRepository <Articles, Long>{
 	List<Articles> findAll();
 	List<Articles> findAllByOrderByIdAsc();
 	List<Articles> findAllByOrderByIdDesc();//trouvé tout les articles dans l'ordre decroissant
-//	List<Articles> findTop10ByOrderByLevelDesc();
+//	List<Articles> par Auteur Id;
 	
+	Optional<List<Articles>>  findByAuteurListId(Long id);
 	
 	
 	//Methodes pour trouver la liste des articles par ID  thematiques ou sous thematiques
