@@ -45,7 +45,14 @@ public class ArticlesController {
 		super();
 		this.articlesRepository = articlesRepository;
 	}
-
+// Get liste articles par auteur Id
+	@GetMapping(value = "/auteur/{id}")
+	public ResponseEntity<List<Articles>> getArticlesByAuteurId(@PathVariable(value = "id") Long id) {
+		List<Articles> article = this.articlesService.getArticlesByAuteurId(id).orElseThrow(
+				() -> new ResponseStatusException(HttpStatus.NOT_FOUND, "Aucun article trouvée pour l'auteur avec l'id : " + id));
+		return new ResponseEntity<List<Articles>>(article, HttpStatus.OK);
+	}
+	
 	// requette pour trouver la liste des articles
 	@GetMapping(value = "/chronological_order")
 	public ResponseEntity<List<Articles>> getAllArticlesByChronologicalOrder() {
@@ -74,7 +81,7 @@ public class ArticlesController {
 	@GetMapping(value = "/{id}")
 	public ResponseEntity<Articles> getArticlesById(@PathVariable(value = "id") Long id) {
 		Articles article = this.articlesService.getArticlesById(id).orElseThrow(
-				() -> new ResponseStatusException(HttpStatus.NOT_FOUND, "Aucun article trouvée avec l'id : " + id));
+				() -> new ResponseStatusException(HttpStatus.NOT_FOUND, "Aucun article trouvée  avec l'id : " + id));
 		return new ResponseEntity<Articles>(article, HttpStatus.OK);
 	}
 
