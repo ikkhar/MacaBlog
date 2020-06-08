@@ -4,6 +4,7 @@ export class Article {
   private _title: string;
   private _datePublication: Date;
   private _resume: string;
+  private _contenent: string;
   private _auteurList: string;
   private _paragraph: string;
   private _keywords: string[];
@@ -13,6 +14,7 @@ export class Article {
     this._title = data.title;
     this._datePublication = data.datePublication;
     this._resume = data.resume;
+    this._contenent = data.contenent;
     this._auteurList = data.auteurList;
     this._paragraph = data.paragraph;
     this._keywords = data.keywords;
@@ -48,6 +50,14 @@ export class Article {
   }
 
   set resume(value: string) {
+    this.resume = value;
+  }
+
+  get contenent(): string {
+    return this.resume;
+  }
+
+  set contenent(value: string) {
     this.resume = value;
   }
 

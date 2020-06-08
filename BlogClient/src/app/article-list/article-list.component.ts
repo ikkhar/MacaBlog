@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import {ActivatedRoute, Data, Router} from '@angular/router';
-import {ArticleService} from '../services/articles.service';
-import {Article} from '../models/article';
+import { ActivatedRoute, Data, Router } from '@angular/router';
+import { ArticleService } from '../services/articles.service';
+import { Article } from '../models/article';
 
 @Component({
   selector: 'app-article-list',
@@ -9,17 +9,24 @@ import {Article} from '../models/article';
   styleUrls: ['./article-list.component.css']
 })
 export class ArticleListComponent implements OnInit {
-  max = 5;
-  public articles: [];
+  max = 10;
+  public articles: Article[];
   constructor(private articleService: ArticleService, private route: ActivatedRoute, private router: Router) {
   }
-  ngOnInit(){
-    this.articleService.findAll()
+  async ngOnInit(){
+    await this.articleService.findAll()
       .then((res) => this.articles = res);
   }
+
+
   showMore() {
-    this.max = this.max + 5;
+    this.max = this.max + 10;
   }
+
+  detailsArticle(id: number){
+    this.router.navigate(['articles', id])
+  }
+
 }
 
 
