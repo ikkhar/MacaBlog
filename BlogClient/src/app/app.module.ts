@@ -26,6 +26,7 @@ import { TopicsComponent } from './home/topics/topics.component';
 import { TopicsPhoneComponent } from './home/topics/topics-phone/topics-phone.component';
 import { ArticleService } from './services/articles.service';
 import { HighlightService } from './services/highlight.service';
+import { DetailsArticleComponent } from './details-article/details-article.component';
 
 
 
@@ -35,48 +36,47 @@ import { HighlightService } from './services/highlight.service';
 const blogRoutes: Routes = [
 { path: 'home', component: HomeComponent },
 { path: 'blog', component: BlogComponent },
-{ path: 'articles', component: ArticleListComponent},
+{ path: 'articles/:id', component: DetailsArticleComponent},
 { path: '', redirectTo: 'home', pathMatch: 'full' },
 { path: '**', redirectTo: 'home' }
 ];
 
 @NgModule({
-  declarations: [
-    AppComponent,
-    ArticleListComponent,
-    HomeComponent,
-    BlogComponent,
-    BlogEntryComponent,
-    ShareComponent,
-    LastEntriesComponent,
-    HeaderComponent,
-    FooterComponent,
-    TopicsComponent,
-    TopicsPhoneComponent,
-
-
-  ],
-  imports: [
-    BrowserModule,
-    MatCardModule,
-    BrowserAnimationsModule,
-    MatButtonModule,
-    MatIconModule,
-    HttpClientModule,
-    RouterModule.forRoot(blogRoutes),
-    MatProgressBarModule,
-    FlexLayoutModule,
-    MatMenuModule,
-    MatToolbarModule,
-    MatListModule,
-    MatExpansionModule,
-
-
-  ],
-  providers: [
-    ArticleService,
-    HighlightService,
-  ],
-  bootstrap: [AppComponent]
+   declarations: [
+      AppComponent,
+      ArticleListComponent,
+      HomeComponent,
+      BlogComponent,
+      BlogEntryComponent,
+      ShareComponent,
+      LastEntriesComponent,
+      HeaderComponent,
+      FooterComponent,
+      TopicsComponent,
+      TopicsPhoneComponent,
+      DetailsArticleComponent
+   ],
+   imports: [
+      BrowserModule,
+      MatCardModule,
+      BrowserAnimationsModule,
+      MatButtonModule,
+      MatIconModule,
+      HttpClientModule,
+      RouterModule.forRoot(blogRoutes),
+      MatProgressBarModule,
+      FlexLayoutModule,
+      MatMenuModule,
+      MatToolbarModule,
+      MatListModule,
+      MatExpansionModule
+   ],
+   providers: [
+      ArticleService,
+      HighlightService
+   ],
+   bootstrap: [
+      AppComponent
+   ]
 })
 export class AppModule { }
