@@ -1,8 +1,7 @@
 footer {
   position: sticky;
-  margin-left: 3%;
-  margin-right: 3%;
-  padding-bottom: 2rem!important;
+  margin-top: 5px;
+  padding-bottom: 2rem !important;
   display: grid;
   width: 100%;
 }

@@ -3,6 +3,7 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { HttpClientModule } from '@angular/common/http';
 import { MatExpansionModule } from '@angular/material/expansion';
+import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 
 import { AppComponent } from './app.component';
 import { HomeComponent } from './home/home.component';
@@ -69,7 +70,8 @@ const blogRoutes: Routes = [
       MatMenuModule,
       MatToolbarModule,
       MatListModule,
-      MatExpansionModule
+      MatExpansionModule,
+      MatProgressSpinnerModule,
    ],
    providers: [
       ArticleService,

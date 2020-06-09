@@ -33,9 +33,11 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
   -ms-hyphens: none;
   hyphens: none;
 }
-/*
-.rose{
-  color: #FF4B82;
-  font-weight: bold;
+
+// progress-spinner color rose !!
+.mat-progress-spinner circle{
+  stroke:  #FF4B82;
+  animation-name: mat-progress-spinner-stroke-rotate-100 !important;
+  stroke-dasharray: 280px !important;
+  stroke-width: 1px !important;
 }
-*/
