@@ -40,3 +40,24 @@ button{
   height: 3px;
   z-index: 10;
 }
+
+/* Spinner */
+.background-spinner {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 100;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.05);
+}
+
+.spinner {
+  margin-left: auto;
+  margin-right: auto;
+  width: 150px;
+  color: rgba(255, 75, 129, 1);
+  /* Avant : color: rgba(0, 0, 0, 1);*/
+  text-align: center;
+  margin-top: 20%;
+}

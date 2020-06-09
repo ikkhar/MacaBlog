@@ -9,13 +9,20 @@ import { Article } from '../models/article';
   styleUrls: ['./article-list.component.css']
 })
 export class ArticleListComponent implements OnInit {
+    // Faire apparaitre le spinner dans ce component
+    public isloading: boolean;
+
   max = 10;
   public articles: Article[];
   constructor(private articleService: ArticleService, private route: ActivatedRoute, private router: Router) {
   }
   async ngOnInit(){
+
+    this.isloading=true;
+
     await this.articleService.findAll()
-      .then((res) => this.articles = res);
+      .then((res) => this.articles = res)
+      .finally (()=> this.isloading=false);
   }
 
 

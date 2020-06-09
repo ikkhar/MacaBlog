@@ -1,3 +1,7 @@
 button{
   margin: 10px;
 }
+.is-loading{
+  margin: auto;
+  margin-top: 22%;
+}

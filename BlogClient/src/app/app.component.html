@@ -1,8 +1,7 @@
-<app-header></app-header>
+<div FxFlex="10"><app-header></app-header></div>
+<div FxFlex="80"><router-outlet></router-outlet>
+  <button  *ngIf="isShow" (click)="gotoTop()" mat-fab color="accent" aria-label="Back to top">
+    <mat-icon>arrow_upward</mat-icon>
+  </button></div>
+<div FxFlex="10"><app-footer></app-footer></div>
 
-<router-outlet></router-outlet>
-<button  *ngIf="isShow" (click)="gotoTop()" mat-fab color="accent" aria-label="Back to top">
-  <mat-icon>arrow_upward</mat-icon>
-</button>
-
-<app-footer></app-footer>
