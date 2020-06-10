@@ -15,6 +15,27 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
   border: 1px solid #FF4B82
 }
 
+// Debut code gestion du footer
+.ie-stickyFooter {
+	display:-ms-flexbox;
+	-ms-flex-direction:column;
+}
+
+#page {
+	width:100%;
+	min-height:100vh;
+	display:-webkit-flex;
+	display:flex;
+	-webkit-flex-direction:column;
+	flex-direction:column;
+}
+
+#content {
+	-webkit-flex-grow:1;
+	flex-grow:1;
+}
+// Fin code gestion du footer
+
 // Code pour mots mis en avant dans texte paragraphe
 .rose /*code:not([class*="language-"])*/{
   padding: .2rem .4rem;
