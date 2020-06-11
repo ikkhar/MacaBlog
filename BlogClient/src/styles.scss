@@ -18,7 +18,7 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
 // Debut code gestion du footer
 .ie-stickyFooter {
 	display:-ms-flexbox;
-	-ms-flex-direction:column;
+	flex-direction:column; //Pour regler problème scss(vendorPrefic) suppression de -ms-flex-direction: colomn
 }
 
 #page {
@@ -36,8 +36,19 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
 }
 // Fin code gestion du footer
 
+// * PRISM * //
+// Modification du block - ajout border-radius
+pre[class*="language-"] {
+	border-radius: 5px;
+}
+// Modification toolbar (btn copy) 
+div.code-toolbar > .toolbar {
+  top: 0.25em;
+  right: 0.3em;
+}
+
 // Code pour mots mis en avant dans texte paragraphe
-.rose /*code:not([class*="language-"])*/{
+.rose {
   padding: .2rem .4rem;
   background-color:#fdf5fc; /* Avant : #f8f9fa;*/
   color: #FF4B82;
