@@ -28,6 +28,8 @@ import { TopicsPhoneComponent } from './home/topics/topics-phone/topics-phone.co
 import { ArticleService } from './services/articles.service';
 import { HighlightService } from './services/highlight.service';
 import { DetailsArticleComponent } from './details-article/details-article.component';
+import { TopicsService } from './services/topics.service';
+
 
 
 
@@ -38,9 +40,11 @@ const blogRoutes: Routes = [
 { path: 'home', component: HomeComponent },
 { path: 'blog', component: BlogComponent },
 { path: 'articles/:id', component: DetailsArticleComponent},
+{ path: 'articles/thematique/:id', component: BlogComponent},
 { path: '', redirectTo: 'home', pathMatch: 'full' },
 { path: '**', redirectTo: 'home' }
 ];
+
 
 @NgModule({
    declarations: [
@@ -75,7 +79,8 @@ const blogRoutes: Routes = [
    ],
    providers: [
       ArticleService,
-      HighlightService
+      HighlightService,
+      TopicsService,
    ],
    bootstrap: [
       AppComponent

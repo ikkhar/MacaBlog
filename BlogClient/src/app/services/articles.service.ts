@@ -22,6 +22,10 @@ export class ArticleService {
     return this.api.get({endpoint: `/articles/${id}`})
   }
 
+  public findAllByOrderByIdDesc(): Promise<any> {
+    return this.api.get({endpoint: '/articles/getLastTenArticles'});
+  }
+
 }
 
 

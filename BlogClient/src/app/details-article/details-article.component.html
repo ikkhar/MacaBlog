@@ -1,9 +1,21 @@
+<div *ngIf="isloading" class="background-spinner">
+  <div class="spinner">
+    <mat-progress-spinner class="spinner" mode="indeterminate"></mat-progress-spinner>
+  </div>
+</div>
+
 <div class="divBlogList" >
   <mat-card  class="mat-elevation-z0" *ngIf= article>
     <mat-card-title >{{article.title}}</mat-card-title>
     <mat-card-subtitle>{{article.datePublication | date:'dd / MM / yyyy'}}</mat-card-subtitle>
     <mat-card-content>{{article.contenent}}</mat-card-content>
   </mat-card>
+</div>
+<div fxLayout.lt-md="column" fxLayout="row" class="insideBlog">
+  <div fxLayout="column" class="shareBlog" fxFlex="40">
+    <app-share></app-share>
+    <app-last-entries class="spaceShareLastEntries"></app-last-entries>
+  </div>
 </div>
 
 

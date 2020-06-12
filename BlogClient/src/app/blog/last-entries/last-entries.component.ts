@@ -1,4 +1,8 @@
 import { Component, Input, OnInit } from '@angular/core';
+import { ActivatedRoute, Data, Router } from '@angular/router';
+import { ArticleService } from '../../services/articles.service';
+import { Article } from '../../models/article';
+
 
 @Component({
   selector: 'app-last-entries',
@@ -6,44 +10,26 @@ import { Component, Input, OnInit } from '@angular/core';
   styleUrls: ['./last-entries.component.scss']
 })
 export class LastEntriesComponent implements OnInit {
-  lasts = [
-    {
-      title: 'Article n°0',
-    },
-    {
-      title: 'Article n°1',
-    },
-    {
-      title: 'Article n°2',
-    },
-    {
-      title: 'Article n°3',
-    },
-    {
-      title: 'Article n°4',
-    },
-    {
-      title: 'Article n°5',
-    },
-    {
-      title: 'Article n°6',
-    },
-    {
-      title: 'Article n°7',
-    },
-    {
-      title: 'Article n°8',
-    },
-    {
-      title: 'Article n°9',
-    },
-    {
-      title: 'Article n°10',
-    },
-    ];
-  constructor() { }
 
-  ngOnInit(): void {
+  id: number;
+  public isloading: boolean;
+  public article: Article;
+
+  constructor(private articleService: ArticleService, private route: ActivatedRoute, private router: Router) {
+   }
+
+ async ngOnInit()  {
+
+  this.isloading=true;
+
+
+  await this.articleService.findAllByOrderByIdDesc()
+      .then((res) => this.article = res)
+      .finally (()=> this.isloading=false);
+  }
+
+  detailsArticle(id: number){
+    this.router.navigate(['articles', id])
   }
 
 }

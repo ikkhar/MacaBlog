@@ -1,5 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { MatListModule } from '@angular/material/list';
+import { ActivatedRoute, Data, Router } from '@angular/router';
+import { Topic } from 'src/app/models/topic';
+import { TopicsService } from 'src/app/services/topics.service';
+import { ArticleService } from 'src/app/services/articles.service';
 
 @Component({
   selector: 'app-topics',
@@ -8,11 +12,23 @@ import { MatListModule } from '@angular/material/list';
 })
 export class TopicsComponent implements OnInit, MatListModule {
 
-  topics: string[] =['Angular','Bases de données', 'Conception','Développement mobile', 'HTML & CSS', 'Intégration continue', 'Java', 'Javascript', 'Linux', 'Management', '.NET', 'PHP', 'Python', 'Sécurité', 'XML']
+  public isloading: boolean;
+  public topics: Topic[];
 
-  constructor() { }
 
-  ngOnInit() {
+  constructor(private topicsService: TopicsService, private route: ActivatedRoute, private router: Router, private articlesService: ArticleService) { }
+
+  async ngOnInit() {
+
+    this.isloading=true;
+
+    await this.topicsService.findAll()
+    .then((res) => this.topics= res)
+    .finally (()=> this.isloading=false);
+  }
+
+  detailsTopics(id: number){
+    this.router.navigate(['articles/thematique', id])
   }
 
 }

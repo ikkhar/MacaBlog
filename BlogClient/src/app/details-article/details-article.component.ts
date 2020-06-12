@@ -10,16 +10,21 @@ import { ActivatedRoute, Data, Router } from '@angular/router';
   styleUrls: ['./details-article.component.css']
 })
 export class DetailsArticleComponent implements OnInit {
- id: number;
- article: Article;
+
+  public isloading: boolean;
+  id: number;
+  article: Article;
 
 
   constructor(private articleService: ArticleService, private route: ActivatedRoute, private router: Router) {}
 
   async ngOnInit() {
 
+    this.isloading=true;
+
     const id = this.route.snapshot.params['id'];
-   this.article = await this.articleService.findById(id);
+   this.article = await this.articleService.findById(id)
+   .finally (()=> this.isloading=false);
 
   }
 }

@@ -1,7 +1,7 @@
 <mat-card class="mat-elevation-z0">
   <mat-card-title>Derniers articles publiés</mat-card-title>
   <div class="divider bg-medium-primary"></div>
-  <div *ngFor="let last of lasts | slice:0:10" >
-    <h3>{{last.title}}</h3>
+  <div *ngFor="let article of article" >
+    <h3>{{article.title}}</h3>
   </div>
 </mat-card>
