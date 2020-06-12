@@ -2,6 +2,7 @@ import { Component, HostListener } from '@angular/core';
 import { Router } from '@angular/router';
 import { ArticleService } from './services/articles.service';
 import { ApiHelperService } from './services/api-helpers.service';
+import { TopicsService } from './services/topics.service';
 
 
 
@@ -11,7 +12,7 @@ import { ApiHelperService } from './services/api-helpers.service';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  constructor(private router: Router, private api: ApiHelperService, private articleService: ArticleService){
+  constructor(private router: Router, private api: ApiHelperService, private articleService: ArticleService, private topicsService: TopicsService){
 
   }
 

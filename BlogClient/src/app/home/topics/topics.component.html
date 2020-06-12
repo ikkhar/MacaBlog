@@ -1,6 +1,14 @@
+<div *ngIf="isloading" class="background-spinner">
+  <div class="spinner">
+    <mat-progress-spinner class="spinner" mode="indeterminate"></mat-progress-spinner>
+  </div>
+</div>
+
+
 <mat-nav-list>
     <h3 class="titre-topic">Topics</h3>
     <mat-list-item *ngFor="let topic of topics" class="texte-item">
-        <a matLine href="topics/{{ topic }}">{{ topic }} </a>
+        <a (click)= "detailsTopics(topic.id)">{{topic.name}}</a>
     </mat-list-item>
 </mat-nav-list>
+
