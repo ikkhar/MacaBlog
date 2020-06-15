@@ -29,6 +29,7 @@ import { ArticleService } from './services/articles.service';
 import { HighlightService } from './services/highlight.service';
 import { DetailsArticleComponent } from './details-article/details-article.component';
 import { TopicsService } from './services/topics.service';
+import { DetailsTopicComponent } from './details-topic/details-topic.component';
 
 
 
@@ -59,7 +60,8 @@ const blogRoutes: Routes = [
       FooterComponent,
       TopicsComponent,
       TopicsPhoneComponent,
-      DetailsArticleComponent
+      DetailsArticleComponent,
+      DetailsTopicComponent
    ],
    imports: [
       BrowserModule,
@@ -75,12 +77,12 @@ const blogRoutes: Routes = [
       MatToolbarModule,
       MatListModule,
       MatExpansionModule,
-      MatProgressSpinnerModule,
+      MatProgressSpinnerModule
    ],
    providers: [
       ArticleService,
       HighlightService,
-      TopicsService,
+      TopicsService
    ],
    bootstrap: [
       AppComponent
