@@ -39,7 +39,7 @@
 			"keywords": [
 				{
 					"id": 4,
-					"name": " Base de Données"
+					"name": "Base de données"
 				},
 				{
 					"id": 5,
@@ -67,7 +67,7 @@
 	},
 		{
 			"id": 3,
-			"name": "Conception",
+			"name": "Concéption",
 			"articles": [],
 			"keywords": [
 				{
@@ -75,7 +75,7 @@
 				},
 				{
 					"id": 8,
-					"name": "Conception orientée objet"
+					"name": "Concéption orientée objet"
 				},
 				{
 					"id": 9,
@@ -98,12 +98,12 @@
 		},
 		{
 			"id": 4,
-			"name": "Developement mobile",
+			"name": "Développement mobile",
 			"articles": [],
 			"keywords": [
 				{
 					"id": 10,
-					"name": " mobile"
+					"name": "Mobile"
 				},
 				{
 					"id": 11,
@@ -144,7 +144,7 @@
 				},
 				{
 					"id": 15,
-					"name": "javascript"
+					"name": "Javascript"
 				},
 				{
 					"id": 35,
@@ -168,12 +168,12 @@
 		},
 		{
 			"id": 6,
-			"name": "Integration continue",
+			"name": "Intégration continue",
 			"articles": [],
 			"keywords": [
 				{
 					"id": 16,
-					"name": "Integration continue"
+					"name": "Intégration continue"
 				},
 				{
 					"id": 17,
@@ -222,7 +222,7 @@
 			"keywords": [
 				{
 					"id": 24,
-					"name": "Disign Pattern"
+					"name": "Design Pattern"
 				},
 				{
 					"id": 25,
@@ -258,7 +258,7 @@
 				},
 				{
 					"id": 54,
-					"name": "Programation orientée objet"
+					"name": "Programmation orientée objet"
 				}
 			],
 			"subThematiques":[]
@@ -266,12 +266,12 @@
 		},
 		{
 			"id": 8,
-			"name": "java-Script",
+			"name": "Javascript",
 			"articles": [],
 			"keywords": [
 				{
 					"id": 15,
-					"name": "javascript"
+					"name": "Javascript"
 				},
 				{
 					"id": 31,
@@ -279,11 +279,11 @@
 				},
 				{
 					"id": 32,
-					"name": "Réact"
+					"name": "React"
 				},
 				{
 					"id": 33,
-					"name": "TypeScript"
+					"name": "Typescript"
 				},
 				{
 					"id": 34,
@@ -316,7 +316,7 @@
 			"keywords": [
 				{
 					"id": 36,
-					"name": "linux "
+					"name": "Linux "
 				},
 				{
 					"id": 37,
@@ -339,16 +339,16 @@
 		},
 		{
 			"id": 10,
-			"name": "Mannagement",
+			"name": "Management",
 			"articles": [],
 			"keywords": [
 				{
 					"id": 38,
-					"name": "Méthode Agil"
+					"name": "Méthode Agile"
 				},
 				{
 					"id": 39,
-					"name": " Scrum Master"
+					"name": "Scrum Master"
 				},
 				{
 					"id": 51,
@@ -397,7 +397,7 @@
 				},
 				{
 					"id": 54,
-					"name": "Programation orientée objet"
+					"name": "Programmation orientée objet"
 				}
 			],
 			"subThematiques":[]
@@ -413,7 +413,7 @@
 				},
 				{
 					"id": 45,
-					"name": "Symphony"
+					"name": "Symfony"
 				},
 				{
 					"id": 51,
@@ -429,7 +429,7 @@
 				},
 				{
 					"id": 54,
-					"name": "Programation orientée objet"
+					"name": "Programmation orientée objet"
 				}
 			],
 			"subThematiques":[]
@@ -465,7 +465,7 @@
 				},
 				{
 					"id": 54,
-					"name": "Programation orientée objet"
+					"name": "Programmation orientée objet"
 				}
 			],
 			"subThematiques":[]

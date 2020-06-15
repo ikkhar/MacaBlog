@@ -65,11 +65,11 @@
 	},
 	{
 		"id": 3,
-		"subName": "Conception Base de Données",
+		"subName": "Concéption Base de données",
 		"keywords": [
 			{
 				"id": 4,
-				"name": " Base de Données"
+				"name": "Base de données"
 			},
 			{
 				"id": 51,
@@ -97,11 +97,11 @@
 		"keywords": [
 			{
 				"id": 5,
-				"name": " MongoDB"
+				"name": "MongoDB"
 			},
 			{
 				"id": 4,
-				"name": " Base de Données"
+				"name": "Base de données"
 			},
 			{
 				"id": 51,
@@ -129,7 +129,7 @@
 		"keywords": [
 			{
 				"id": 4,
-				"name": " Base de Données"
+				"name": "Base de données"
 			},
 			{
 				"id": 6,
@@ -157,15 +157,15 @@
 	},
 	{
 		"id": 6,
-		"subName": "Conception orientée objet",
+		"subName": "Concéption orientée objet",
 		"keywords": [
 			{
 				"id": 8,
-				"name": "Conception orientée objet"
+				"name": "Concéption orientée objet"
 			},
 			{
 				"id": 54,
-				"name": "Programation orientée objet"
+				"name": "Programmation orientée objet"
 			},
 			{
 				"id": 51,
@@ -183,7 +183,7 @@
 		"thematiques": 
 			{
 				"id": 3,
-				"name": "Conception"
+				"name": "Concéption"
 			}
 	
 	},
@@ -249,7 +249,7 @@
 	},
 	{
 		"id": 9,
-		"subName": "Java-Script",
+		"subName": "Javascript",
 		"keywords": [
 			{
 				"id": 12,
@@ -257,7 +257,7 @@
 			},
 			{
 				"id": 15,
-				"name": "javascript"
+				"name": "Javascript"
 			},
 			{
 				"id": 51,
@@ -335,7 +335,7 @@
 		"thematiques": 
 			{
 				"id": 6,
-				"name": "Integration continue"
+				"name": "Intégration continue"
 			}
 		
 	},
@@ -367,7 +367,7 @@
 		"thematiques": 
 			{
 				"id": 6,
-				"name": "Integration continue"
+				"name": "Intégration continue"
 			}
 		
 	},
@@ -451,7 +451,7 @@
 		"thematiques": 
 			{
 				"id": 6,
-				"name": "Integration continue"
+				"name": "Intégration continue"
 			}
 		
 	},
@@ -479,17 +479,17 @@
 		"thematiques": 
 			{
 				"id": 6,
-				"name": "Integration continue"
+				"name": "Intégration continue"
 			}
 		
 	},
 	{
 		"id": 17,
-		"subName": "Disign Pattern",
+		"subName": "Design Pattern",
 		"keywords": [
 			{
 				"id": 24,
-				"name": "Disign Pattern"
+				"name": "Design Pattern"
 			},
 			{
 				"id": 51,
@@ -533,7 +533,7 @@
 			},
 			{
 				"id": 54,
-				"name": "Programation orientée objet"
+				"name": "Programmation orientée objet"
 			}
 		],
 		"thematiques": 
@@ -577,7 +577,7 @@
 			},
 			{
 				"id": 54,
-				"name": "Programation orientée objet"
+				"name": "Programmation orientée objet"
 			}
 		],
 		"thematiques": 
@@ -621,7 +621,7 @@
 			},
 			{
 				"id": 54,
-				"name": "Programation orientée objet"
+				"name": "Programmation orientée objet"
 			}
 		],
 		"thematiques": 
@@ -661,7 +661,7 @@
 			},
 			{
 				"id": 54,
-				"name": "Programation orientée objet"
+				"name": "Programmation orientée objet"
 			},
 			{
 				"id": 55,
@@ -677,15 +677,15 @@
 	},
 	{
 		"id": 22,
-		"subName": "Réact Native",
+		"subName": "React Native",
 		"keywords": [
 			{
 				"id": 32,
-				"name": "Réact"
+				"name": "React"
 			},
 			{
 				"id": 15,
-				"name": "javascript"
+				"name": "Javascript"
 			},
 			{
 				"id": 51,
@@ -701,27 +701,27 @@
 			},
 			{
 				"id": 54,
-				"name": "Programation orientée objet"
+				"name": "Programmation orientée objet"
 			}
 		],
 		"thematiques":
 			{
 				"id": 8,
-				"name": "java-Script"
+				"name": "Javascript"
 			}
 		
 	},
 	{
 		"id": 22,
-		"subName": "TypeScript",
+		"subName": "Typescript",
 		"keywords": [
 			{
 				"id": 33,
-				"name": "TypeScript"
+				"name": "Typescript"
 			},
 			{
 				"id": 15,
-				"name": "javascript"
+				"name": "Javascript"
 			},
 			{
 				"id": 51,
@@ -737,13 +737,13 @@
 			},
 			{
 				"id": 54,
-				"name": "Programation orientée objet"
+				"name": "Programmation orientée objet"
 			}
 		],
 		"thematiques": 
 			{
 				"id": 8,
-				"name": "java-Script"
+				"name": "Javascript"
 			}
 		
 	},
@@ -757,7 +757,7 @@
 			},
 			{
 				"id": 15,
-				"name": "javascript"
+				"name": "Javascript"
 			},
 			{
 				"id": 51,
@@ -773,13 +773,13 @@
 			},
 			{
 				"id": 54,
-				"name": "Programation orientée objet"
+				"name": "Programmation orientée objet"
 			}
 		],
 		"thematiques": 
 			{
 				"id": 8,
-				"name": "java-Script"
+				"name": "Javascript"
 			}
 		
 	},
@@ -793,7 +793,7 @@
 			},
 			{
 				"id": 15,
-				"name": "javascript"
+				"name": "Javascript"
 			},
 			{
 				"id": 51,
@@ -809,23 +809,23 @@
 			},
 			{
 				"id": 54,
-				"name": "Programation orientée objet"
+				"name": "Programmation orientée objet"
 			}
 		],
 		"thematiques": 
 			{
 				"id": 8,
-				"name": "java-Script"
+				"name": "Javascript"
 			}
 		
 	},
 	{
 		"id": 25,
-		"subName": "linux",
+		"subName": "Linux",
 		"keywords": [
 			{
 				"id": 36,
-				"name": "linux "
+				"name": "Linux"
 			},
 			{
 				"id": 51,
@@ -853,7 +853,7 @@
 		"keywords": [
 			{
 				"id": 36,
-				"name": "linux "
+				"name": "Linux"
 			},
 			{
 				"id": 37,
@@ -881,15 +881,15 @@
 	},
 	{
 		"id": 27,
-		"subName": "Méthode Agil",
+		"subName": "Méthode Agile",
 		"keywords": [
 			{
 				"id": 38,
-				"name": "Méthode Agil"
+				"name": "Méthode Agile"
 			},
 			{
 				"id": 39,
-				"name": " Scrum Master"
+				"name": "Scrum Master"
 			},
 			{
 				"id": 51,
@@ -907,7 +907,7 @@
 		"thematiques":
 			{
 				"id": 10,
-				"name": "Mannagement"
+				"name": "Management"
 			}
 		
 	},
@@ -1005,7 +1005,7 @@
 			},
 			{
 				"id": 45,
-				"name": "Symphony"
+				"name": "Symfony"
 			},
 			{
 				"id": 52,
@@ -1033,7 +1033,7 @@
 			},
 			{
 				"id": 54,
-				"name": "Programation orientée objet"
+				"name": "Programmation orientée objet"
 			},
 			{
 				"id": 52,
@@ -1105,7 +1105,7 @@
 	},
 	{
 		"id": 35,
-		"subName": "Securité",
+		"subName": "Sécurité",
 		"keywords": [
 			{
 				"id": 48,
