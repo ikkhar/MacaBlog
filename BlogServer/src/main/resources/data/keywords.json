@@ -14,7 +14,7 @@
   },
   {
     "id": 4,
-    "name": " Base de Données"
+    "name": "Base de données"
   },
   {
     "id": 5,
@@ -26,11 +26,11 @@
   },
   {
     "id": 7,
-    "name": "Conception"
+    "name": "Concéption"
   },
   {
     "id": 8,
-    "name": "Conception orientée objet"
+    "name": "Concéption orientée objet"
   },
   {
     "id": 9,
@@ -38,7 +38,7 @@
   },
   {
     "id": 10,
-    "name": " mobile"
+    "name": "Mobile"
   },
   {
     "id":11,
@@ -58,11 +58,11 @@
   },
   {
     "id": 15,
-    "name": "javascript"
+    "name": "Javascript"
   },
   {
     "id": 16,
-    "name": "Integration continue"
+    "name": "Intégration continue"
 	
   },
   {
@@ -95,7 +95,7 @@
   },
   {
     "id": 24,
-    "name": "Disign Pattern"
+    "name": "Design Pattern"
   },
   {
     "id": 25,
@@ -128,11 +128,11 @@
   },
   {
     "id": 32,
-    "name": "Réact"
+    "name": "React"
   },
   {
     "id": 33,
-    "name": "TypeScript"
+    "name": "Typescript"
   },
   {
     "id": 34,
@@ -144,7 +144,7 @@
   },
   {
     "id": 36,
-    "name": "linux "
+    "name": "Linux"
   },
   {
     "id": 37,
@@ -152,7 +152,7 @@
   },
   {
     "id": 38,
-    "name": "Méthode Agil"
+    "name": "Méthode Agile"
   },
   {
     "id": 39,
@@ -180,7 +180,7 @@
   },
   {
     "id": 45,
-    "name": "Symphony"
+    "name": "Symfony"
   },
   {
     "id": 46,
@@ -216,7 +216,7 @@
   },
   {
     "id": 54,
-    "name": "Programation"
+    "name": "Programmation"
   },
   {
     "id": 55,
