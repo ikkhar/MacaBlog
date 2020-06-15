@@ -1,0 +1,26 @@
+<div *ngIf="isloading" class="background-spinner">
+  <div class="spinner">
+    <mat-progress-spinner class="spinner" mode="indeterminate"></mat-progress-spinner>
+  </div>
+</div>
+
+
+<div *ngFor="let topic of topic">
+  <div fxLayout="column" class="fondGris">
+    <div class="oneBlog">
+      <h1>{{topic.title}}</h1>
+      <div class="divider bg-medium-primary"></div>
+      <div fxLayout="row">
+        <a href=""><p>{{topic.name}}</p></a><span class="point">.</span><p>{{topic.datePublication | date:'dd / MM / yyyy'}}</p>
+      </div>
+      <div>{{topic.resume}}</div>
+      <button (click)= "detailsArticle(topic.id)" mat-stroked-button color="accent">Learn more</button>
+    </div>
+  </div>
+<!--<div fxLayout.lt-md="column" fxLayout="row" class="insideBlog">
+    <div fxLayout="column" class="shareBlog" fxFlex="40">
+      <app-share></app-share>
+      <app-last-entries class="spaceShareLastEntries"></app-last-entries>
+    </div>
+  </div>-->
+
