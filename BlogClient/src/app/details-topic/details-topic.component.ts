@@ -17,9 +17,10 @@ export class DetailsTopicComponent implements OnInit, AfterViewChecked {
   id: number;
   name: string;
   public article: Article;
-  public topic: Topic;
+  public topic= Topic;
 
   highlighted: boolean = false;
+
 
 
   constructor(private articleService: ArticleService, private topicsService: TopicsService, private route: ActivatedRoute, private router: Router, private highlightService: HighlightService) {
@@ -39,10 +40,7 @@ export class DetailsTopicComponent implements OnInit, AfterViewChecked {
 
   const id = this.route.snapshot.params['id'];
   this.topic = await this.topicsService.findById(id);
-
-  const name = this.route.snapshot.params['name'];
-  this.topic = await this.topicsService.findByName(name);
-  }
+ }
 
   detailsArticle(id: number){
     this.router.navigate(['articles', id])

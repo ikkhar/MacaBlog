@@ -22,7 +22,7 @@ export class ArticleService {
     return this.api.get({endpoint: `/articles/${id}`})
   }
 
-  public findAllByOrderByIdDesc(): Promise<any> {
+  public getLastTenArticles(): Promise<any> {
     return this.api.get({endpoint: '/articles/getLastTenArticles'});
   }
 
