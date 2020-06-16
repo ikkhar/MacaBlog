@@ -23,7 +23,7 @@ export class LastEntriesComponent implements OnInit {
   this.isloading=true;
 
 
-  await this.articleService.findAllByOrderByIdDesc()
+  await this.articleService.getLastTenArticles()
       .then((res) => this.article = res)
       .finally (()=> this.isloading=false);
   }
