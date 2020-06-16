@@ -8,7 +8,7 @@
   <mat-card  class="mat-elevation-z0" *ngIf= article>
     <mat-card-title >{{article.title}}</mat-card-title>
     <mat-card-subtitle>{{article.datePublication | date:'dd / MM / yyyy'}}</mat-card-subtitle>
-    <mat-card-content>{{article.contenent}}</mat-card-content>
+    <mat-card-content><div [innerHTML]="article.contenent"></div></mat-card-content>
   </mat-card>
 </div>
 <div fxLayout.lt-md="column" fxLayout="row" class="insideBlog">
