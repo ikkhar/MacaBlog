@@ -12,6 +12,10 @@
   background-color: none ;
   z-index: 0;
 }
+.padding-less {
+  padding-left: 0%;
+  padding-right: 0%;
+}
 
 /*Header Aricle */
 .fondGris{

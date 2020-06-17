@@ -9,7 +9,7 @@
   <div id="top">
     <mat-progress-bar color="warn" [value]="progresValue" *ngIf="progresValue > 0"></mat-progress-bar>
   </div>
-  <mat-card  class="mat-elevation-z0 background-color-none" *ngIf= article>
+  <mat-card  class="mat-elevation-z0 background-color-none padding-less" *ngIf= article>
     <div fxLayout="column" class="fondGris">
       <div class="oneBlog">
         <mat-card-title ><h1>{{article.title}}</h1></mat-card-title>
