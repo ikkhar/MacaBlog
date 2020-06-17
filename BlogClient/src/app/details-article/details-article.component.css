@@ -13,6 +13,55 @@
   z-index: 0;
 }
 
+/*Header Aricle */
+.fondGris{
+  background-color: rgba(124,77,255,.03);
+}
+.oneBlog{
+  width: 85%;
+  margin: auto;
+}
+h1 {
+  display: block;
+  font-size: 1.4em;
+  margin-block-start: 0.67em;
+  margin-block-end: 0.67em;
+  margin-inline-start: 0px;
+  margin-inline-end: 0px;
+  font-weight: bold;
+}
+
+/* Paragraphe article */
+.paragraphBlog {
+  margin-top: 0;
+  padding: 30px;
+}
+
+/* Share & 10 derniers articles */
+.shareBlog {
+  padding-top: 20px;
+}
+
+.bg-medium-primary {
+  background-color: rgba(124,77,255,.1);
+}
+.divider {
+  width: 3.125rem !important;
+  height: .25rem;
+  border-radius: .25rem !important;
+  margin-top: 1.5rem;
+  margin-bottom: 1.5rem;
+}
+.point{
+  color: #FF4B82 !important;
+  font-size: 30px;
+  position: relative;
+  top: -1px;
+  margin: 0 0.5rem 0 .5rem;
+  font-weight: 400;
+}
+
+
 /* Spinner */
 .background-spinner {
   position: fixed;
