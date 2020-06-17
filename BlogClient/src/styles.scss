@@ -7,8 +7,11 @@
 html, body { height: 100%; }
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
 
-.mat-card {padding:0px !important;}
-.mat-card-content {padding: 30px !important;}
+.mat-card {padding:16px;}
+//.mat-card-content {padding: 30px !important;}
+.mat-card-content {
+  padding: 0px !important;
+}
 
 // Progress-Bar articles 
 
