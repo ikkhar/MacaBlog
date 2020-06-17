@@ -19,10 +19,14 @@ import fr.macademia.macablog.model.entities.Auteur;
 @Repository
 public interface ArticlesRepository extends JpaRepository <Articles, Long>{
 	Optional<Articles> findById(Long id);
+	void deleteById(Long id);
 	List<Articles> findAll();
 	List<Articles> findAllByOrderByIdAsc();
 	List<Articles> findAllByOrderByIdDesc();//trouvé tout les articles dans l'ordre decroissant
-//	List<Articles> par Auteur Id;
+List <Articles>findTop10ByThematiquesIdOrderByIdDesc(Long id);
+List <Articles>findTop10OrderByIdDesc(Long id);
+//List<Article> findTop3ByOrderBySalaryDesc();
+	//	List<Articles> par Auteur Id;
 	
 	Optional<List<Articles>>  findByAuteurListId(Long id);
 	
@@ -31,7 +35,7 @@ public interface ArticlesRepository extends JpaRepository <Articles, Long>{
 		List<Articles> findByThematiquesId(Long id);
 
 		List<Articles> findBySubThematiquesId(Long id);
-	
+		List<Articles>findByThematiquesIdOrderByIdDesc(Long id);
 	
 	
 	//Methodes pour trouver la liste des articles par thematiques ou sous thematiques

@@ -24,10 +24,17 @@ public interface ArticlesService {
 	List<Articles> getArticlesByThematiquesId(Long id);
 
 	List<Articles> getArticlesBySubThematiquesId(Long id);
-
+	List<Articles> getLastTenArticlesByThematiquesId(Long id);
 	Optional<List<Articles>>getArticlesByThematiquesName(String thematiques);
+	
 	Optional<List<Articles>> getArticlesBySubThematiquesSubName(String subThematiques);
 	List <Articles> getAllArticles();
+	List <Articles> getAllArticlesByClick(Long nbreClick);
+	
+	List <Articles> getAllArticlesByThematiquesIdByClick(Long id,Long nbreClick);
+List <Articles> removeTenArticlesByClick(int clickShowLess);
+	
+	List <Articles> removeAllArticlesByThematiquesIdByClick(Long id,Long nbreClick);
 	
 	Optional<List<String>> searchArticles(String keyword);
 	

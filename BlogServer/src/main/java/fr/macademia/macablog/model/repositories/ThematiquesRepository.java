@@ -15,5 +15,6 @@ public interface ThematiquesRepository extends JpaRepository<Thematiques,Long> {
 	Optional<Thematiques> findById(Long id);
 	List<Thematiques> findAll();
 	List<Thematiques> findAllByOrderByIdAsc();
+	
 	Optional<Thematiques> findByName(String thematiqueName);
 }
