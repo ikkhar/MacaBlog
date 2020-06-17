@@ -37,9 +37,10 @@ h1 {
   padding: 30px;
 }
 
+
 /* Share & 10 derniers articles */
 .shareBlog {
-  padding-top: 20px;
+  padding: 20px;
 }
 
 .bg-medium-primary {
