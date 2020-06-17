@@ -17,7 +17,8 @@ export class DetailsTopicComponent implements OnInit, AfterViewChecked {
   id: number;
   name: string;
   public article: Article;
-  public topic= Topic;
+  topic: any;
+  max=10;
 
   highlighted: boolean = false;
 
@@ -44,6 +45,10 @@ export class DetailsTopicComponent implements OnInit, AfterViewChecked {
 
   detailsArticle(id: number){
     this.router.navigate(['articles', id])
+  }
+
+  showMore() {
+    this.max = this.max + 10;
   }
 
 
