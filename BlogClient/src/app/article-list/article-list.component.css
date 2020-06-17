@@ -4,7 +4,11 @@
 }
 mat-card{
   border: 1px solid #dadada;
-
+  padding: 16px !important;
+}
+  
+.mat-card-content {
+  padding: 0px !important;
 }
 mat-card-title{
   font-weight: bold;
