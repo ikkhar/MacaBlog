@@ -1,3 +1,4 @@
+
 <div *ngIf="isloading" class="background-spinner">
   <div class="spinner">
     <mat-progress-spinner class="spinner" mode="indeterminate"></mat-progress-spinner>
@@ -5,7 +6,11 @@
 </div>
 
 <div class="divBlogList" >
-  <mat-card  class="mat-elevation-z0" *ngIf= article>
+  <div id="top">
+    <mat-progress-bar color="warn" [value]="progresValue" *ngIf="progresValue > 0"></mat-progress-bar>
+  </div>
+  <mat-card  class="mat-elevation-z0 background-color-none" *ngIf= article>
+    
     <mat-card-title >{{article.title}}</mat-card-title>
     <mat-card-subtitle>{{article.datePublication | date:'dd / MM / yyyy'}}</mat-card-subtitle>
     <mat-card-content><div [innerHTML]="article.contenent"></div></mat-card-content>
