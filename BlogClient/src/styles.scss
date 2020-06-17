@@ -7,6 +7,9 @@
 html, body { height: 100%; }
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
 
+.mat-card {padding:0px !important;}
+.mat-card-content {padding: 30px !important;}
+
 // Progress-Bar articles 
 
 .mat-progress-bar, .mat-progress-bar-element {
