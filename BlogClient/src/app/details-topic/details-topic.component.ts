@@ -17,7 +17,7 @@ export class DetailsTopicComponent implements OnInit, AfterViewChecked {
   id: number;
   name: string;
   public article: Article;
-  topic: any;
+  public topic: Topic;
   max=10;
 
   highlighted: boolean = false;
@@ -50,7 +50,6 @@ export class DetailsTopicComponent implements OnInit, AfterViewChecked {
   showMore() {
     this.max = this.max + 10;
   }
-
 
 }
 
