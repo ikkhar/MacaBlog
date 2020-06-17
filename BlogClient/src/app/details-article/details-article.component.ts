@@ -2,7 +2,8 @@ import { Component, OnInit, Input } from '@angular/core';
 import { Article } from '../models/article';
 import { ArticleService } from '../services/articles.service';
 import { ActivatedRoute, Data, Router } from '@angular/router';
-import { HighlightService } from '../services/highlight.service'
+import { HighlightService } from '../services/highlight.service';
+import { HostListener} from '@angular/core'
 
 
 @Component({
@@ -12,13 +13,30 @@ import { HighlightService } from '../services/highlight.service'
 })
 export class DetailsArticleComponent implements OnInit {
 
+  progresValue: number;
+
   public isloading: boolean;
   id: number;
   article: Article;
 
   highlighted: boolean = false;
 
-  constructor(private articleService: ArticleService, private route: ActivatedRoute, private router: Router, private highlightService: HighlightService) {}
+  constructor(private articleService: ArticleService, private route: ActivatedRoute, private router: Router, private highlightService: HighlightService) {
+    this.progresValue = 0;
+  }
+
+  /** Progress bar */
+  @HostListener('window:scroll', [])
+  onWindowScroll() {
+    // tslint:disable-next-line:one-variable-per-declaration
+    const element = document.documentElement,
+      body = document.body,
+      scrollTop = 'scrollTop',
+      scrollHeight = 'scrollHeight';
+    this.progresValue =
+      (element[scrollTop] || body[scrollTop]) /
+      ((element[scrollHeight] || body[scrollHeight]) - element.clientHeight) * 100;
+  }
 
   /**
    * Highlight blog post when it's ready
