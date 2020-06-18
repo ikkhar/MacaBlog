@@ -14,7 +14,7 @@ export class TopicsComponent implements OnInit, MatListModule {
 
   public isloading: boolean;
   public topics: Topic[];
-
+  clickedIndex: number = 0
 
   constructor(private topicsService: TopicsService, private route: ActivatedRoute, private router: Router, private articlesService: ArticleService) { }
 

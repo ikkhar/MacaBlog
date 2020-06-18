@@ -3,11 +3,6 @@
     <mat-progress-spinner class="spinner" mode="indeterminate"></mat-progress-spinner>
   </div>
 </div>
-<ng-container *ngIf="isloading && ! articles">
-  <h3><p>Il n'ya aucun articles  ! </p>
-      <p> d'autre articles sur d'autre thématiques</p></h3>
-</ng-container>
-
 <ng-container *ngIf="!isloading">
   <div class="scroll-bar"></div>
   <div class="divBlogList" *ngFor="let article of articles | slice:0:articles.length">

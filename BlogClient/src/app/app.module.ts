@@ -41,6 +41,7 @@ const blogRoutes: Routes = [
 { path: 'home', component: HomeComponent },
 { path: 'blog', component: BlogComponent },
 { path: 'articles/:id', component: DetailsArticleComponent},
+{ path: 'articles/:id', component: LastEntriesComponent},
 { path: 'articles/thematique/:id', component: BlogComponent},
 { path: '', redirectTo: 'home', pathMatch: 'full' },
 { path: '**', redirectTo: 'home' }
