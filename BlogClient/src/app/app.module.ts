@@ -30,7 +30,8 @@ import { HighlightService } from './services/highlight.service';
 import { DetailsArticleComponent } from './details-article/details-article.component';
 import { TopicsService } from './services/topics.service';
 import { DetailsTopicComponent } from './details-topic/details-topic.component';
-
+import { ShareIconsModule } from 'ngx-sharebuttons/icons';
+import { ShareButtonsModule } from 'ngx-sharebuttons/buttons';
 
 
 
@@ -78,7 +79,9 @@ const blogRoutes: Routes = [
       MatToolbarModule,
       MatListModule,
       MatExpansionModule,
-      MatProgressSpinnerModule
+      MatProgressSpinnerModule,
+      ShareButtonsModule,
+      ShareIconsModule,
    ],
    providers: [
       ArticleService,
