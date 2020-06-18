@@ -2,7 +2,7 @@ import { Component, OnInit, HostListener } from '@angular/core';
 import { ActivatedRoute, Data, Router } from '@angular/router';
 import { ArticleService } from '../services/articles.service';
 import { Article } from '../models/article';
-import { MatTableDataSource } from '@angular/material/table';
+
 @Component({
   selector: 'app-article-list',
   templateUrl: './article-list.component.html',
@@ -45,6 +45,7 @@ export class ArticleListComponent implements OnInit {
   }
 
   getAllArticlesByClick(): Promise<any> {
+  
     return this.articleService.getTenArticlesByClick(this.clickShowMore).then(res => {
       this.articles = res;
       console.log(this.articles);
