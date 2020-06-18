@@ -4,15 +4,12 @@
     <div class="divider bg-medium-primary"></div>
     <mat-card-subtitle>Partager cet article avec vos amis & vos abonnés</mat-card-subtitle>
     <div fxLayout="row">
-      <a href="#" class="btn facebook">
-          <span class="label icon fa fa-facebook">facebook</span>
-      </a>
-      <a href="#" class="btn twitter">
-          <span class="label icon fa fa-twitter">twitter</span>
-      </a>
-      <a href="#" class="btn linkedin">
-          <span class="label icon fa fa-linkedin">Linkedin</span>
-        </a>
-      </div>
+      <share-buttons [theme]="'default'"
+          [include]="['facebook','twitter','linkedin']"
+          [showText]="true"
+          [url]="''"
+          [autoSetMeta]="true">
+      </share-buttons>
+    </div>
   </mat-card>
 </div>
