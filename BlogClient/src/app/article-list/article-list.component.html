@@ -7,7 +7,7 @@
 
 <ng-container *ngIf="!isloading">
   <div class="scroll-bar"></div>
-  <div class="divBlogList" *ngFor="let article of articles | slice:0:clickShowMore">
+  <div class="divBlogList" *ngFor="let article of articles | slice:0:articles.length">
     <mat-card class="mat-elevation-z0">
       <mat-card-title>{{article.title}}</mat-card-title>
       <mat-card-subtitle>{{article.datePublication | date:'dd / MM / yyyy'}}</mat-card-subtitle>
@@ -16,7 +16,7 @@
     </mat-card>
   </div>
   <div class="centerButton">
-    <button (click)="getAllArticlesByClick(this.clickShowMore)" mat-stroked-button color="accent"><span class="material-icons">
+    <button (click)="getAllArticlesByClick()" mat-stroked-button color="accent"><span class="material-icons">
         expand_more
       </span>Montrer plus d'articles<span class="material-icons">
         expand_more

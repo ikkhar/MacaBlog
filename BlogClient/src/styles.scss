@@ -6,9 +6,25 @@
 
 html, body { height: 100%; }
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+.mat-card {padding:16px;}
+//.mat-card-content {padding: 30px !important;}
+.mat-card-content {
+  padding: 0px !important;
+}
+
+// Progress-Bar articles 
+
+.mat-progress-bar, .mat-progress-bar-element {
+  height: 3px !important;
+}
 .mat-progress-bar.mat-warn .mat-progress-bar-buffer {
   background-color: white !important;
 }
+.mat-progress-bar.mat-warn .mat-progress-bar-fill::after {
+  background-color: #FF4B82 !important;
+}
+
 .codeExemple{
   background-color: #212529;
   color: white;
@@ -39,7 +55,8 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
 // * PRISM * //
 // Modification du block - ajout border-radius
 pre[class*="language-"] {
-	border-radius: 5px;
+  border-radius: 5px;
+  margin-top: 1em;
 }
 // Modification toolbar (btn copy) 
 div.code-toolbar > .toolbar {

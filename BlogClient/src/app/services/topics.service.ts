@@ -24,7 +24,7 @@ public findById(id: number): Promise<any> {
 }
 
 public findByName(name: string): Promise<any> {
-  return this.api.get({endpoint: `/articles/thematique/${name}`})
+  return this.api.get({endpoint: `/articles/thematiques/name/${name}`})
 }
 
 }

@@ -1,3 +1,4 @@
+
 <div *ngIf="isloading" class="background-spinner">
   <div class="spinner">
     <mat-progress-spinner class="spinner" mode="indeterminate"></mat-progress-spinner>
@@ -5,13 +6,22 @@
 </div>
 
 <div class="divBlogList" >
-  <mat-card  class="mat-elevation-z0" *ngIf= article>
-    <mat-card-title >{{article.title}}</mat-card-title>
-    <mat-card-subtitle>{{article.datePublication | date:'dd / MM / yyyy'}}</mat-card-subtitle>
-    <mat-card-content>{{article.contenent}}</mat-card-content>
+  <div id="top">
+    <mat-progress-bar color="warn" [value]="progresValue" *ngIf="progresValue > 0"></mat-progress-bar>
+  </div>
+  <mat-card  class="mat-elevation-z0 background-color-none padding-less" *ngIf= article>
+    <div fxLayout="column" class="fondGris">
+      <div class="oneBlog">
+        <mat-card-title ><h1>{{article.title}}</h1></mat-card-title>
+        <div class="divider bg-medium-primary"></div>
+        <mat-card-subtitle>{{article.datePublication | date:'dd / MM / yyyy'}}</mat-card-subtitle>
+      </div>
+    </div>  
+    <!--<mat-card-content><div [innerHTML]="article.contenent"></div></mat-card-content>-->
   </mat-card>
 </div>
 <div fxLayout.lt-md="column" fxLayout="row" class="insideBlog">
+  <div class="paragraphBlog" fxFlex="60" [innerHTML]="article.contenent"></div>
   <div fxLayout="column" class="shareBlog" fxFlex="40">
     <app-share></app-share>
     <app-last-entries class="spaceShareLastEntries"></app-last-entries>

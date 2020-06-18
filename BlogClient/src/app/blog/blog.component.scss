@@ -1,7 +1,11 @@
-mat-progress-bar{
-  position:fixed;
-  top:0;
-  z-index: 99;
-  height:2px;
-
+/*.mat-progress-bar .mat-progress-bar-element, .mat-progress-bar .mat-progress-bar-fill::after {
+  height: 100%;
+  position: absolute;
+  width: 100%;
 }
+.mat-progress-bar .mat-progress-bar-fill::after {
+  animation: none;
+  content: "";
+  display: inline-block;
+  left: 0;
+}*/
