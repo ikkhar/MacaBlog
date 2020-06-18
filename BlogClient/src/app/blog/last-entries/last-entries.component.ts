@@ -12,6 +12,8 @@ import { Article } from '../../models/article';
 export class LastEntriesComponent implements OnInit {
 
   id: number;
+
+  // Faire apparaitre le spinner dans ce component
   public isloading: boolean;
   public article: Article;
 
@@ -30,6 +32,7 @@ export class LastEntriesComponent implements OnInit {
 
   detailsArticle(id: number){
     this.router.navigate(['articles', id])
+    .finally(() => window.location.reload());
   }
 
 }

@@ -8,6 +8,7 @@ export class Article {
   private _auteurList: string;
   private _paragraph: string;
   private _keywords: string[];
+  
 
   constructor(data: any) {
     this._id = data.id;
