@@ -3,25 +3,22 @@
     <mat-progress-spinner class="spinner" mode="indeterminate"></mat-progress-spinner>
   </div>
 </div>
-
-
 <ng-container *ngIf="!isloading">
-<div class="scroll-bar"></div>
-<div class="divBlogList" *ngFor="let article of articles | slice:0:max" >
-<mat-card  class="mat-elevation-z0">
-  <mat-card-title >{{article.title}}</mat-card-title>
-  <mat-card-subtitle>{{article.datePublication | date:'dd / MM / yyyy'}}</mat-card-subtitle>
-  <mat-card-content>{{article.resume}}</mat-card-content>
-  <button (click)= "detailsArticle(article.id)" mat-stroked-button color="accent">En savoir plus</button>
-</mat-card>
-</div>
-<div class="centerButton">
-  <button (click)="showMore()" mat-stroked-button color="accent"><span class="material-icons">
-expand_more
-</span>Montrer plus d'articles<span class="material-icons">
-expand_more
-</span>
-  </button>
-</div>
+  <div class="scroll-bar"></div>
+  <div class="divBlogList" *ngFor="let article of articles | slice:0:articles.length">
+    <mat-card class="mat-elevation-z0">
+      <mat-card-title>{{article.title}}</mat-card-title>
+      <mat-card-subtitle>{{article.datePublication | date:'dd / MM / yyyy'}}</mat-card-subtitle>
+      <mat-card-content>{{article.resume}}</mat-card-content>
+      <button (click)="detailsArticle(article.id)" mat-stroked-button color="accent">En savoir plus</button>
+    </mat-card>
+  </div>
+  <div class="centerButton">
+    <button (click)="getAllArticlesByClick()" mat-stroked-button color="accent"><span class="material-icons">
+        expand_more
+      </span>Montrer plus d'articles<span class="material-icons">
+        expand_more
+      </span> 
+    </button>
+  </div>
 </ng-container>
-

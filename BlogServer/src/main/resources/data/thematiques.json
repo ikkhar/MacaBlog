@@ -26,7 +26,7 @@
 				},
 				{
 					"id": 53,
-					"name": "VidÃ©os"
+					"name": "Vidéos"
 				}
 				
 			],
@@ -34,12 +34,12 @@
 		},
 		{
 			"id": 2,
-			"name": "Base de donnÃ©es",
+			"name": "Base de données",
 			"articles": [],
 			"keywords": [
 				{
 					"id": 4,
-					"name": "Base de donnÃ©es"
+					"name": "Base de données"
 				},
 				{
 					"id": 5,
@@ -59,7 +59,7 @@
 				},
 				{
 					"id": 53,
-					"name": "VidÃ©os"
+					"name": "Vidéos"
 				}
 			],
 			"subThematiques":[]
@@ -67,7 +67,9 @@
 	},
 		{
 			"id": 3,
-			"name": "Conception",
+
+			"name": "Concéption",
+
 			"articles": [],
 			"keywords": [
 				{
@@ -75,7 +77,9 @@
 				},
 				{
 					"id": 8,
-					"name": "conception orientÃ©e objet"
+
+					"name": "Concéption orientée objet"
+
 				},
 				{
 					"id": 9,
@@ -91,14 +95,14 @@
 				},
 				{
 					"id": 53,
-					"name": "VidÃ©os"
+					"name": "Vidéos"
 				}
 			],
 			"subThematiques":[]
 		},
 		{
 			"id": 4,
-			"name": "DÃ©veloppement mobile",
+			"name": "Développement mobile",
 			"articles": [],
 			"keywords": [
 				{
@@ -119,7 +123,7 @@
 				},
 				{
 					"id": 53,
-					"name": "VidÃ©os"
+					"name": "Vidéos"
 				}
 			],
 			"subThematiques":[]
@@ -160,7 +164,7 @@
 				},
 				{
 					"id": 53,
-					"name": "VidÃ©os"
+					"name": "Vidéos"
 				}
 			],
 			"subThematiques":[]
@@ -168,12 +172,12 @@
 		},
 		{
 			"id": 6,
-			"name": "IntÃ©gration continue",
+			"name": "Intégration continue",
 			"articles": [],
 			"keywords": [
 				{
 					"id": 16,
-					"name": "IntÃ©gration continue"
+					"name": "Intégration continue"
 				},
 				{
 					"id": 17,
@@ -209,7 +213,7 @@
 				},
 				{
 					"id": 53,
-					"name": "VidÃ©os"
+					"name": "Vidéos"
 				}
 			],
 			"subThematiques":[]
@@ -254,11 +258,11 @@
 				},
 				{
 					"id": 53,
-					"name": "VidÃ©os"
+					"name": "Vidéos"
 				},
 				{
 					"id": 54,
-					"name": "Programmation orientÃ©e objet"
+					"name": "Programmation orientée objet"
 				}
 			],
 			"subThematiques":[]
@@ -303,7 +307,7 @@
 				},
 				{
 					"id": 53,
-					"name": "VidÃ©os"
+					"name": "Vidéos"
 				}
 			],
 			"subThematiques":[]
@@ -332,7 +336,7 @@
 				},
 				{
 					"id": 53,
-					"name": "VidÃ©os"
+					"name": "Vidéos"
 				}
 			],
 			"subThematiques":[]
@@ -344,7 +348,7 @@
 			"keywords": [
 				{
 					"id": 38,
-					"name": "MÃ©thode Agile"
+					"name": "Méthode Agile"
 				},
 				{
 					"id": 39,
@@ -360,7 +364,7 @@
 				},
 				{
 					"id": 53,
-					"name": "VidÃ©os"
+					"name": "Vidéos"
 				}
 			],
 			"subThematiques":[]
@@ -393,11 +397,11 @@
 				},
 				{
 					"id": 53,
-					"name": "VidÃ©os"
+					"name": "Vidéos"
 				},
 				{
 					"id": 54,
-					"name": "Programmation orientÃ©e objet"
+					"name": "Programmation orientée objet"
 				}
 			],
 			"subThematiques":[]
@@ -425,11 +429,11 @@
 				},
 				{
 					"id": 53,
-					"name": "VidÃ©os"
+					"name": "Vidéos"
 				},
 				{
 					"id": 54,
-					"name": "Programmation orientÃ©e objet"
+					"name": "Programmation orientée objet"
 				}
 			],
 			"subThematiques":[]
@@ -449,7 +453,7 @@
 				},
 				{
 					"id": 48,
-					"name": "SÃ©curitÃ©"
+					"name": "Sécurité"
 				},
 				{
 					"id": 51,
@@ -461,18 +465,18 @@
 				},
 				{
 					"id": 53,
-					"name": "VidÃ©os"
+					"name": "Vidéos"
 				},
 				{
 					"id": 54,
-					"name": "Programmation orientÃ©e objet"
+					"name": "Programmation orientée objet"
 				}
 			],
 			"subThematiques":[]
 		},
 		{
 			"id": 14,
-			"name": "SÃ©curitÃ©",
+			"name": "Sécurité",
 			"articles": [],
 			"keywords": [
 				{
@@ -481,7 +485,7 @@
 				},
 				{
 					"id": 48,
-					"name": "SÃ©curitÃ©"
+					"name": "Sécurité"
 				},
 				{
 					"id": 54,
@@ -497,7 +501,7 @@
 				},
 				{
 					"id": 53,
-					"name": "VidÃ©os"
+					"name": "Vidéos"
 				}
 			],
 			"subThematiques":[]
@@ -521,12 +525,10 @@
 				},
 				{
 					"id": 53,
-					"name": "VidÃ©os"
+					"name": "Vidéos"
 				}
 			],
 			"subThematiques":[]
 		}
 	
 ]
-	
-
