@@ -1,7 +1,7 @@
 /* Import Prism */
 @import "~prismjs/plugins/toolbar/prism-toolbar.css";
 @import "~prismjs/themes/prism-tomorrow.css";
-
+@import '~ngx-sharebuttons/themes/default/default-theme';
 /* You can add global styles to this file, and also import other style files */
 
 html, body { height: 100%; }
@@ -19,7 +19,7 @@ a:hover {
   padding: 0px !important;
 }
 
-// Progress-Bar articles 
+// Progress-Bar articles
 
 .mat-progress-bar, .mat-progress-bar-element {
   height: 3px !important;
@@ -64,7 +64,7 @@ pre[class*="language-"] {
   border-radius: 5px;
   margin-top: 1em;
 }
-// Modification toolbar (btn copy) 
+// Modification toolbar (btn copy)
 div.code-toolbar > .toolbar {
   top: 0.25em;
   right: 0.3em;
