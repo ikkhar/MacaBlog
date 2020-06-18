@@ -7,6 +7,12 @@
 html, body { height: 100%; }
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
 
+/* Ajout comportement passage souris */
+a:hover {
+  cursor: pointer;
+  color:#737577;
+}
+
 .mat-card {padding:16px;}
 //.mat-card-content {padding: 30px !important;}
 .mat-card-content {
