@@ -29,6 +29,7 @@ export class TopicsComponent implements OnInit, MatListModule {
 
   detailsTopics(id: number){
     this.router.navigate(['articles/thematique', id])
+    .finally(() => window.location.reload());
   }
 
 }
