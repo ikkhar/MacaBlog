@@ -3,6 +3,10 @@
     <mat-progress-spinner class="spinner" mode="indeterminate"></mat-progress-spinner>
   </div>
 </div>
+<!--<ng-container *ngIf="isLoading &&  articles.length=0">
+  <h3><p>Aucun article en vue ! </p> </h3>
+</ng-container> -->
+
 <ng-container *ngIf="!isloading">
   <div class="scroll-bar"></div>
   <div class="divBlogList" *ngFor="let article of articles | slice:0:articles.length">
@@ -11,14 +15,21 @@
       <mat-card-subtitle>{{article.datePublication | date:'dd / MM / yyyy'}}</mat-card-subtitle>
       <mat-card-content>{{article.resume}}</mat-card-content>
       <button (click)="detailsArticle(article.id)" mat-stroked-button color="accent">En savoir plus</button>
-    </mat-card> 
-  </div>
-  <div class="centerButton">
+    </mat-card>    
+  </div  > 
+  <div class="centerButton" >
     <button (click)="getAllArticlesByClick()" mat-stroked-button color="accent"><span class="material-icons">
         expand_more
       </span>Montrer plus d'articles<span class="material-icons">
         expand_more
       </span> 
     </button>
+  <!--  <button ng-hide="isLoading && !articles.length" mat-stroked-button color="accent"><span class="material-icons">
+      expand_more
+    </span>Montrer plus d'articles<span class="material-icons">
+      expand_more
+    </span> 
+  </button>-->
+
   </div>
 </ng-container>

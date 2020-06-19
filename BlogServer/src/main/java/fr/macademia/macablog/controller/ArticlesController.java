@@ -61,7 +61,12 @@ public class ArticlesController {
 		List<Articles> listOrderedArticles = this.articlesService.getAllChronologicArticles();
 		return new ResponseEntity<List<Articles>>(listOrderedArticles, HttpStatus.OK);
 	}
-
+	// requette pour trouver la liste des articles
+		@GetMapping(value = "/size_List")
+		public ResponseEntity<Long> getsizeAllArticles() {
+			Long sizeListAllArticlesBackend = this.articlesService.getSizeAllArticlesList();
+			return new ResponseEntity<Long>(sizeListAllArticlesBackend, HttpStatus.OK);
+		}
 // requette pour trouver la liste des articles dans l'ordre decroissant 
 
 	@GetMapping(value = "")

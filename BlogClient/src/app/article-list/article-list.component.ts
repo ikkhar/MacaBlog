@@ -13,6 +13,7 @@ export class ArticleListComponent implements OnInit {
   public articles: Article[];
   public isloading: boolean;
   public clickShowMore: number = 1;
+  public sizeListAllArticles:number;
   max = 10; // c'est à cause de ce petit coquin, il limité l'affichage à 10 ! à remplacer dans html par articles.length
   dataSource;
   length: number;
@@ -30,11 +31,7 @@ export class ArticleListComponent implements OnInit {
       .then((res) => this.articles = res)
       .finally (()=> this.isloading=false);
   }*/
-
-  
-
-
-  // Get All Rticle By click with Host Listener Event :
+ 
   async ngOnInit() {
 
     this.isloading = true;
@@ -58,6 +55,17 @@ export class ArticleListComponent implements OnInit {
   detailsArticle(id: number) {
     this.router.navigate(['articles', id])
   }
+// Requette qui renvoie la taille de la liste des articles du back
+getSizeAllArticlesListFromBack(): Promise<any> {
+  
+  return this.articleService.getsizeAllArticlesList().then(res => {
+    this.sizeListAllArticles = res;
+    console.log(this.sizeListAllArticles);
+    
+  });
+
+
+}
 
 }
 

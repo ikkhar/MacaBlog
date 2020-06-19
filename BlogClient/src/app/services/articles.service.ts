@@ -27,7 +27,12 @@ export class ArticleService {
   public getLastTenArticles(): Promise<any> {
     return this.api.get({endpoint: '/articles/getLastTenArticles'});
   }
- 
+ // Requette du back pour recuperer la taille de la listes de tous les articles
+ public getsizeAllArticlesList(): Promise<any> {
+  return this.api.get({endpoint: '/articles/size_List'});
+}
+
+
  // requette pour charger 10 articles à chaque clique:
 
 
