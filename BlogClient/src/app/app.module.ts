@@ -34,7 +34,7 @@ import { ShareIconsModule } from 'ngx-sharebuttons/icons';
 import { ShareButtonsModule } from 'ngx-sharebuttons/buttons';
 
 
-
+ 
 
 
 
