@@ -4,6 +4,7 @@ import { ArticleService } from '../services/articles.service';
 import { ActivatedRoute, Data, Router } from '@angular/router';
 import { HighlightService } from '../services/highlight.service';
 import { HostListener} from '@angular/core'
+import { Auteur } from '../models/auteur';
 
 
 @Component({
@@ -18,7 +19,8 @@ export class DetailsArticleComponent implements OnInit {
   public isloading: boolean;
   id: number;
   article: Article;
-  
+  auteurList: Auteur;
+
 
   highlighted: boolean = false;
 
@@ -47,10 +49,10 @@ export class DetailsArticleComponent implements OnInit {
    * Highlight blog post when it's ready
    */
   ngAfterViewChecked() {
-    
+
     this.highlightService.highlightAll();
     this.highlighted = true;
-  
+
 }
 
   async ngOnInit() {
@@ -62,5 +64,12 @@ export class DetailsArticleComponent implements OnInit {
    .finally (()=> this.isloading=false);
 
   }
+
+  getArticlesByAuteurId(): Promise<any> {
+    return this.articleService.getArticlesByAuteurId(this.id).then(res => {
+      this.article = res;
+      console.log(this.article);
+  });
 }
 
+}
