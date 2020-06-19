@@ -29,7 +29,7 @@
 <!-- Fin HEADER -->
 
 <!-- Debut BODY & Side -->
-<div fxLayout.lt-md="column" fxLayout="row" class="insideBlog" >
+<div fxLayout.lt-md="column" fxLayout="row" class="insideBlog" *ngIf="!isloading" >
   <div class="paragraphBlog" fxFlex="60" [innerHTML]="article.contenent"></div>
   <!-- Debut Side -->
   <div fxLayout="column" class="shareBlog" fxFlex="40">
