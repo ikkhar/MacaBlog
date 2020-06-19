@@ -281,15 +281,6 @@ public class ArticlesServiceImpl implements ArticlesService {
 	
 	
 	
-	
-	
-	
-	
-	
-	
-	
-	
-	
 	@Override
 	public List<Articles> removeAllArticlesByThematiquesIdByClick(Long id, Long nbreClick) {
 		ArrayList<Articles> listeAllArticlesByThematiquesId = new ArrayList<Articles>();
