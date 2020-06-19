@@ -184,7 +184,7 @@ public class ArticlesServiceImpl implements ArticlesService {
 	@Override
 	public List<Articles> getLastTenArticlesByThematiquesId(Long id) {
 		// TODO Auto-generated method stub
-		return articlesRepository.findTop10ByThematiquesIdOrderByIdDesc(id);
+		return articlesRepository.findFirst10ByThematiquesIdOrderByIdDesc(id);
 	}
 
 // Methode pour affciher 10 articles à chaque cliques ShowMore :
@@ -277,15 +277,6 @@ public class ArticlesServiceImpl implements ArticlesService {
 		return  listTenArticlesByClick;
 	}
 
-	
-	
-	
-	
-	
-	
-	
-	
-	
 	
 	
 	
