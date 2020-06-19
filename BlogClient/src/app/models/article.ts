@@ -1,3 +1,5 @@
+import { Auteur } from './auteur';
+
 export class Article {
 
   private _id: number;
@@ -5,10 +7,10 @@ export class Article {
   private _datePublication: Date;
   private _resume: string;
   private _contenent: string;
-  private _auteurList: string;
+  private _auteurList: Auteur[];
   private _paragraph: string;
   private _keywords: string[];
-  
+
 
   constructor(data: any) {
     this._id = data.id;
@@ -62,11 +64,11 @@ export class Article {
     this.resume = value;
   }
 
-  get auteurList(): string {
+  get auteurList(): Auteur[] {
     return this.auteurList;
   }
 
-  set auteurList(value: string) {
+  set auteurList(value: Auteur[]) {
     this.auteurList = value;
   }
 
