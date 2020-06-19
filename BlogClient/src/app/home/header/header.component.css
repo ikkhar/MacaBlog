@@ -27,7 +27,7 @@ header{
   }
 }
 
-.img-brand. {
+.img-brand {
   width: 47px;
   height: 47px;
   transition: all .25s ease-out;
@@ -71,4 +71,29 @@ img {
 .menuTrigger{
   display: inline-block;
   position: relative;
+}
+
+/* Debut CSS Lien contact */
+.navbar-right {
+  display: inline-flex;
+  float: right;
+  padding: 20px;
+  margin-right: 2%;
+}
+
+.iconSocialHeader{
+  background: #fff;
+  width:22px;
+  clip-path:ellipse(50% 50%);
+  padding-left: 15px;
+  padding-right: 15px;
+  margin-top: 0px;
+}
+.iconSocialHeader:hover {
+  background: #f5f5f5;
+  
+    text-align: center;
+    line-height: 100px;
+    vertical-align: middle;
+    padding: 15px;
 }

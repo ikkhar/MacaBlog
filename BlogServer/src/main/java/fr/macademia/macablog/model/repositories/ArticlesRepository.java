@@ -24,7 +24,6 @@ public interface ArticlesRepository extends JpaRepository <Articles, Long>{
 	List<Articles> findAllByOrderByIdAsc();
 	List<Articles> findAllByOrderByIdDesc();//trouvé tout les articles dans l'ordre decroissant
 List <Articles>findTop10ByThematiquesIdOrderByIdDesc(Long id);
-List <Articles>findTop10OrderByIdDesc(Long id);
 //List<Article> findTop3ByOrderBySalaryDesc();
 	//	List<Articles> par Auteur Id;
 	
