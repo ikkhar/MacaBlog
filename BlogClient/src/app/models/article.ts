@@ -7,7 +7,7 @@ export class Article {
   private _datePublication: Date;
   private _resume: string;
   private _contenent: string;
-  private _auteurList: Auteur[];
+  private _auteurList: string;
   private _paragraph: string;
   private _keywords: string[];
 
@@ -64,11 +64,11 @@ export class Article {
     this.resume = value;
   }
 
-  get auteurList(): Auteur[] {
+  get auteurList(): string {
     return this.auteurList;
   }
 
-  set auteurList(value: Auteur[]) {
+  set auteurList(value: string) {
     this.auteurList = value;
   }
 

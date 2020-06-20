@@ -7,8 +7,8 @@ export class Auteur {
 
   constructor(data: any) {
     this._id = data.id;
-    this._firstname = data.name;
-    this._lastname = data.articles;
+    this._firstname = data.firstname;
+    this._lastname = data.lastname;
   }
 
   /* GETTERS & SETTERS */
