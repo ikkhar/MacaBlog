@@ -32,9 +32,12 @@ import { TopicsService } from './services/topics.service';
 import { DetailsTopicComponent } from './details-topic/details-topic.component';
 import { ShareIconsModule } from 'ngx-sharebuttons/icons';
 import { ShareButtonsModule } from 'ngx-sharebuttons/buttons';
+import { registerLocaleData } from '@angular/common';
+import localeFr from '@angular/common/locales/fr';
+registerLocaleData(localeFr, 'fr');
+import { LOCALE_ID } from '@angular/core';
 
 
- 
 
 
 
@@ -82,11 +85,13 @@ const blogRoutes: Routes = [
       MatProgressSpinnerModule,
       ShareButtonsModule,
       ShareIconsModule,
+
    ],
    providers: [
       ArticleService,
       HighlightService,
-      TopicsService
+      TopicsService,
+      { provide: LOCALE_ID, useValue: "fr" }
    ],
    bootstrap: [
       AppComponent

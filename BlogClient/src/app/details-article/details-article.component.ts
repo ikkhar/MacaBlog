@@ -18,14 +18,14 @@ export class DetailsArticleComponent implements OnInit {
 
   public isloading: boolean;
   id: number;
-  article: Article;
-  auteurList: Auteur;
+  public article: Article;
+  
 
 
   highlighted: boolean = false;
 
   // Test Keywords
-  keywords:string = 'jaimepasjava';
+  keywords:string = 'angular';
   auteur: string = 'Mazen Gharbi';
 
   constructor(private articleService: ArticleService, private route: ActivatedRoute, private router: Router, private highlightService: HighlightService) {

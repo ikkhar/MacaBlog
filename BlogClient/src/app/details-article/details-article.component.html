@@ -20,8 +20,9 @@
       <div class="oneBlog">
         <mat-card-title ><h1>{{article.title}}</h1></mat-card-title>
         <div class="divider bg-medium-primary"></div>
+        <mat-card-subtitle><p><span style="font-weight: bold;color:#FF4B82">#{{keywords | uppercase}}
+          •  </span>{{article.datePublication | date:'dd MMMM yyyy': 'fr-FR'}}</p></mat-card-subtitle>
         <mat-card-subtitle><p style="color:#393a3b"><i>{{auteur}}</i></p></mat-card-subtitle>
-        <mat-card-subtitle><p><span style="font-weight: bold;color:#FF4B82">#{{keywords | uppercase}} • </span>{{article.datePublication | date:'dd / MM / yyyy'}}</p></mat-card-subtitle>
       </div>
     </div>
   </mat-card>

@@ -9,7 +9,6 @@ import { Auteur } from '../models/auteur';
 })
 export class ArticleService {
   public articles: Article[];
-  public auteurList: Auteur[];
   clickShowMore: number;
 
   constructor(private api: ApiHelperService, private route: ActivatedRoute) {
