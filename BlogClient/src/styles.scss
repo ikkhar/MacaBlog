@@ -1,7 +1,8 @@
-/* Import Prism */
+/* Import Prism & ShareButtons */
 @import "~prismjs/plugins/toolbar/prism-toolbar.css";
 @import "~prismjs/themes/prism-tomorrow.css";
-@import '~ngx-sharebuttons/themes/default/default-theme';
+@import '~ngx-sharebuttons/themes/default/default-theme'; // css par defaut
+@import '~ngx-sharebuttons/themes/circles/circles-dark-theme'; // Ajout des btn forme cercle attention supp ombre ligne 27
 /* You can add global styles to this file, and also import other style files */
 
 html, body { height: 100%; }
@@ -22,6 +23,12 @@ a:hover {
 .borderNull{
   border:0px !important;
 }
+
+/* Btn Share Personnalisation du css pour ne pas avoir d'ombre */
+.sb-circles-dark .sb-wrapper .sb-icon {
+  box-shadow: none;
+}
+
 
 // Progress-Bar articles
 
