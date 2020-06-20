@@ -65,7 +65,7 @@
 	},
 	{
 		"id": 3,
-		"subName": "Concéption Base de données",
+		"subName": "Conception Base de données",
 		"keywords": [
 			{
 				"id": 4,
@@ -157,11 +157,11 @@
 	},
 	{
 		"id": 6,
-		"subName": "Concéption orientée objet",
+		"subName": "Conception orientée objet",
 		"keywords": [
 			{
 				"id": 8,
-				"name": "Concéption orientée objet"
+				"name": "Conception orientée objet"
 			},
 			{
 				"id": 54,
@@ -183,7 +183,7 @@
 		"thematiques": 
 			{
 				"id": 3,
-				"name": "Concéption"
+				"name": "Conception"
 			}
 	
 	},
