@@ -87,7 +87,7 @@ img {
   clip-path:ellipse(50% 50%);
   padding-left: 15px;
   padding-right: 15px;
-  margin-top: 0px;
+  margin-top: 6px;
 }
 .iconSocialHeader:hover {
   background: #f5f5f5;
