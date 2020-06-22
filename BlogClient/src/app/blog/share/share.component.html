@@ -4,12 +4,12 @@
     <div class="divider bg-medium-primary"></div>
     <mat-card-subtitle>Partager cet article avec vos amis & vos abonnés</mat-card-subtitle>
     <div fxLayout="row">
-      <share-buttons [theme]="'default'"
+      <share-buttons [theme]="'circles-dark'"
         [include]="['facebook','twitter','linkedin']"
-        [showText]="true"
+        [showText]="false"
         [url]="''"
         [autoSetMeta]="false"
-></share-buttons>
+></share-buttons>  <!-- Mettre [showText]="true" // pour avoir texte sous btn -->
       </div>
   </mat-card>
 </div>

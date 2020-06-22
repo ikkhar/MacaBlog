@@ -30,7 +30,11 @@
   },
   {
     "id": 8,
+<<<<<<< HEAD
     "name": "Conception orientée objet"
+=======
+    "name": "Conception orientÃ©e objet"
+>>>>>>> b0da81b751756335ea6e1edaed0964c5f470b3dd
   },
   {
     "id": 9,
