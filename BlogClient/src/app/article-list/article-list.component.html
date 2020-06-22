@@ -24,9 +24,10 @@
         expand_more
       </span> 
     </button>  
-    <button    style="visibility:hidden" mat-stroked-button color="accent">
+    <!--
+    <button *ngIf="conditionToHideButton()" style="visibility:hidden" mat-stroked-button color="accent">
      
-  </button>  
+  </button>  -->
   </div >
    <!--<div class="centerButton"  *ngIf="sizeListAllArticlesFromBack" style="visibility:hidden">
     <button (click)="getAllArticlesByClick()" mat-stroked-button color="accent"><span class="material-icons">

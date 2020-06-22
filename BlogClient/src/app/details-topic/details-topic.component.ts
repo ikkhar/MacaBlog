@@ -51,8 +51,8 @@ export class DetailsTopicComponent implements OnInit, AfterViewChecked {
     this.router.navigate(['articles', id])
   }
 
-  getAllArticlesByThematiqueByClick(): Promise<any> {
-    const {id} = this.route.snapshot.params
+  getAllArticlesByThematiqueByClick(id: number): Promise<any> {
+   // const {id} = this.route.snapshot.params
     return this.topicsService.getTenArticlesByThematiqueByClick(this.topic.id,this.clickShowMore).then(res => {
       this.article = res;
       console.log(this.topic);

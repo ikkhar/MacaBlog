@@ -50,6 +50,7 @@ export class ArticleListComponent implements OnInit {
      // this.articles.length=res.length;
       console.log(this.articles);
       this.clickShowMore += 1;
+      this.length = res.totalElements;
     });
   }
 
@@ -67,13 +68,13 @@ getSizeAllArticlesListFromBack(): Promise<any> {
     
   });
 }
- // Methode pour mettre une condition sur la taille maximal qui est chargé% à la taille de la liste des articles du back
+ // Methode pour mettre une condition sur la taille maximal qui est chargée% à la taille de la liste des articles du back
 
 conditionToHideButton(){
-  this.getAllArticlesByClick();
-  this.getSizeAllArticlesListFromBack()  
+  //this.getAllArticlesByClick();
+  //this.getSizeAllArticlesListFromBack()  
  
-  if (Article.length == this.sizeListAllArticlesFromBack  ) {
+  if ( this.length == this.sizeListAllArticlesFromBack  ) {
     return this.sizeListAllArticlesFromBack ;
   } 
  
