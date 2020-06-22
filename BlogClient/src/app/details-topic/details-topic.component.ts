@@ -14,7 +14,7 @@ import { Article } from 'src/app/models/article';
 })
 export class DetailsTopicComponent implements OnInit, AfterViewChecked {
 
-  public isloading: boolean;
+  public isloading: boolean= false;
   id: number;
   name: string;
   public article: Article;
@@ -77,3 +77,4 @@ export class DetailsTopicComponent implements OnInit, AfterViewChecked {
 
 
 
+    

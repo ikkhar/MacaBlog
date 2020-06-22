@@ -33,7 +33,7 @@ public class Articles {
 	private boolean photo = false;
 
 	@ManyToMany(cascade = { CascadeType.PERSIST }, fetch = FetchType.EAGER)
-	@JsonIgnore
+	
 	private Set<Auteur> auteurList = new HashSet<>();
 
 	@ManyToMany(fetch = FetchType.EAGER, cascade = CascadeType.PERSIST)
@@ -42,12 +42,12 @@ public class Articles {
 
 	@ManyToOne(fetch = FetchType.EAGER, cascade = { CascadeType.PERSIST})
     @NotFound(action=NotFoundAction.IGNORE)
-	@JsonIgnore
+	
 	private Thematiques thematiques;
 
 	@ManyToOne(fetch = FetchType.EAGER, cascade = { CascadeType.PERSIST})
     @NotFound(action=NotFoundAction.IGNORE)
-	@JsonIgnore
+	
 	private SubThematiques subThematiques;
 
 	public Articles() {
