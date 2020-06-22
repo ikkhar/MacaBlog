@@ -6,32 +6,34 @@
 
 
 
-<ng-container *ngIf="!isloading && topic">
+<ng-container *ngIf="!isloading && topic" noShowPhrase="true">
   <div class="scroll-bar"></div>
-  <div class="divBlogList" *ngFor="let topic of topic" >
+  <div class="divBlogList" *ngFor="let topic of topic">
   <mat-card  class="mat-elevation-z0">
     <mat-card-title >{{topic.title}}</mat-card-title>
-    <mat-card-subtitle>{{topic.datePublication | date:'dd / MM / yyyy'}}</mat-card-subtitle>
+    <mat-card-subtitle>{{topic.datePublication | date:'dd MMMM yyyy': 'fr-FR'}}</mat-card-subtitle>
     <mat-card-content>{{topic.resume}}</mat-card-content>
     <button (click)= "detailsArticle(topic.id)" mat-stroked-button color="accent" class="borderNull">En savoir plus</button>
   </mat-card>
-  </div>
-  <div class="centerButton" >
-    <button (click)="getAllArticlesByThematiqueByClick(topic.id)" mat-stroked-button color="accent"><span class="material-icons">
-  expand_more
+</div>
+<div class="centerButton" >
+  <button (click)="getAllArticlesByThematiqueByClick(topic.id)" mat-stroked-button color="accent"><span class="material-icons">
+    expand_more
   </span>Montrer plus d'articles<span class="material-icons">
   expand_more
   </span>
     </button>
-        
   </div>
-  
-  </ng-container>
-  <ng-container *ngIf="!isloading && !topic">
-    <div class="emptyListArticlesByThematique" >
-<h2>Il n'ya pas d'articles sur cette thematique  </h2>
+</ng-container>
+
+<!--
+<ng-container *ngIf="!isloading && !topic">
+  <div showPhrase="true" class="emptyListArticlesByThematique" >
+<h2>Il n'y a pas d'article pour cette thématique</h2>
 </div>
-  </ng-container>
+</ng-container>
+-->
+
 <!--<div fxLayout.lt-md="column" fxLayout="row" class="insideBlog">
     <div fxLayout="column" class="shareBlog" fxFlex="40">
       <app-share></app-share>

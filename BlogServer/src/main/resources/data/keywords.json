@@ -14,7 +14,7 @@
   },
   {
     "id": 4,
-    "name": "Base de données"
+    "name": "Base de donnÃ©es"
   },
   {
     "id": 5,
@@ -30,11 +30,7 @@
   },
   {
     "id": 8,
-<<<<<<< HEAD
-    "name": "Conception orientée objet"
-=======
     "name": "Conception orientÃ©e objet"
->>>>>>> b0da81b751756335ea6e1edaed0964c5f470b3dd
   },
   {
     "id": 9,
@@ -66,7 +62,7 @@
   },
   {
     "id": 16,
-    "name": "Intégration continue"
+    "name": "IntÃ©gration continue"
 	
   },
   {
@@ -156,11 +152,11 @@
   },
   {
     "id": 38,
-    "name": "Méthode Agile"
+    "name": "MÃ©thode Agile"
   },
   {
     "id": 39,
-    "name": " Scrum Master"
+    "name": "Scrum Master"
   },
   {
     "id": 40,
@@ -196,7 +192,7 @@
   },
   {
     "id": 48,
-    "name": "Sécurité"
+    "name": "SÃ©curitÃ©"
   },
   {
     "id": 49,
@@ -216,7 +212,7 @@
   },
   {
     "id": 53,
-    "name": "Vidéos"
+    "name": "VidÃ©os"
   },
   {
     "id": 54,
