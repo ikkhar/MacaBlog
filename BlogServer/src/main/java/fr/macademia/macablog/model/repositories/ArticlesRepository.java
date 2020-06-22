@@ -23,6 +23,7 @@ public interface ArticlesRepository extends JpaRepository<Articles, Long> {
 
 	List<Articles> findAllByOrderByIdAsc();
 
+
 	List<Articles> findAllByOrderByIdDesc();// trouvé tout les articles dans l'ordre decroissant
 
 	List<Articles> findFirst10ByThematiquesIdOrderByIdDesc(Long id);

@@ -23,13 +23,13 @@
         <mat-card-subtitle><p style="color:#393a3b"><i>{{auteur}}</i></p></mat-card-subtitle>
         <mat-card-subtitle><p><span style="font-weight: bold;color:#FF4B82">#{{keywords | uppercase}} • </span>{{article.datePublication | date:'dd / MM / yyyy'}}</p></mat-card-subtitle>
       </div>
-    </div> 
+    </div>
   </mat-card>
 </div>
-<!-- Fin HEADER --> 
+<!-- Fin HEADER -->
 
 <!-- Debut BODY & Side -->
-<div fxLayout.lt-md="column" fxLayout="row" class="insideBlog">
+<div fxLayout.lt-md="column" fxLayout="row" class="insideBlog" *ngIf="!isloading" >
   <div class="paragraphBlog" fxFlex="60" [innerHTML]="article.contenent"></div>
   <!-- Debut Side -->
   <div fxLayout="column" class="shareBlog" fxFlex="40">

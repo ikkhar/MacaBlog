@@ -13,9 +13,9 @@ export class ArticleListComponent implements OnInit {
   public articles: Article[];
   public isloading: boolean;
   public clickShowMore: number = 1;
-  public sizeListAllArticles:number;
+  public sizeListAllArticlesFromBack :number;
   max = 10; // c'est à cause de ce petit coquin, il limité l'affichage à 10 ! à remplacer dans html par articles.length
-  dataSource;
+ 
   length: number;
   event: boolean = false;
   constructor(private articleService: ArticleService, private route: ActivatedRoute, private router: Router) {
@@ -39,12 +39,15 @@ export class ArticleListComponent implements OnInit {
     // this.clickShowMore=this.clickShowMore*10 ;
     await this.getAllArticlesByClick() // On passe par notre méthode pour éviter la redondance de code
       .finally(() => this.isloading = false);
+   
+    
   }
 
   getAllArticlesByClick(): Promise<any> {
   
     return this.articleService.getTenArticlesByClick(this.clickShowMore).then(res => {
       this.articles = res;
+     // this.articles.length=res.length;
       console.log(this.articles);
       this.clickShowMore += 1;
     });
@@ -59,13 +62,26 @@ export class ArticleListComponent implements OnInit {
 getSizeAllArticlesListFromBack(): Promise<any> {
   
   return this.articleService.getsizeAllArticlesList().then(res => {
-    this.sizeListAllArticles = res;
-    console.log(this.sizeListAllArticles);
+    this.sizeListAllArticlesFromBack = res;
+    console.log(this.sizeListAllArticlesFromBack );
     
   });
-
-
 }
+ // Methode pour mettre une condition sur la taille maximal qui est chargé% à la taille de la liste des articles du back
+
+conditionToHideButton(){
+  this.getAllArticlesByClick();
+ this.getSizeAllArticlesListFromBack()  
+ 
+  if (Article.length == this.sizeListAllArticlesFromBack  ) {
+    return this.sizeListAllArticlesFromBack ;
+  } 
+ 
+}
+
+
+
+
 
 }
 

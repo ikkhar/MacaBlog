@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { MatListModule } from '@angular/material/list';
-import { ActivatedRoute, Data, Router } from '@angular/router';
+import { ActivatedRoute, Data, Router, RouterLinkActive } from '@angular/router';
 import { Topic } from 'src/app/models/topic';
 import { TopicsService } from 'src/app/services/topics.service';
 import { ArticleService } from 'src/app/services/articles.service';
@@ -29,6 +29,7 @@ export class TopicsComponent implements OnInit, MatListModule {
 
   detailsTopics(id: number){
     this.router.navigate(['articles/thematique', id])
+    .finally(() => window.location.reload());
   }
 
 }

@@ -7,7 +7,7 @@
   <h3><p>Aucun article en vue ! </p> </h3>
 </ng-container> -->
 
-<ng-container *ngIf="!isloading">
+<ng-container *ngIf="!isloading && articles">
   <div class="scroll-bar"></div>
   <div class="divBlogList" *ngFor="let article of articles | slice:0:articles.length">
     <mat-card class="mat-elevation-z0">
@@ -17,13 +17,27 @@
       <button (click)="detailsArticle(article.id)" mat-stroked-button color="accent">En savoir plus</button>
     </mat-card>    
   </div  > 
-  <div class="centerButton" >
+  <div class="centerButton">
+    <button   (click)="getAllArticlesByClick()" mat-stroked-button color="accent"><span class="material-icons">
+        expand_more
+      </span>Montrer plus d'articles<span class="material-icons">
+        expand_more
+      </span> 
+    </button>  
+    <button    style="visibility:hidden" mat-stroked-button color="accent">
+     
+  </button>  
+  </div >
+   <!--<div class="centerButton"  *ngIf="sizeListAllArticlesFromBack" style="visibility:hidden">
     <button (click)="getAllArticlesByClick()" mat-stroked-button color="accent"><span class="material-icons">
         expand_more
       </span>Montrer plus d'articles<span class="material-icons">
         expand_more
       </span> 
     </button>
+  
+  </div > -->
+    
   <!--  <button ng-hide="isLoading && !articles.length" mat-stroked-button color="accent"><span class="material-icons">
       expand_more
     </span>Montrer plus d'articles<span class="material-icons">
@@ -31,5 +45,4 @@
     </span> 
   </button>-->
 
-  </div>
 </ng-container>

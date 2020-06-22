@@ -2,12 +2,14 @@ import { Injectable } from '@angular/core';
 import { Article } from '../models/article';
 import { ApiHelperService } from './api-helpers.service';
 import { ActivatedRoute } from '@angular/router';
+import { Auteur } from '../models/auteur';
 
 @Injectable({
   providedIn: 'root'
 })
 export class ArticleService {
   public articles: Article[];
+  public auteurList: Auteur[];
   clickShowMore: number;
 
   constructor(private api: ApiHelperService, private route: ActivatedRoute) {
@@ -19,7 +21,7 @@ export class ArticleService {
   public findAll(): Promise<any> {
     return this.api.get({ endpoint: '/articles' });
   }
- 
+
   public findById(id: number): Promise<any> {
     return this.api.get({ endpoint: `/articles/${id}` })
   }
@@ -32,6 +34,11 @@ export class ArticleService {
   return this.api.get({endpoint: '/articles/size_List'});
 }
 
+
+  public getArticlesByAuteurId(id: number): Promise<any> {
+    return this.api.get({endpoint: `/articles/auteur/${id}` })
+
+  }
 
  // requette pour charger 10 articles à chaque clique:
 
@@ -50,7 +57,7 @@ public getTenArticlesByClick(nbElementToShow:number): Promise<any> {
             });
     });
     return promise;
-} 
+}
 
 
 }
