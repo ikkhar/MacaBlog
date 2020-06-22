@@ -3,23 +3,47 @@
     <mat-progress-spinner class="spinner" mode="indeterminate"></mat-progress-spinner>
   </div>
 </div>
-<ng-container *ngIf="!isloading">
+<!--<ng-container *ngIf="isLoading &&  articles.length=0">
+  <h3><p>Aucun article en vue ! </p> </h3>
+</ng-container> -->
+
+<ng-container *ngIf="!isloading && articles">
   <div class="scroll-bar"></div>
   <div class="divBlogList" *ngFor="let article of articles | slice:0:articles.length">
     <mat-card class="mat-elevation-z0">
       <mat-card-title>{{article.title}}</mat-card-title>
       <mat-card-subtitle>{{article.datePublication | date:'dd MMMM yyyy': 'fr-FR'}}</mat-card-subtitle>
       <mat-card-content>{{article.resume}}</mat-card-content>
-      <button (click)="detailsArticle(article.id)" mat-stroked-button color="accent" class="borderNull">En savoir plus</button>
-    </mat-card> 
-
-  </div>
+      <button (click)="detailsArticle(article.id)" mat-stroked-button color="accent">En savoir plus</button>
+    </mat-card>    
+  </div  > 
   <div class="centerButton">
+    <button   (click)="getAllArticlesByClick()" mat-stroked-button color="accent"><span class="material-icons">
+        expand_more
+      </span>Montrer plus d'articles<span class="material-icons">
+        expand_more
+      </span> 
+    </button>  
+    <!--
+    <button *ngIf="conditionToHideButton()" style="visibility:hidden" mat-stroked-button color="accent">
+     
+  </button>  -->
+  </div >
+   <!--<div class="centerButton"  *ngIf="sizeListAllArticlesFromBack" style="visibility:hidden">
     <button (click)="getAllArticlesByClick()" mat-stroked-button color="accent"><span class="material-icons">
         expand_more
       </span>Montrer plus d'articles<span class="material-icons">
         expand_more
       </span>
     </button>
-  </div>
+  
+  </div > -->
+    
+  <!--  <button ng-hide="isLoading && !articles.length" mat-stroked-button color="accent"><span class="material-icons">
+      expand_more
+    </span>Montrer plus d'articles<span class="material-icons">
+      expand_more
+    </span> 
+  </button>-->
+
 </ng-container>

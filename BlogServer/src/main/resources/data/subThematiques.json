@@ -21,7 +21,7 @@
 			},
 			{
 				"id": 53,
-				"name": "VidÃ©os"
+				"name": "Vidéos"
 			}
 		],
 		"thematiques":
@@ -53,7 +53,7 @@
 			},
 			{
 				"id": 53,
-				"name": "VidÃ©os"
+				"name": "Vidéos"
 			}
 		],
 		"thematiques":
@@ -65,11 +65,13 @@
 	},
 	{
 		"id": 3,
-		"subName": "Conception Base de donnÃ©es",
+
+		"subName": "Conception Base de données",
+
 		"keywords": [
 			{
 				"id": 4,
-				"name": "Base de donnÃ©es"
+				"name": "Base de données"
 			},
 			{
 				"id": 51,
@@ -81,13 +83,13 @@
 			},
 			{
 				"id": 53,
-				"name": "VidÃ©os"
+				"name": "Vidéos"
 			}
 		],
 		"thematiques": 
 			{
 				"id": 2,
-				"name": "Base de donnÃ©es"
+				"name": "Base de données"
 			}
 		
 	},
@@ -101,7 +103,7 @@
 			},
 			{
 				"id": 4,
-				"name": "Base de donnÃ©es"
+				"name": "Base de données"
 			},
 			{
 				"id": 51,
@@ -113,13 +115,13 @@
 			},
 			{
 				"id": 53,
-				"name": "VidÃ©os"
+				"name": "Vidéos"
 			}
 		],
 		"thematiques":
 			{
 				"id": 2,
-				"name": "Base de donnÃ©es"
+				"name": "Base de données"
 			}
 		
 	},
@@ -129,7 +131,7 @@
 		"keywords": [
 			{
 				"id": 4,
-				"name": "Base de donnÃ©es"
+				"name": "Base de données"
 			},
 			{
 				"id": 6,
@@ -145,27 +147,29 @@
 			},
 			{
 				"id": 53,
-				"name": "VidÃ©os"
+				"name": "Vidéos"
 			}
 		],
 		"thematiques": 
 			{
 				"id": 2,
-				"name": "Base de donnÃ©es"
+				"name": "Base de données"
 			}
 		
 	},
 	{
 		"id": 6,
-		"subName": "Conception orientÃ©e objet",
+
+		"subName": "Conception orientée objet",
 		"keywords": [
 			{
 				"id": 8,
-				"name": "Conception orientÃ©e objet"
+				"name": "Conception orientée objet"
+
 			},
 			{
 				"id": 54,
-				"name": "Programmation orientÃ©e objet"
+				"name": "Programmation orientée objet"
 			},
 			{
 				"id": 51,
@@ -177,7 +181,7 @@
 			},
 			{
 				"id": 53,
-				"name": "VidÃ©os"
+				"name": "Vidéos"
 			}
 		],
 		"thematiques": 
@@ -209,7 +213,7 @@
 			},
 			{
 				"id": 53,
-				"name": "VidÃ©os"
+				"name": "Vidéos"
 			}
 		],
 		"thematiques": 
@@ -237,7 +241,7 @@
 			},
 			{
 				"id": 53,
-				"name": "VidÃ©os"
+				"name": "Vidéos"
 			}
 		],
 		"thematiques":
@@ -269,7 +273,7 @@
 			},
 			{
 				"id": 53,
-				"name": "VidÃ©os"
+				"name": "Vidéos"
 			}
 		],
 		"thematiques": 
@@ -301,7 +305,7 @@
 			},
 			{
 				"id": 53,
-				"name": "VidÃ©os"
+				"name": "Vidéos"
 			}
 		],
 		"thematiques": 
@@ -329,13 +333,13 @@
 			},
 			{
 				"id": 53,
-				"name": "VidÃ©os"
+				"name": "Vidéos"
 			}
 		],
 		"thematiques": 
 			{
 				"id": 6,
-				"name": "IntÃ©gration continue"
+				"name": "Intégration continue"
 			}
 		
 	},
@@ -361,13 +365,13 @@
 			},
 			{
 				"id": 53,
-				"name": "VidÃ©os"
+				"name": "Vidéos"
 			}
 		],
 		"thematiques": 
 			{
 				"id": 6,
-				"name": "IntÃ©gration continue"
+				"name": "Intégration continue"
 			}
 		
 	},
@@ -389,13 +393,13 @@
 			},
 			{
 				"id": 53,
-				"name": "VidÃ©os"
+				"name": "Vidéos"
 			}
 		],
 		"thematiques": 
 			{
 				"id": 6,
-				"name": "IntÃ©gration continue"
+				"name": "Intégration continue"
 			}
 		
 	},
@@ -417,13 +421,13 @@
 			},
 			{
 				"id": 53,
-				"name": "VidÃ©os"
+				"name": "Vidéos"
 			}
 		],
 		"thematiques":
 			{
 				"id": 6,
-				"name": "IntÃ©gration continue"
+				"name": "Intégration continue"
 			}
 		
 	},
@@ -445,13 +449,13 @@
 			},
 			{
 				"id": 53,
-				"name": "VidÃ©os"
+				"name": "Vidéos"
 			}
 		],
 		"thematiques": 
 			{
 				"id": 6,
-				"name": "IntÃ©gration continue"
+				"name": "Intégration continue"
 			}
 		
 	},
@@ -473,13 +477,13 @@
 			},
 			{
 				"id": 53,
-				"name": "VidÃ©os"
+				"name": "Vidéos"
 			}
 		],
 		"thematiques": 
 			{
 				"id": 6,
-				"name": "IntÃ©gration continue"
+				"name": "Intégration continue"
 			}
 		
 	},
@@ -501,7 +505,7 @@
 			},
 			{
 				"id": 53,
-				"name": "VidÃ©os"
+				"name": "Vidéos"
 			}
 		],
 		"thematiques": 
@@ -529,11 +533,11 @@
 			},
 			{
 				"id": 53,
-				"name": "VidÃ©os"
+				"name": "Vidéos"
 			},
 			{
 				"id": 54,
-				"name": "Programmation orientÃ©e objet"
+				"name": "Programmation orientée objet"
 			}
 		],
 		"thematiques": 
@@ -573,11 +577,11 @@
 			},
 			{
 				"id": 53,
-				"name": "VidÃ©os"
+				"name": "Vidéos"
 			},
 			{
 				"id": 54,
-				"name": "Programmation orientÃ©e objet"
+				"name": "Programmation orientée objet"
 			}
 		],
 		"thematiques": 
@@ -617,11 +621,11 @@
 			},
 			{
 				"id": 53,
-				"name": "VidÃ©os"
+				"name": "Vidéos"
 			},
 			{
 				"id": 54,
-				"name": "Programmation orientÃ©e objet"
+				"name": "Programmation orientée objet"
 			}
 		],
 		"thematiques": 
@@ -657,11 +661,11 @@
 			},
 			{
 				"id": 53,
-				"name": "VidÃ©os"
+				"name": "Vidéos"
 			},
 			{
 				"id": 54,
-				"name": "Programmation orientÃ©e objet"
+				"name": "Programmation orientée objet"
 			},
 			{
 				"id": 55,
@@ -697,11 +701,11 @@
 			},
 			{
 				"id": 53,
-				"name": "VidÃ©os"
+				"name": "Vidéos"
 			},
 			{
 				"id": 54,
-				"name": "Programmation orientÃ©e objet"
+				"name": "Programmation orientée objet"
 			}
 		],
 		"thematiques":
@@ -733,11 +737,11 @@
 			},
 			{
 				"id": 53,
-				"name": "VidÃ©os"
+				"name": "Vidéos"
 			},
 			{
 				"id": 54,
-				"name": "Programmation orientÃ©e objet"
+				"name": "Programmation orientée objet"
 			}
 		],
 		"thematiques": 
@@ -769,11 +773,11 @@
 			},
 			{
 				"id": 53,
-				"name": "VidÃ©os"
+				"name": "Vidéos"
 			},
 			{
 				"id": 54,
-				"name": "Programmation orientÃ©e objet"
+				"name": "Programmation orientée objet"
 			}
 		],
 		"thematiques": 
@@ -805,11 +809,11 @@
 			},
 			{
 				"id": 53,
-				"name": "VidÃ©os"
+				"name": "Vidéos"
 			},
 			{
 				"id": 54,
-				"name": "Programmation orientÃ©e objet"
+				"name": "Programmation orientée objet"
 			}
 		],
 		"thematiques": 
@@ -837,7 +841,7 @@
 			},
 			{
 				"id": 53,
-				"name": "VidÃ©os"
+				"name": "Vidéos"
 			}
 		],
 		"thematiques": 
@@ -869,7 +873,7 @@
 			},
 			{
 				"id": 53,
-				"name": "VidÃ©os"
+				"name": "Vidéos"
 			}
 		],
 		"thematiques":
@@ -881,11 +885,11 @@
 	},
 	{
 		"id": 27,
-		"subName": "MÃ©thode Agile",
+		"subName": "Méthode Agile",
 		"keywords": [
 			{
 				"id": 38,
-				"name": "MÃ©thode Agile"
+				"name": "Méthode Agile"
 			},
 			{
 				"id": 39,
@@ -901,7 +905,7 @@
 			},
 			{
 				"id": 53,
-				"name": "VidÃ©os"
+				"name": "Vidéos"
 			}
 		],
 		"thematiques":
@@ -929,7 +933,7 @@
 			},
 			{
 				"id": 53,
-				"name": "VidÃ©os"
+				"name": "Vidéos"
 			}
 		],
 		"thematiques": 
@@ -957,7 +961,7 @@
 			},
 			{
 				"id": 53,
-				"name": "VidÃ©os"
+				"name": "Vidéos"
 			}
 		],
 		"thematiques": 
@@ -985,7 +989,7 @@
 			},
 			{
 				"id": 53,
-				"name": "VidÃ©os"
+				"name": "Vidéos"
 			}
 		],
 		"thematiques": 
@@ -1013,7 +1017,7 @@
 			},
 			{
 				"id": 53,
-				"name": "VidÃ©os"
+				"name": "Vidéos"
 			}
 		],
 		"thematiques": 
@@ -1033,7 +1037,7 @@
 			},
 			{
 				"id": 54,
-				"name": "Programmation orientÃ©e objet"
+				"name": "Programmation orientée objet"
 			},
 			{
 				"id": 52,
@@ -1041,7 +1045,7 @@
 			},
 			{
 				"id": 53,
-				"name": "VidÃ©os"
+				"name": "Vidéos"
 			}
 		],
 		"thematiques": 
@@ -1065,7 +1069,7 @@
 			},
 			{
 				"id": 53,
-				"name": "VidÃ©os"
+				"name": "Vidéos"
 			}
 		],
 		"thematiques": 
@@ -1093,7 +1097,7 @@
 			},
 			{
 				"id": 53,
-				"name": "VidÃ©os"
+				"name": "Vidéos"
 			}
 		],
 		"thematiques": 
@@ -1105,11 +1109,11 @@
 	},
 	{
 		"id": 35,
-		"subName": "SÃ©curitÃ©",
+		"subName": "Sécurité",
 		"keywords": [
 			{
 				"id": 48,
-				"name": "SÃ©curitÃ©"
+				"name": "Sécurité"
 			},
 			{
 				"id": 47,
@@ -1125,13 +1129,13 @@
 			},
 			{
 				"id": 53,
-				"name": "VidÃ©os"
+				"name": "Vidéos"
 			}
 		],
 		"thematiques": 
 			{
 				"id": 14,
-				"name": "SÃ©curitÃ©"
+				"name": "Sécurité"
 			}
 		
 	},
@@ -1149,7 +1153,7 @@
 			},
 			{
 				"id": 53,
-				"name": "VidÃ©os"
+				"name": "Vidéos"
 			}
 		],
 		"thematiques": 

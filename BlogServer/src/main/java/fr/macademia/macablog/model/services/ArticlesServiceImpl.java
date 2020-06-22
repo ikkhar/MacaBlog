@@ -293,4 +293,12 @@ public class ArticlesServiceImpl implements ArticlesService {
 		return listeAllArticlesByThematiquesIdByClick;
 	}
 
+	@Override
+	public Long getSizeAllArticlesList() {
+		ArrayList<Articles> listeAllArticles = new ArrayList<Articles>();
+		listeAllArticles.addAll(this.articlesRepository.findAllByOrderByIdDesc());
+		Long sizeListAllArticlesBackend = (long) listeAllArticles.size();
+		return sizeListAllArticlesBackend;
+	}
+
 }

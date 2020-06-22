@@ -14,7 +14,7 @@
   },
   {
     "id": 4,
-    "name": "Base de donnÃ©es"
+    "name": "Base de données"
   },
   {
     "id": 5,
@@ -30,7 +30,11 @@
   },
   {
     "id": 8,
+<<<<<<< HEAD
+    "name": "Conception orientée objet"
+=======
     "name": "Conception orientÃ©e objet"
+>>>>>>> b0da81b751756335ea6e1edaed0964c5f470b3dd
   },
   {
     "id": 9,
@@ -62,7 +66,7 @@
   },
   {
     "id": 16,
-    "name": "IntÃ©gration continue"
+    "name": "Intégration continue"
 	
   },
   {
@@ -152,7 +156,7 @@
   },
   {
     "id": 38,
-    "name": "MÃ©thode Agile"
+    "name": "Méthode Agile"
   },
   {
     "id": 39,
@@ -192,7 +196,7 @@
   },
   {
     "id": 48,
-    "name": "SÃ©curitÃ©"
+    "name": "Sécurité"
   },
   {
     "id": 49,
@@ -212,7 +216,7 @@
   },
   {
     "id": 53,
-    "name": "VidÃ©os"
+    "name": "Vidéos"
   },
   {
     "id": 54,

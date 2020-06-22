@@ -28,6 +28,11 @@ export class ArticleService {
   public getLastTenArticles(): Promise<any> {
     return this.api.get({endpoint: '/articles/getLastTenArticles'});
   }
+ // Requette du back pour recuperer la taille de la listes de tous les articles
+ public getsizeAllArticlesList(): Promise<any> {
+  return this.api.get({endpoint: '/articles/size_List'});
+}
+
 
   public getArticlesByAuteurId(id: number): Promise<any> {
     return this.api.get({endpoint: `/articles/auteur/${id}` })

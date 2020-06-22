@@ -30,7 +30,7 @@ public interface ArticlesService {
 	Optional<List<Articles>> getArticlesBySubThematiquesSubName(String subThematiques);
 	List <Articles> getAllArticles();
 	List <Articles> getAllArticlesByClick(Long nbreClick);
-	
+	Long getSizeAllArticlesList();
 	List <Articles> getAllArticlesByThematiquesIdByClick(Long id,Long nbreClick);
 List <Articles> removeTenArticlesByClick(int clickShowLess);
 	
