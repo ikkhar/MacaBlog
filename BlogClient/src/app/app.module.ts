@@ -37,6 +37,8 @@ import localeFr from '@angular/common/locales/fr';
 registerLocaleData(localeFr, 'fr');
 import { LOCALE_ID } from '@angular/core';
 
+// Partie share - modification CS //
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 
 
 
@@ -85,6 +87,7 @@ const blogRoutes: Routes = [
       MatProgressSpinnerModule,
       ShareButtonsModule,
       ShareIconsModule,
+      FontAwesomeModule,
 
    ],
    providers: [

@@ -3,13 +3,21 @@
     <mat-card-title>Partager cet article</mat-card-title>
     <div class="divider bg-medium-primary"></div>
     <mat-card-subtitle>Partager cet article avec vos amis & vos abonnés</mat-card-subtitle>
-    <div fxLayout="row">
+    <!--<div fxLayout="row">
       <share-buttons [theme]="'circles-dark'"
         [include]="['facebook','twitter','linkedin']"
         [showText]="false"
         [url]="''"
-        [autoSetMeta]="false"
-></share-buttons>  <!-- Mettre [showText]="true" // pour avoir texte sous btn -->
-      </div>
+        [autoSetMeta]="false">
+      </share-buttons>  //Mettre [showText]="true" // pour avoir texte sous btn 
+    </div>-->
+
+    <!--Debut test pour avoir que les icones, sans link actif-->
+    <div fxLayout="row">
+      <div><img class="btn-share-false" src="/assets/pictures/icon-share-facebook.svg"  alt="Logo Facebook" /></div>
+      <div><img class="btn-share-false" src="/assets/pictures/icon-share-twitter.svg"  alt="Logo Twitter" /></div>
+      <div><img class="btn-share-false" src="/assets/pictures/icon-share-linkedin.svg"  alt="Logo Linkedin" /></div>
+    </div>
+    <!-- Fin test pour avoir que les icones, sans link actif -->
   </mat-card>
 </div>
