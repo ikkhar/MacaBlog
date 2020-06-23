@@ -30,14 +30,21 @@
 <!-- Fin HEADER -->
 
 <!-- Debut BODY & Side -->
+
 <div fxLayout.lt-md="column" fxLayout="row" class="insideBlog" *ngIf="!isloading" >
-  <div class="paragraphBlog" fxFlex="60" [innerHTML]="article.contenent"></div>
+  <!-- Marge a gauche -->
+  <div fxLayout="column" class="" fxFlex="8"></div>
+
+  <div class="paragraphBlog" fxFlex="64" [innerHTML]="article.contenent"></div>
   <!-- Debut Side -->
-  <div fxLayout="column" class="shareBlog" fxFlex="40">
-    <app-share></app-share>
+  <div fxLayout="column" class="shareBlog" fxFlex="20">
+    <!-- Suppression du component en attendant creation du blog <app-share></app-share> -->
     <app-last-entries class="spaceShareLastEntries"></app-last-entries>
   </div>
+
   <!-- Fin Side -->
+  <!-- Marge a droite -->
+  <div fxLayout="column" class="" fxFlex="8"></div>
 </div>
 <!-- Debut BODY & Side -->
 
