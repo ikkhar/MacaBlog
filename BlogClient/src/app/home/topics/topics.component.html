@@ -7,8 +7,7 @@
 
 <mat-nav-list>
     <h3 class="titre-topic">Topics</h3>
-    <mat-list-item *ngFor="let topic of topics" class="texte-item">
-        <a (click)= "detailsTopics(topic.id)" routerLinkActive="active-link">{{topic.name}}</a>
-    </mat-list-item>
+    <mat-list-item *ngFor="let topic of topics" class="texte-item" [routerLinkActive]="['is-active']">
+        <a (click)= "detailsTopics(topic.id)"  routerLinkActive="active" [routerLink]="'/articles/thematique/' + (topic.id)" >{{topic.name}}</a>    </mat-list-item>
 </mat-nav-list>
 
