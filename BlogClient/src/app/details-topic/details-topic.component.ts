@@ -15,8 +15,6 @@ import { Article } from 'src/app/models/article';
 export class DetailsTopicComponent implements OnInit, AfterViewChecked {
 
   public isloading: boolean= false;
-  id: number;
-  name: string;
   public article: Article;
   public topic: Topic;
   max=10;
@@ -26,9 +24,9 @@ export class DetailsTopicComponent implements OnInit, AfterViewChecked {
   public edited = false;
 
   constructor(private articleService: ArticleService, private topicsService: TopicsService, private route: ActivatedRoute, private router: Router, private highlightService: HighlightService) {
-    
+
     this.clickShowMore = 0; // Je le met à 0 je sais pas si c'est une bonne idée ou pas
-    
+
   }
   /**
    * Highlight blog post when it's ready
@@ -40,12 +38,15 @@ export class DetailsTopicComponent implements OnInit, AfterViewChecked {
     }
   }
 
- async ngOnInit()  {
+  async ngOnInit() {
+    this.route.params.subscribe( async (params) =>  {
+      this.isloading=true;
+      const id = params.id;
 
-  const id = this.route.snapshot.params['id'];
-  this.topic = await this.topicsService.findById(id);
-
- }
+      this.topic = await this.topicsService.findById(id)
+        .finally (()=> this.isloading=false);
+    })
+  }
 
   detailsArticle(id: number){
     this.router.navigate(['articles', id]);
@@ -71,10 +72,9 @@ export class DetailsTopicComponent implements OnInit, AfterViewChecked {
   noShowPhrase() {
     this.edited = false;
   }
-  
+
 }
 
 
 
 
-    
