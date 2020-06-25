@@ -1,4 +1,5 @@
 import { Auteur } from './auteur';
+import { Thematique } from './thematique';
 
 export class Article {
 
@@ -7,7 +8,8 @@ export class Article {
   private _datePublication: Date;
   private _resume: string;
   private _contenent: string;
-  private _auteurList: string;
+  private _auteurList: Auteur[];
+  private _thematiques: Thematique[];
   private _paragraph: string;
   private _keywords: string[];
 
@@ -19,6 +21,7 @@ export class Article {
     this._resume = data.resume;
     this._contenent = data.contenent;
     this._auteurList = data.auteurList;
+    this._thematiques = data.thematiques;
     this._paragraph = data.paragraph;
     this._keywords = data.keywords;
   }
@@ -49,27 +52,35 @@ export class Article {
   }
 
   get resume(): string {
-    return this.resume;
+    return this._resume;
   }
 
   set resume(value: string) {
-    this.resume = value;
+    this._resume = value;
   }
 
   get contenent(): string {
-    return this.resume;
+    return this._contenent;
   }
 
   set contenent(value: string) {
-    this.resume = value;
+    this._contenent = value;
   }
 
-  get auteurList(): string {
-    return this.auteurList;
+  get auteurList(): Auteur[] {
+    return this._auteurList;
   }
 
-  set auteurList(value: string) {
-    this.auteurList = value;
+  set auteurList(value: Auteur[]) {
+    this._auteurList = value;
+  }
+
+  get thematiques(): Thematique[] {
+    return this._thematiques;
+  }
+
+  set thematiques(value: Thematique[]) {
+    this._thematiques = value;
   }
 
   get paragraph(): string {

@@ -3,6 +3,7 @@ import { Topic } from '../models/topic';
 import { ApiHelperService } from './api-helpers.service';
 import { ActivatedRoute } from '@angular/router';
 import { ArticleService } from './articles.service';
+import { Thematique } from '../models/thematique';
 
 
 @Injectable({

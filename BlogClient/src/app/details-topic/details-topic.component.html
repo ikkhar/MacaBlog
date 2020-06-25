@@ -8,12 +8,12 @@
 
 <ng-container *ngIf="!isloading && topic" noShowPhrase="true">
   <div class="scroll-bar"></div>
-  <div class="divBlogList" *ngFor="let topic of topic">
+  <div class="divBlogList" *ngFor="let article of topic">
   <mat-card  class="mat-elevation-z0">
-    <mat-card-title >{{topic.title}}</mat-card-title>
-    <mat-card-subtitle>{{topic.datePublication | date:'dd MMMM yyyy': 'fr-FR'}}</mat-card-subtitle>
-    <mat-card-content>{{topic.resume}}</mat-card-content>
-    <button (click)= "detailsArticle(topic.id)" mat-stroked-button color="accent" class="borderNull">En savoir plus</button>
+    <mat-card-title >{{article.title}}</mat-card-title>
+    <mat-card-subtitle>{{article.datePublication | date:'dd MMMM yyyy': 'fr-FR'}}</mat-card-subtitle>
+    <mat-card-content>{{article.resume}}</mat-card-content>
+    <button (click)= "detailsArticle(article.id)" mat-stroked-button color="accent" class="borderNull">En savoir plus</button>
   </mat-card>
 </div>
 <div class="centerButton" >

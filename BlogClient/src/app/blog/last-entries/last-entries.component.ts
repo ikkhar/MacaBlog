@@ -32,7 +32,6 @@ export class LastEntriesComponent implements OnInit {
 
   detailsArticle(id: number){
     this.router.navigate(['articles', id])
-    .finally(() => window.location.reload());
   }
 
 }
