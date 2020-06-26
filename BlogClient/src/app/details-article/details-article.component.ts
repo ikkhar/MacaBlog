@@ -28,6 +28,7 @@ export class DetailsArticleComponent implements OnInit {
 
 
 
+ 
   highlighted: boolean = false;
 
 
