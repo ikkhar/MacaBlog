@@ -97,3 +97,11 @@ img {
     vertical-align: middle;
     padding: 15px;
 }
+
+/* Gestion du responsive */
+@media only screen and (max-width : 450px){
+  .navbar-right {
+    padding-right: 0px;
+    margin-right: 0px;
+  }
+}

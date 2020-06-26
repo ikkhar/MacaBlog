@@ -33,6 +33,11 @@ footer {
 
 }
 
+.copyright {
+  font-weight: 100; 
+  margin-right: 10px;
+}
+
 .mat-button{
   font-size: 15px;
   color: #adb5bd;
@@ -62,4 +67,22 @@ footer {
     line-height: 100px;
     vertical-align: middle;
     padding: 15px;
+}
+
+.firstIconFooter {
+  margin-left: 0px;
+}
+
+/* Gestion du responsive */
+@media only screen and (max-width : 450px){
+.menuFooter {
+  margin-left: 0px;
+}
+.copyright { margin-right: 0px;}
+/*Suppression brn home en smartphone */
+.supp-smartphone {display: none;}
+
+.logoSocial, .navbar-right {margin-right: 0px;}
+
+
 }

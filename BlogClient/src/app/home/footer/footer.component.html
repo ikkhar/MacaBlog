@@ -1,4 +1,28 @@
 <footer>
+  <div fxLayout.lt-md="column" fxLayout="row" class="menuFooter" fxLayoutAlign="space-between center"> <!--  -->
+     <div class="copyright" fxLayout="row" fxLayout.xs="column" fxLayoutAlign="start center"><span>© Macablog {{ myDate | date:'yyyy' }}</span>
+      <div class="button supp-smartphone">
+        <a [routerLink]="['/home']" mat-button>Home</a>
+      </div>
+
+      </div>
+          <div class="logoSocial navbar-right" fxLayout="row" fxFlexAlign="center">
+            <div class="button floatRight"><a href="https://twitter.com/MacademiaFrance" target="_blank" ><img class="iconSocialFooter firstIconFooter" src="/assets/pictures/icon-twitter.png"  alt="Logo Twitter" /></a></div>
+            <div class="button floatRight"><a href="https://github.com/ikkhar/MacaBlog" target="_blank"><img class="iconSocialFooter" src="/assets/pictures/icon-github.png" alt="Logo Github" /></a></div>
+            <div class="button floatRight"><a href="https://www.linkedin.com/company/macademiafrance/" target="_blank"><img class="iconSocialFooter" src="/assets/pictures/icon-linkedin.png"  alt="Logo Linkedin" /></a></div>
+            <div class="button floatRight supp-smartphone"><a href="https://www.macademia.fr/contact" target="_blank"><img class="iconSocialFooter" src="/assets/pictures/icon-contact.png" alt="Contact" /></a></div>
+          </div>
+  </div>
+</footer>
+
+
+
+
+
+
+<!-- footer de base -->
+
+<!--<footer>
   <div class="menuFooter" fxLayout="row" fxLayoutAlign="space-between center">
      <div class="copyright" fxLayout="row" fxLayoutAlign="start center"><span style="font-weight: 100; margin-right: 10px;">© Macablog {{ myDate | date:'yyyy' }}</span>
       <div class="button">
@@ -13,5 +37,5 @@
             <div class="button floatRight"><a href="https://www.macademia.fr/contact" target="_blank"><img class="iconSocialFooter" src="/assets/pictures/icon-contact.png" alt="Contact" /></a></div>
           </div>
   </div>
-</footer>
+</footer>-->
 
