@@ -18,7 +18,7 @@ public interface ArticlesService {
 	
 	Optional<List<Articles>>getArticlesByAuteurId(Long id);
 	Optional<Articles> getArticlesById(long id);
-	 ArrayList<Articles> getLastTenArticles();
+	ArrayList<Articles> getLastTenArticles();
 	Optional<Articles> getArticlesByTitle(String title);
 	
 	List<Articles> getArticlesByThematiquesId(Long id);
@@ -29,26 +29,26 @@ public interface ArticlesService {
 	
 	Optional<List<Articles>> getArticlesBySubThematiquesSubName(String subThematiques);
 	List <Articles> getAllArticles();
-	List <Articles> getAllArticlesByClick(Long nbreClick);
-	Long getSizeAllArticlesList();
-	List <Articles> getAllArticlesByThematiquesIdByClick(Long id,Long nbreClick);
-List <Articles> removeTenArticlesByClick(int clickShowLess);
 	
-	List <Articles> removeAllArticlesByThematiquesIdByClick(Long id,Long nbreClick);
+	Long getSizeAllArticlesList();
+	
+    List <Articles> removeTenArticlesByClick(int clickShowLess);
 	
 	Optional<List<String>> searchArticles(String keyword);
 	
+
+	List<Articles> getAllArticlesByThematiquesIdByClick(Long id, int indexFrom);
+
+
+	List<Articles> getAllArticlesByClick( int indexFrom);
+
+
+
+	List<Articles> removeAllArticlesByThematiquesIdByClick(Long id, Long nbreClick);
+
+
+
 	
-	Page<Articles> getPageOfEntities(PageTool pageTool);
-	// afiche dans l'ordre croissant
-	Page<Articles> getPageOfEntitiesByThematiques(PageTool pageTool, Long id);
-	
-
-
-
-// affiche dans l'ordre decroissant
-	Page<Articles> getPageOfEntitiesByThematiquesOrderDesc(PageTool pageTool, Long id);
-	Page<Articles> getPageOfEntitiesBySubThematiquesOrderDesc(PageTool pageTool, Long id);
 
 
 

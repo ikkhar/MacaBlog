@@ -48,9 +48,9 @@ export class ArticleService {
  // requette pour charger 10 articles à chaque clique:
 
 
-public getTenArticlesByClick(nbElementToShow:number): Promise<any> {
+public getTenArticlesByClick(indexFrom:number): Promise<any> {
     let promise = new Promise((resolve, reject) => {
-        this.api.get({endpoint: '/articles/getTenArticlesByClick', queryParams: { "clickShowMore":nbElementToShow} })
+        this.api.get({endpoint: '/articles/getTenArticlesByClick', queryParams: { "indexFrom":indexFrom} })
             .then(
                 res => {
                     resolve(res);

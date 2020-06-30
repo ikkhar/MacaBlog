@@ -146,34 +146,6 @@ public class ArticlesServiceImpl implements ArticlesService {
 
 	// Affiche la liste de tout les articles dans l'ordre decroissant par id
 	// d'articles
-	@Override
-	public Page<Articles> getPageOfEntities(PageTool pageTool) {
-		return articlesRepository.findAllByOrderByIdDesc(pageTool.requestPage());
-	}
-//*****************************/////*********************///////*********************////*************
-// Toute les methodes qui appel la clase page affiche la liste par 10 articles par page	
-
-	// Affiche dans l'ordre croissant par Id de thematiques
-
-	@Override
-	public Page<Articles> getPageOfEntitiesByThematiques(PageTool pageTool, Long id) {
-		// TODO Auto-generated method stub
-		return articlesRepository.findByThematiquesId(pageTool.requestPage(), id);
-	}
-	// repository.findAll(Sort.by(Sort.Direction.DESC, id));
-
-// Affiche dans l'ordre decroissant par Id de thematiques
-	@Override
-	public Page<Articles> getPageOfEntitiesByThematiquesOrderDesc(PageTool pageTool, Long id) {
-		// TODO Auto-generated method stub
-		return articlesRepository.findByThematiquesIdOrderByIdDesc(pageTool.requestPage(), id);
-	}
-
-	@Override
-	public Page<Articles> getPageOfEntitiesBySubThematiquesOrderDesc(PageTool pageTool, Long id) {
-		// TODO Auto-generated method stub
-		return articlesRepository.findBySubThematiquesIdOrderByIdDesc(pageTool.requestPage(), id);
-	}
 
 	@Override
 	public Optional<List<Articles>> getArticlesByAuteurId(Long id) {
@@ -188,29 +160,58 @@ public class ArticlesServiceImpl implements ArticlesService {
 	}
 
 // Methode pour affciher 10 articles à chaque cliques ShowMore :
-	@Override
-	public List<Articles> getAllArticlesByClick(Long ClickShowMore) {
-		ArrayList<Articles> listeAllArticles = new ArrayList<Articles>();
-		listeAllArticles.addAll(this.articlesRepository.findAllByOrderByIdDesc());
-		ArrayList<Articles> listTenArticlesByClick = new ArrayList<Articles>();
-		// int nbreClick=0;
-		for (int i = 0; i < 10 + 10 * ClickShowMore; i++) {
-			listTenArticlesByClick.add(listeAllArticles.get(i));
-		}
-		return listTenArticlesByClick;
-	}
+//	@Override
+//	public List<Articles> getAllArticlesByClick(Long ClickShowMore) {
+//		ArrayList<Articles> listeAllArticles = new ArrayList<Articles>();
+//		listeAllArticles.addAll(this.articlesRepository.findAllByOrderByIdDesc());
+//		ArrayList<Articles> listTenArticlesByClick = new ArrayList<Articles>();
+//		// int nbreClick=0;
+//		for (int i = 0; i < 10 + 10 * ClickShowMore; i++) {
+//			listTenArticlesByClick.add(listeAllArticles.get(i));
+//		}
+//		return listTenArticlesByClick;
+//	}
+	// affichage de la liste de tout articles Id par chargement de sublist de 10 articles 
+	// --> coté front dans promise
+		@Override
+		public List<Articles> getAllArticlesByClick( int indexFrom) {
+			ArrayList<Articles> listeAllArticles = new ArrayList<Articles>();
+			listeAllArticles.addAll(this.articlesRepository.findAllByOrderByIdDesc());
+			if (listeAllArticles.size()- indexFrom <= 0) {
+				return new ArrayList<Articles>();
+			} else if (listeAllArticles.size() - indexFrom >= 10) {
+				int indexTo = indexFrom + 10;
+				return listeAllArticles.subList(indexFrom, indexTo);
+			} else {
+				int indexTo = indexFrom + (listeAllArticles.size() % 10);
+				return listeAllArticles.subList(indexFrom, indexTo);
+			}
 
+
+			
+		}
+
+	// affichage de la liste des articlespar thematique Id par chargement de sublist de 10 articles
 	@Override
-	public List<Articles> getAllArticlesByThematiquesIdByClick(Long id, Long ClickShowMore) {
+	public List<Articles> getAllArticlesByThematiquesIdByClick(Long id, int indexFrom) {
 		ArrayList<Articles> listeAllArticlesByThematiquesId = new ArrayList<Articles>();
 		listeAllArticlesByThematiquesId.addAll(this.articlesRepository.findByThematiquesIdOrderByIdDesc(id));
-		ArrayList<Articles> listeAllArticlesByThematiquesIdByClick = new ArrayList<Articles>();
-		// int nbreClick=0;
-		for (int i = 0; i < 10 + 10 * ClickShowMore; i++) {
-			listeAllArticlesByThematiquesIdByClick.add(listeAllArticlesByThematiquesId.get(i));
+		if (listeAllArticlesByThematiquesId.size()- indexFrom <= 0) {
+			return new ArrayList<Articles>();
+		} else if (listeAllArticlesByThematiquesId.size() - indexFrom >= 10) {
+			int indexTo = indexFrom + 10;
+			return listeAllArticlesByThematiquesId.subList(indexFrom, indexTo);
+		} else {
+			int indexTo = indexFrom + (listeAllArticlesByThematiquesId.size() % 10);
+			return listeAllArticlesByThematiquesId.subList(indexFrom, indexTo);
 		}
-		return listeAllArticlesByThematiquesIdByClick;
+
+
+		
 	}
+
+	
+	
 
 	// Methode pour enlver de l'affichage 10 articles à chaque cliques ShowLess :
 
@@ -256,31 +257,27 @@ public class ArticlesServiceImpl implements ArticlesService {
 	public List<Articles> removeTenArticlesByClick(int clickShowLess) {
 		ArrayList<Articles> listeAllArticles = new ArrayList<Articles>();
 		listeAllArticles.addAll(this.articlesRepository.findAllByOrderByIdDesc());
-		//ArrayList<Articles> listTenArticlesByClick = new ArrayList<Articles>();
+		// ArrayList<Articles> listTenArticlesByClick = new ArrayList<Articles>();
 		for (int i = listeAllArticles.size() - 10 * clickShowLess; i < listeAllArticles.size(); i++) {
 			Iterator<Articles> itr = listeAllArticles.iterator();
-			
+
 			while (itr.hasNext()) {
-			Articles listeAllArticle=itr.next();
+				Articles listeAllArticle = itr.next();
 				if (clickShowLess != 0) {
 					itr.remove();
 					System.out.println(">>> liste articles apres suppresion de 10: " + listeAllArticles);
-				} 
+				}
 //				else {
 //					listeAllArticles.addAll(this.articlesRepository.findAllByOrderByIdDesc());
 //				}
-			} 
-			
+			}
+
 		}
-		Set<Articles>mySet= new HashSet<Articles>(listeAllArticles);
-		List<Articles> listTenArticlesByClick=new   ArrayList<Articles>(mySet);
-		return  listTenArticlesByClick;
+		Set<Articles> mySet = new HashSet<Articles>(listeAllArticles);
+		List<Articles> listTenArticlesByClick = new ArrayList<Articles>(mySet);
+		return listTenArticlesByClick;
 	}
 
-	
-	
-	
-	
 	@Override
 	public List<Articles> removeAllArticlesByThematiquesIdByClick(Long id, Long nbreClick) {
 		ArrayList<Articles> listeAllArticlesByThematiquesId = new ArrayList<Articles>();
@@ -301,4 +298,7 @@ public class ArticlesServiceImpl implements ArticlesService {
 		return sizeListAllArticlesBackend;
 	}
 
+	
+	
+	
 }
