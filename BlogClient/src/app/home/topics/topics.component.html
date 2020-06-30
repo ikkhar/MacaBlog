@@ -1,3 +1,4 @@
+<!-- Spinner-->
 <div *ngIf="isloading" class="background-spinner">
   <div class="spinner">
     <mat-progress-spinner class="spinner" mode="indeterminate"></mat-progress-spinner>
@@ -5,10 +6,33 @@
 </div>
 
 
-<mat-nav-list>
+<!-- version desktop -->
+<div fxLayout="row" fxFlex="100">
+  <mat-nav-list>
     <h3 class="titre-topic">Topics</h3>
-    <mat-list-item *ngFor="let topic of topics" class="texte-item">
-        <a (click)= "detailsTopics(topic.id)" routerLinkActive="active-link">{{topic.name}}</a>
-    </mat-list-item>
-</mat-nav-list>
+    <mat-list-item *ngFor="let topic of topics" class="texte-item" [routerLinkActive]="['is-active']">
+        <a (click)= "detailsTopics(topic.id)"  routerLinkActive="active" [routerLink]="'/articles/thematique/' + (topic.id)" >{{topic.name}}</a>    </mat-list-item>
+  </mat-nav-list>
+</div>
 
+
+<!-- Version smartphone -->
+<mat-accordion fxFlex="100" fxHide> <!-- [fxHide.md]="isNotDesktop()"[fxHide.lg]="isNotDesktop()"[fxHide.xl]="isNotDesktop()"*/ -->
+    
+  <mat-expansion-panel class="mat-elevation-z0 topicsPhone" (open)="panelOpenState = true"
+                       (closed)="panelOpenState = false">
+    <mat-expansion-panel-header>
+      <mat-panel-title>
+          <h3 class="titre-topic">Topics</h3>
+      </mat-panel-title>
+      <!--<mat-panel-description>
+        Currently I am {{panelOpenState ? 'open' : 'closed'}}
+      </mat-panel-description>-->
+    </mat-expansion-panel-header>
+    <mat-nav-list>
+      <mat-list-item *ngFor="let topic of topics" class="texte-item">
+          <a matLine href="topics/{{ topic }}">{{ topic }} </a>
+      </mat-list-item>
+  </mat-nav-list>
+  </mat-expansion-panel>
+</mat-accordion>

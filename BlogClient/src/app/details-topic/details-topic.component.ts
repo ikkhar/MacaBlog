@@ -15,20 +15,21 @@ import { Article } from 'src/app/models/article';
 export class DetailsTopicComponent implements OnInit, AfterViewChecked {
 
   public isloading: boolean= false;
-  id: number;
-  name: string;
   public article: Article;
   public topic: Topic;
   max=10;
   public clickShowMore: number = 0
   highlighted: boolean = false;
+  //edited: boolean; // Pour essayer de faire apparaitre/masquer la phrase "il n'y a pas d'article..."
+  //public topicLength: 'string';
 
-  public edited = false;
+  //public length: number;
+  //public edited = false;
 
   constructor(private articleService: ArticleService, private topicsService: TopicsService, private route: ActivatedRoute, private router: Router, private highlightService: HighlightService) {
-    
+
     this.clickShowMore = 0; // Je le met à 0 je sais pas si c'est une bonne idée ou pas
-    
+
   }
   /**
    * Highlight blog post when it's ready
@@ -40,12 +41,25 @@ export class DetailsTopicComponent implements OnInit, AfterViewChecked {
     }
   }
 
- async ngOnInit()  {
+  async ngOnInit() {
+    this.route.params.subscribe( async (params) =>  {
+      this.isloading=true;
+      const id = params.id;
 
-  const id = this.route.snapshot.params['id'];
-  this.topic = await this.topicsService.findById(id);
+      this.topic = await this.topicsService.findById(id)
+        .finally (()=> this.isloading=false);
+      
+      /*const id = this.route.snapshot.params['id'];
+    this.topic = await this.topicsService.findById(id).then(res => {
+      this.article = res;*/
 
- }
+    })
+
+
+
+
+
+  }
 
   detailsArticle(id: number){
     this.router.navigate(['articles', id]);
@@ -65,16 +79,15 @@ export class DetailsTopicComponent implements OnInit, AfterViewChecked {
     this.max = this.max + 10;
   }
 
+  /* // Pour essayer de faire apparaitre/masquer la phrase "il n'y a pas d'article..."
   showPhrase() {
     this.edited = true;
   }
   noShowPhrase() {
     this.edited = false;
-  }
-  
+  }*/
 }
 
 
 
 
-    

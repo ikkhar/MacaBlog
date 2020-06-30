@@ -34,10 +34,16 @@ export class ArticleService {
 }
 
 
+  public getArticlesByThematiquesId(id: number): Promise<any> {
+    return this.api.get({endpoint: `/articles/thematiques/${id}` })
+
+  }
+
   public getArticlesByAuteurId(id: number): Promise<any> {
     return this.api.get({endpoint: `/articles/auteur/${id}` })
 
   }
+
 
  // requette pour charger 10 articles à chaque clique:
 

@@ -1,14 +1,15 @@
 export class Auteur {
 
-  private _id: number;
-  private _firstname: string;
-  private _lastname: string;
+  private _id : number;
+  private _firstName: string;
+  private _lastName: string;
 
+  constructor(data: any){
 
-  constructor(data: any) {
-    this._id = data.id;
-    this._firstname = data.firstname;
-    this._lastname = data.lastname;
+    this._id= data.id;
+    this._firstName= data.firstName;
+    this._lastName= data.lastName;
+
   }
 
   /* GETTERS & SETTERS */
@@ -20,20 +21,20 @@ export class Auteur {
     this._id = value;
   }
 
-  get firstname(): string {
-    return this.firstname;
+  get firstName(): string {
+    return this._firstName;
   }
 
-  set firstname(value: string) {
-    this.firstname = value;
+  set firstName(value: string) {
+    this._firstName = value;
   }
 
-  get lastname(): string {
-    return this.lastname;
+  get lastName(): string {
+    return this._lastName;
   }
 
-  set lastname(value: string) {
-    this.lastname = value;
+  set lastName(value: string) {
+    this._lastName = value;
   }
 
 }

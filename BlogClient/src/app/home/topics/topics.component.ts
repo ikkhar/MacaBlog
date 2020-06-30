@@ -11,10 +11,15 @@ import { ArticleService } from 'src/app/services/articles.service';
   styleUrls: ['./topics.component.scss']
 })
 export class TopicsComponent implements OnInit, MatListModule {
+// debut version ts smartphone 
+panelOpenState = false;
+// fin verion ts smarphone
+
 
   public isloading: boolean;
   public topics: Topic[];
-  clickedIndex: number = 0
+  clickedIndex: number = 0;
+  
 
   constructor(private topicsService: TopicsService, private route: ActivatedRoute, private router: Router, private articlesService: ArticleService) { }
 
@@ -29,7 +34,7 @@ export class TopicsComponent implements OnInit, MatListModule {
 
   detailsTopics(id: number){
     this.router.navigate(['articles/thematique', id])
-    .finally(() => window.location.reload());    
+    
   }
 
 }

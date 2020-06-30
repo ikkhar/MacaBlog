@@ -118,6 +118,7 @@ public class ArticlesController {
 			@PathVariable(value = "thematiqueId") Long thematiqueId) {
 		List<Articles> listArticleByThemId = this.articlesService.getArticlesByThematiquesId(thematiqueId);
 
+
 		return new ResponseEntity<List<Articles>>(listArticleByThemId, HttpStatus.OK);
 	}
 	// else if (listArticleByThemId.size() == 0) {
@@ -129,6 +130,12 @@ public class ArticlesController {
 //***** affichage de la liste des articles par thematique Id par chargement de sublist de 10 articles
 //***** --> coté front dans la promise mettre un query param int et à inscrementer le renvoyer comme result--> this.indexFrom=this.indexFrom+10 ***********//
 
+		
+		
+
+	// Afficher les articles par thematique id 10 par 10 a chaque cliques
+
+
 	@GetMapping(value = "/thematique/{thematiqueId}/getAllArticlesByClick")
 	public ResponseEntity<List<Articles>> getAllArticlesByThematiquesIdByClick(
 			@PathVariable(value = "thematiqueId") Long thematiqueId, @RequestParam("indexFrom") int indexFrom) {
@@ -136,6 +143,7 @@ public class ArticlesController {
 		List<Articles> listArticlesByThemIdByClick = this.articlesService
 				.getAllArticlesByThematiquesIdByClick(thematiqueId, indexFrom);
 		return new ResponseEntity<List<Articles>>(listArticlesByThemIdByClick, HttpStatus.OK);
+
 	}
 
 //		else if (listArticlesByThemIdByClick.size() == 0) {

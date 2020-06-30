@@ -20,9 +20,9 @@
       <div class="oneBlog">
         <mat-card-title ><h1>{{article.title}}</h1></mat-card-title>
         <div class="divider bg-medium-primary"></div>
-        <mat-card-subtitle><p><span style="font-weight: bold;color:#FF4B82">#{{keywords | uppercase}}
+        <mat-card-subtitle><p><span style="font-weight: bold;color:#FF4B82">#{{article.thematiques["name"] | uppercase}}
           •  </span>{{article.datePublication | date:'dd MMMM yyyy': 'fr-FR'}}</p></mat-card-subtitle>
-        <mat-card-subtitle><p style="color:#393a3b"><i>{{auteur}}</i></p></mat-card-subtitle>
+        <mat-card-subtitle><p style="color:#393a3b"><i>{{article.auteurList[0].firstName}} {{article.auteurList[0].lastName | uppercase}}</i></p></mat-card-subtitle>
       </div>
     </div>
   </mat-card>
@@ -30,14 +30,21 @@
 <!-- Fin HEADER -->
 
 <!-- Debut BODY & Side -->
+
 <div fxLayout.lt-md="column" fxLayout="row" class="insideBlog" *ngIf="!isloading" >
-  <div class="paragraphBlog" fxFlex="60" [innerHTML]="article.contenent"></div>
+  <!-- Marge a gauche -->
+  <div fxLayout="column" class="" fxFlex="8"></div>
+
+  <div class="paragraphBlog" fxFlex="64" [innerHTML]="article.contenent"></div>
   <!-- Debut Side -->
-  <div fxLayout="column" class="shareBlog" fxFlex="40">
-    <app-share></app-share>
+  <div fxLayout="column" class="shareBlog" fxFlex="20">
+    <!-- Suppression du component en attendant creation du blog <app-share></app-share> -->
     <app-last-entries class="spaceShareLastEntries"></app-last-entries>
   </div>
+
   <!-- Fin Side -->
+  <!-- Marge a droite -->
+  <div fxLayout="column" class="" fxFlex="8"></div>
 </div>
 <!-- Debut BODY & Side -->
 

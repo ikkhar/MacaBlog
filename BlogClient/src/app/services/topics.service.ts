@@ -3,6 +3,7 @@ import { Topic } from '../models/topic';
 import { ApiHelperService } from './api-helpers.service';
 import { ActivatedRoute } from '@angular/router';
 import { ArticleService } from './articles.service';
+import { Thematique } from '../models/thematique';
 
 
 @Injectable({
@@ -11,6 +12,7 @@ import { ArticleService } from './articles.service';
 export class TopicsService {
   public topic: Topic[];
   clickShowMore: number;
+
 constructor(private api: ApiHelperService, private route: ActivatedRoute, private articleService: ArticleService) {
   this.topic = [];
   this.clickShowMore = 0; // Je le met à 0 je sais pas si c'est une bonne idée ou pas

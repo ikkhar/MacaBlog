@@ -8,6 +8,7 @@
     "adresse":"7 Chemin Valentin 060600 Antibes",
     "qualification": "Formateur, Développeur Fullstack en freelance", 
     "organisation":"Macademia", 
+
     "photo": false,
     "articlesList": []
     
@@ -21,6 +22,7 @@
     "adresse":"7 Chemin Valentin 060600 Antibes",
     "qualification": "Formateur, Développeur Fullstack en freelance", 
     "organisation":"Macademia",
+
     "photo": false,
     "articlesList": []
     }

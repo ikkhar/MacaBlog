@@ -1,7 +1,7 @@
-<div fxLayout="row" [fxHide.xs]="isMobile()">
+<!--<div fxLayout="row" [fxHide.xs]="isMobile()">
   <app-topics-phone fxFlex="100"></app-topics-phone>
-</div>
-<div fxLayout="row" fxLayout.lt-sm="column">
-  <app-topics fxFlex="30" [fxHide.xs]="isNotMobile()"></app-topics>
+</div>-->
+<div fxLayout="row" ><!--fxLayout.lt-sm="column"-->
+  <app-topics fxFlex="20" ></app-topics> <!--[fxHide.xs]="isNotMobile()"-->
   <app-article-list fxFlex="70"></app-article-list>
 </div>
