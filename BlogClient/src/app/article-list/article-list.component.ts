@@ -12,7 +12,7 @@ export class ArticleListComponent implements OnInit {
   // Faire apparaitre le spinner dans ce component
   public articles: Article[];
   public isloading: boolean;
-  public clickShowMore: number = 1;
+  public indexFrom: number = 0;
   public sizeListAllArticlesFromBack :number;
   max = 10; // c'est à cause de ce petit coquin, il limité l'affichage à 10 ! à remplacer dans html par articles.length
  
@@ -35,7 +35,7 @@ export class ArticleListComponent implements OnInit {
   async ngOnInit() {
 
     this.isloading = true;
-    this.clickShowMore = 0;
+    this.indexFrom = 0;
     // this.clickShowMore=this.clickShowMore*10 ;
     await this.getAllArticlesByClick() // On passe par notre méthode pour éviter la redondance de code
       .finally(() => this.isloading = false);
@@ -45,12 +45,12 @@ export class ArticleListComponent implements OnInit {
 
   getAllArticlesByClick(): Promise<any> {
   
-    return this.articleService.getTenArticlesByClick(this.clickShowMore).then(res => {
+    return this.articleService.getTenArticlesByClick(this.indexFrom).then(res => {
       this.articles = res;
      // this.articles.length=res.length;
       console.log(this.articles);
-      this.clickShowMore += 1;
-      this.length = res.totalElements;
+      this.indexFrom =this.indexFrom+1;
+      
     });
   }
 

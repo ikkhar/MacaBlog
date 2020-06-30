@@ -2,7 +2,7 @@
   {
     "id": 1,
     "name": "Angular"
-	
+  
   },
   {
     "id": 2,
@@ -30,11 +30,7 @@
   },
   {
     "id": 8,
-
-
-    "name": "Conception orient�e objet"
-
-
+    "name": "Conception orientée objet"
   },
   {
     "id": 9,
@@ -67,7 +63,7 @@
   {
     "id": 16,
     "name": "Intégration continue"
-	
+  
   },
   {
     "id": 17,
@@ -128,7 +124,7 @@
     {
     "id": 31,
     "name": "Node.js"
-	
+  
   },
   {
     "id": 32,

@@ -61,12 +61,13 @@ public class ArticlesController {
 		List<Articles> listOrderedArticles = this.articlesService.getAllChronologicArticles();
 		return new ResponseEntity<List<Articles>>(listOrderedArticles, HttpStatus.OK);
 	}
+
 	// requette pour trouver la liste des articles
-		@GetMapping(value = "/size_List")
-		public ResponseEntity<Long> getsizeAllArticles() {
-			Long sizeListAllArticlesBackend = this.articlesService.getSizeAllArticlesList();
-			return new ResponseEntity<Long>(sizeListAllArticlesBackend, HttpStatus.OK);
-		}
+	@GetMapping(value = "/size_List")
+	public ResponseEntity<Long> getsizeAllArticles() {
+		Long sizeListAllArticlesBackend = this.articlesService.getSizeAllArticlesList();
+		return new ResponseEntity<Long>(sizeListAllArticlesBackend, HttpStatus.OK);
+	}
 // requette pour trouver la liste des articles dans l'ordre decroissant 
 
 	@GetMapping(value = "")
@@ -101,23 +102,13 @@ public class ArticlesController {
 		return new ResponseEntity<Articles>(articlesFromDb, HttpStatus.OK);
 	}
 
-	// Afficher les articles par thematique id 10 par 10 a chaque cliques
 
-	// afficher les articles par 10 à chaque click
-
-	@GetMapping(value = "/removeTenArticlesByClick")
-	public ResponseEntity<List<Articles>> removeTenArticlesByClick(@RequestParam("clickShowLess") int clickShowLess) {
-		List<Articles> listArticlesByClick = this.articlesService.removeTenArticlesByClick(clickShowLess);
-		return new ResponseEntity<List<Articles>>(listArticlesByClick, HttpStatus.OK);
-	}
-
-	
-
-	// afficher les articles par 10 à chaque click
+//***** affichage de la liste de tout les articles par chargement de sublist de 10 articles
+//***** --> coté front dans la promise mettre un query param int indexFrom  et à inscrementer le renvoyer comme result--> this.indexFrom=this.indexFrom+10 ***********//
 
 	@GetMapping(value = "/getTenArticlesByClick")
-	public ResponseEntity<List<Articles>> getTenArticlesByClick(@RequestParam("clickShowMore") Long clickShowMore) {
-		List<Articles> listArticlesByClick = this.articlesService.getAllArticlesByClick(clickShowMore);
+	public ResponseEntity<List<Articles>> getTenArticlesByClick(@RequestParam("indexFrom") int indexFrom) {
+		List<Articles> listArticlesByClick = this.articlesService.getAllArticlesByClick(indexFrom);
 		return new ResponseEntity<List<Articles>>(listArticlesByClick, HttpStatus.OK);
 	}
 
@@ -127,32 +118,31 @@ public class ArticlesController {
 			@PathVariable(value = "thematiqueId") Long thematiqueId) {
 		List<Articles> listArticleByThemId = this.articlesService.getArticlesByThematiquesId(thematiqueId);
 
-		if (listArticleByThemId.size() != 0) {
-			return new ResponseEntity<List<Articles>>(listArticleByThemId, HttpStatus.OK);
-		} else if (listArticleByThemId.size() == 0) {
-			throw new ResponseStatusException(HttpStatus.NOT_FOUND, "Il n'ya pas d'article pour cette thématique");
-		} else {
-			throw new ResponseStatusException(HttpStatus.BAD_REQUEST, "Aucune article trouvé");
-		}
+		return new ResponseEntity<List<Articles>>(listArticleByThemId, HttpStatus.OK);
 	}
-
-	// Afficher les articles par thematique id 10 par 10 a chaque cliques
+	// else if (listArticleByThemId.size() == 0) {
+//			throw new ResponseStatusException(HttpStatus.NOT_FOUND, "Il n'ya pas d'article pour cette thématique");
+//		} else {
+//			throw new ResponseStatusException(HttpStatus.BAD_REQUEST, "Aucune article trouvé");
+//		}
+////////////////////////////////////////////////////////////////////////////////////////////////////////
+//***** affichage de la liste des articles par thematique Id par chargement de sublist de 10 articles
+//***** --> coté front dans la promise mettre un query param int et à inscrementer le renvoyer comme result--> this.indexFrom=this.indexFrom+10 ***********//
 
 	@GetMapping(value = "/thematique/{thematiqueId}/getAllArticlesByClick")
 	public ResponseEntity<List<Articles>> getAllArticlesByThematiquesIdByClick(
-			@PathVariable(value = "thematiqueId") Long thematiqueId, @RequestParam("clickShowMore") Long clickShowMore) {
-		
-		List<Articles> listArticlesByThemIdByClick = this.articlesService.getAllArticlesByThematiquesIdByClick(thematiqueId, clickShowMore);
-		
-		if (listArticlesByThemIdByClick.size() != 0  ) {
-		
+			@PathVariable(value = "thematiqueId") Long thematiqueId, @RequestParam("indexFrom") int indexFrom) {
+
+		List<Articles> listArticlesByThemIdByClick = this.articlesService
+				.getAllArticlesByThematiquesIdByClick(thematiqueId, indexFrom);
 		return new ResponseEntity<List<Articles>>(listArticlesByThemIdByClick, HttpStatus.OK);
-	} else if (listArticlesByThemIdByClick.size() == 0) {
-		throw new ResponseStatusException(HttpStatus.NOT_FOUND, "Il n'ya pas d'article pour cette thématique");
-	} else {
-		throw new ResponseStatusException(HttpStatus.BAD_REQUEST, "Aucune article trouvé");
 	}
-	}
+
+//		else if (listArticlesByThemIdByClick.size() == 0) {
+//		throw new ResponseStatusException(HttpStatus.NOT_FOUND, "Il n'ya pas d'article pour cette thématique");
+//	} else {
+//		throw new ResponseStatusException(HttpStatus.BAD_REQUEST, "Aucune article trouvé");
+//	}
 
 	// Trouver les 10 derniers articles par l'id d'une thematique
 	@GetMapping(value = "/getLastTenArticlesByThematiqueId/{thematiqueId}")
@@ -199,60 +189,6 @@ public class ArticlesController {
 				.orElseThrow(() -> new ResponseStatusException(HttpStatus.BAD_REQUEST,
 						"Aucun matching avec le keyword : " + keyword));
 		return new ResponseEntity<List<String>>(listArticles, HttpStatus.OK);
-	}
-
-//****************************************************************************************************************************
-////////////////////////////////////// Affichage par 10 par page dans l'ordre decroissants de Id////////////////////////////////////////////////////////////
-//Route générique : Get Articles 10 By 10 with PageTool dans l'ordre chronologique par id decendant
-	@GetMapping(value = "/page/chronological_order")
-	public ResponseEntity<Page<Articles>> getArticlesPerPage(@Valid PageTool pageTool) {
-		if (pageTool != null) {
-			Page<Articles> listArticlesByPage = articlesService.getPageOfEntities(pageTool);
-			return new ResponseEntity<Page<Articles>>(listArticlesByPage, HttpStatus.OK);
-		} else {
-			throw new ResponseStatusException(HttpStatus.BAD_REQUEST, "Données en paramètre non valides");
-		}
-	}
-
-	// Route générique : Get Articles by thematique Id affichage de 10 By 10 with
-	// PageTool ordre decroissant
-	@GetMapping(value = "/page/thematique_desc/{thematiqueId}")
-	public ResponseEntity<Page<Articles>> getArticlesByThematiquesPerPageDesc(
-			@PathVariable(value = "thematiqueId") Long thematiqueId, @Valid PageTool pageTool) {
-		if (pageTool != null) {
-			Page<Articles> listArticlesByThematiquesByPage = articlesService
-					.getPageOfEntitiesByThematiquesOrderDesc(pageTool, thematiqueId);
-			return new ResponseEntity<Page<Articles>>(listArticlesByThematiquesByPage, HttpStatus.OK);
-		} else {
-			throw new ResponseStatusException(HttpStatus.BAD_REQUEST, "Données en paramètre non valides");
-		}
-	}
-
-	// Route générique : Get Articles by thematique Id affichage de 10 By 10 with
-	// PageTool ordre decroissant
-	@GetMapping(value = "/page/sub_thematique_desc/{sub_thematiqueId}")
-	public ResponseEntity<Page<Articles>> getArticlesBySubThematiquesPerPageDesc(
-			@PathVariable(value = "thematiqueId") Long sub_thematiqueId, @Valid PageTool pageTool) {
-		if (pageTool != null) {
-			Page<Articles> listArticlesBySubThematiquesByPage = articlesService
-					.getPageOfEntitiesBySubThematiquesOrderDesc(pageTool, sub_thematiqueId);
-			return new ResponseEntity<Page<Articles>>(listArticlesBySubThematiquesByPage, HttpStatus.OK);
-		} else {
-			throw new ResponseStatusException(HttpStatus.BAD_REQUEST, "Données en paramètre non valides");
-		}
-	}
-
-// Route générique : Get Articles 10 By 10 with PageTool dans l'ordre croissant de id
-	@GetMapping(value = "/page/thematique/{thematiqueId}")
-	public ResponseEntity<Page<Articles>> getArticlesByThematiquesPerPage(
-			@PathVariable(value = "thematiqueId") Long thematiqueId, @Valid PageTool pageTool) {
-		if (pageTool != null) {
-			Page<Articles> listArticlesByThematiquesByPage = articlesService.getPageOfEntitiesByThematiques(pageTool,
-					thematiqueId);
-			return new ResponseEntity<Page<Articles>>(listArticlesByThematiquesByPage, HttpStatus.OK);
-		} else {
-			throw new ResponseStatusException(HttpStatus.BAD_REQUEST, "Données en paramètre non valides");
-		}
 	}
 
 }
