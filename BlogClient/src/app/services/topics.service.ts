@@ -12,6 +12,7 @@ import { Thematique } from '../models/thematique';
 export class TopicsService {
   public topic: Topic[];
   clickShowMore: number;
+
 constructor(private api: ApiHelperService, private route: ActivatedRoute, private articleService: ArticleService) {
   this.topic = [];
   this.clickShowMore = 0; // Je le met à 0 je sais pas si c'est une bonne idée ou pas

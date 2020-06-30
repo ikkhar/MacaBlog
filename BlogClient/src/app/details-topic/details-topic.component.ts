@@ -20,8 +20,11 @@ export class DetailsTopicComponent implements OnInit, AfterViewChecked {
   max=10;
   public clickShowMore: number = 0
   highlighted: boolean = false;
+  //edited: boolean; // Pour essayer de faire apparaitre/masquer la phrase "il n'y a pas d'article..."
+  //public topicLength: 'string';
 
-  public edited = false;
+  //public length: number;
+  //public edited = false;
 
   constructor(private articleService: ArticleService, private topicsService: TopicsService, private route: ActivatedRoute, private router: Router, private highlightService: HighlightService) {
 
@@ -45,7 +48,17 @@ export class DetailsTopicComponent implements OnInit, AfterViewChecked {
 
       this.topic = await this.topicsService.findById(id)
         .finally (()=> this.isloading=false);
+      
+      /*const id = this.route.snapshot.params['id'];
+    this.topic = await this.topicsService.findById(id).then(res => {
+      this.article = res;*/
+
     })
+
+
+
+
+
   }
 
   detailsArticle(id: number){
@@ -66,13 +79,13 @@ export class DetailsTopicComponent implements OnInit, AfterViewChecked {
     this.max = this.max + 10;
   }
 
+  /* // Pour essayer de faire apparaitre/masquer la phrase "il n'y a pas d'article..."
   showPhrase() {
     this.edited = true;
   }
   noShowPhrase() {
     this.edited = false;
-  }
-
+  }*/
 }
 
 

@@ -127,14 +127,9 @@ public class ArticlesController {
 			@PathVariable(value = "thematiqueId") Long thematiqueId) {
 		List<Articles> listArticleByThemId = this.articlesService.getArticlesByThematiquesId(thematiqueId);
 
-		if (listArticleByThemId.size() != 0) {
+		
 			return new ResponseEntity<List<Articles>>(listArticleByThemId, HttpStatus.OK);
-		} else if (listArticleByThemId.size() == 0) {
-			throw new ResponseStatusException(HttpStatus.NOT_FOUND, "Il n'ya pas d'article pour cette thématique");
-		} else {
-			throw new ResponseStatusException(HttpStatus.BAD_REQUEST, "Aucune article trouvé");
-		}
-	}
+		} 
 
 	// Afficher les articles par thematique id 10 par 10 a chaque cliques
 
@@ -148,7 +143,7 @@ public class ArticlesController {
 		
 		return new ResponseEntity<List<Articles>>(listArticlesByThemIdByClick, HttpStatus.OK);
 	} else if (listArticlesByThemIdByClick.size() == 0) {
-		throw new ResponseStatusException(HttpStatus.NOT_FOUND, "Il n'ya pas d'article pour cette thématique");
+		throw new ResponseStatusException(HttpStatus.NOT_FOUND, "Il n'y a pas d'article pour cette thématique");
 	} else {
 		throw new ResponseStatusException(HttpStatus.BAD_REQUEST, "Aucune article trouvé");
 	}

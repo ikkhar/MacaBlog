@@ -1,4 +1,6 @@
 .mat-list-base {
+    width: 100%;
+    //display: inline-block;
     padding-left: 20%;
     padding-right: 10%;
 }
@@ -55,4 +57,28 @@ a.active {
   /* Avant : color: rgba(0, 0, 0, 1);*/
   text-align: center;
   margin-top: 20%;
+}
+
+/* Gestion du responsive */
+@media only screen and (max-width : 450px){
+.mat-form-field + .mat-form-field {
+    margin-left: 8px;
+}
+
+.topicsPhone {
+    border: 1px solid #dadada;
+    background-color: #f1f1f1;
+    margin: auto;
+    width:85%;
+}
+.texte-item {
+    color: #949ca5; /* Avant color: #adb5bd;*/
+}
+/*.texte-item:hover {
+    color: #212529;
+}
+.texte-item:active {
+    color: #FF4B82;
+    font-weight: 700;
+}*/
 }
