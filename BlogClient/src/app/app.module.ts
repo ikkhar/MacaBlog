@@ -1,35 +1,9 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { RouterModule, Routes } from '@angular/router';
 import { HttpClientModule } from '@angular/common/http';
-import { MatExpansionModule } from '@angular/material/expansion';
-import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
-
-import { AppComponent } from './app.component';
-import { HomeComponent } from './home/home.component';
-import { HeaderComponent } from './home/header/header.component';
-import { FooterComponent } from './home/footer/footer.component';
-import { ArticleListComponent } from './article-list/article-list.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { BlogComponent } from './blog/blog.component';
-import { MatCardModule } from '@angular/material/card';
-import { MatButtonModule } from '@angular/material/button';
-import { MatIconModule } from '@angular/material/icon';
-import { MatProgressBarModule } from '@angular/material/progress-bar';
-import { FlexLayoutModule } from '@angular/flex-layout';
-import { BlogEntryComponent } from './blog/blog-entry/blog-entry.component';
-import { ShareComponent } from './blog/share/share.component';
-import { LastEntriesComponent } from './blog/last-entries/last-entries.component';
-import { MatMenuModule } from '@angular/material/menu';
-import { MatToolbarModule } from '@angular/material/toolbar';
-import { MatListModule } from '@angular/material/list';
-import { TopicsComponent } from './home/topics/topics.component';
-import { TopicsPhoneComponent } from './home/topics/topics-phone/topics-phone.component';
-import { ArticleService } from './services/articles.service';
-import { HighlightService } from './services/highlight.service';
-import { DetailsArticleComponent } from './details-article/details-article.component';
-import { TopicsService } from './services/topics.service';
-import { DetailsTopicComponent } from './details-topic/details-topic.component';
+import { AppRoutingModule } from '../app/app.routing.module';
+import { MaterialModule } from '../app/module/material.module';
 import { ShareIconsModule } from 'ngx-sharebuttons/icons';
 import { ShareButtonsModule } from 'ngx-sharebuttons/buttons';
 import { registerLocaleData } from '@angular/common';
@@ -37,21 +11,25 @@ import localeFr from '@angular/common/locales/fr';
 registerLocaleData(localeFr, 'fr');
 import { LOCALE_ID } from '@angular/core';
 
+// Partie Component //
+import { AppComponent } from './app.component';
+import { HomeComponent } from './home/home.component';
+import { HeaderComponent } from './home/header/header.component';
+import { FooterComponent } from './home/footer/footer.component';
+import { ArticleListComponent } from './article-list/article-list.component';
+import { DetailsArticleComponent } from './details-article/details-article.component';
+import { BlogComponent } from './blog/blog.component';
+import { BlogEntryComponent } from './blog/blog-entry/blog-entry.component';
+import { ShareComponent } from './blog/share/share.component';
+import { LastEntriesComponent } from './blog/last-entries/last-entries.component';
+import { TopicsComponent } from './home/topics/topics.component';
+import { TopicsPhoneComponent } from './home/topics/topics-phone/topics-phone.component';
+import { DetailsTopicComponent } from './details-topic/details-topic.component';
+
+
 // Partie share - modification CS //
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 
-
-
-
-const blogRoutes: Routes = [
-{ path: 'home', component: HomeComponent },
-{ path: 'blog', component: BlogComponent },
-{ path: 'articles/:id', component: DetailsArticleComponent},
-{ path: 'articles/:id', component: LastEntriesComponent},
-{ path: 'articles/thematique/:id', component: BlogComponent},
-{ path: '', redirectTo: 'home', pathMatch: 'full' },
-{ path: '**', redirectTo: 'home' }
-];
 
 
 @NgModule({
@@ -72,28 +50,16 @@ const blogRoutes: Routes = [
    ],
    imports: [
       BrowserModule,
-      MatCardModule,
+      AppRoutingModule,
       BrowserAnimationsModule,
-      MatButtonModule,
-      MatIconModule,
       HttpClientModule,
-      RouterModule.forRoot(blogRoutes),
-      MatProgressBarModule,
-      FlexLayoutModule,
-      MatMenuModule,
-      MatToolbarModule,
-      MatListModule,
-      MatExpansionModule,
-      MatProgressSpinnerModule,
+      MaterialModule,
       ShareButtonsModule,
       ShareIconsModule,
       FontAwesomeModule,
 
    ],
    providers: [
-      ArticleService,
-      HighlightService,
-      TopicsService,
       { provide: LOCALE_ID, useValue: "fr" }
    ],
    bootstrap: [

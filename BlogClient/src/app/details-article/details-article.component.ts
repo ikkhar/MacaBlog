@@ -21,14 +21,14 @@ export class DetailsArticleComponent implements OnInit {
 
   public isloading: boolean;
   id: number;
+  public article: Article;
   auteurList: Auteur[];
   thematiques: Thematique[];
-  public article: Article;
   public topics: Topic[];
 
 
 
- 
+
   highlighted: boolean = false;
 
 
