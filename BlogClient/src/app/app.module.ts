@@ -18,7 +18,6 @@ import { HeaderComponent } from './home/header/header.component';
 import { FooterComponent } from './home/footer/footer.component';
 import { ArticleListComponent } from './article-list/article-list.component';
 import { DetailsArticleComponent } from './details-article/details-article.component';
-import { BlogComponent } from './blog/blog.component';
 import { BlogEntryComponent } from './blog/blog-entry/blog-entry.component';
 import { ShareComponent } from './blog/share/share.component';
 import { LastEntriesComponent } from './blog/last-entries/last-entries.component';
@@ -37,7 +36,6 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
       AppComponent,
       ArticleListComponent,
       HomeComponent,
-      BlogComponent,
       BlogEntryComponent,
       ShareComponent,
       LastEntriesComponent,

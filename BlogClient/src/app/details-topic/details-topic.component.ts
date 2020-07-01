@@ -20,6 +20,10 @@ export class DetailsTopicComponent implements OnInit, AfterViewChecked {
   max=10;
   public clickShowMore: number = 0
   highlighted: boolean = false;
+  topics = [
+     Topic
+  ]
+
   //edited: boolean; // Pour essayer de faire apparaitre/masquer la phrase "il n'y a pas d'article..."
   //public topicLength: 'string';
 
@@ -29,6 +33,7 @@ export class DetailsTopicComponent implements OnInit, AfterViewChecked {
   constructor(private articleService: ArticleService, private topicsService: TopicsService, private route: ActivatedRoute, private router: Router, private highlightService: HighlightService) {
 
     this.clickShowMore = 0; // Je le met à 0 je sais pas si c'est une bonne idée ou pas
+  
 
   }
   /**
@@ -48,7 +53,7 @@ export class DetailsTopicComponent implements OnInit, AfterViewChecked {
 
       this.topic = await this.topicsService.findById(id)
         .finally (()=> this.isloading=false);
-      
+
       /*const id = this.route.snapshot.params['id'];
     this.topic = await this.topicsService.findById(id).then(res => {
       this.article = res;*/
@@ -56,10 +61,8 @@ export class DetailsTopicComponent implements OnInit, AfterViewChecked {
     })
 
 
-
-
-
   }
+
 
   detailsArticle(id: number){
     this.router.navigate(['articles', id]);

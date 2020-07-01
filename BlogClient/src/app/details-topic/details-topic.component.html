@@ -6,7 +6,7 @@
 
 
 
-<ng-container *ngIf="!isloading && topic">
+<ng-container *ngIf="!isloading">
   <div class="scroll-bar"></div>
   <div class="divBlogList" *ngFor="let article of topic">
   <mat-card  class="mat-elevation-z0">
@@ -16,7 +16,7 @@
     <button (click)= "detailsArticle(article.id)" mat-stroked-button color="accent" class="borderNull">En savoir plus</button>
   </mat-card>
 </div>
-<div class="centerButton" >
+<div class="centerButton" *ngIf="topics.length === 0">
   <button (click)="getAllArticlesByThematiqueByClick(topic.id)" mat-stroked-button color="accent"><span class="material-icons">
     expand_more
   </span>Montrer plus d'articles<span class="material-icons">
@@ -28,11 +28,6 @@
 
 
 <!-- version pas d'article -->
-<ng-container *ngIf="!isloading && topic">
-  <div class="divBlogList">
-    <mat-card  class="mat-elevation-z0"> 
-      <h3>Il n'y a pas d'article pour cette thématique</h3>
-    </mat-card>
-  </div>
-  
-</ng-container>
+
+
+

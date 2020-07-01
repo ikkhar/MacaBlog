@@ -15,14 +15,14 @@ export class ArticleListComponent implements OnInit {
   public indexFrom: number = 0;
   public sizeListAllArticlesFromBack :number;
   max = 10; // c'est à cause de ce petit coquin, il limité l'affichage à 10 ! à remplacer dans html par articles.length
- 
+
   length: number;
   event: boolean = false;
   constructor(private articleService: ArticleService, private route: ActivatedRoute, private router: Router) {
     this.articles = [];
   }
 
-  //Methode Benoit avec findAll() 
+  //Methode Benoit avec findAll()
   /*async ngOnInit(){
 
     this.isloading=true;
@@ -31,7 +31,7 @@ export class ArticleListComponent implements OnInit {
       .then((res) => this.articles = res)
       .finally (()=> this.isloading=false);
   }*/
- 
+
   async ngOnInit() {
 
     this.isloading = true;
@@ -39,18 +39,18 @@ export class ArticleListComponent implements OnInit {
     // this.clickShowMore=this.clickShowMore*10 ;
     await this.getAllArticlesByClick() // On passe par notre méthode pour éviter la redondance de code
       .finally(() => this.isloading = false);
-   
-    
+
+
   }
 
   getAllArticlesByClick(): Promise<any> {
-  
+
     return this.articleService.getTenArticlesByClick(this.indexFrom).then(res => {
       this.articles = res;
      // this.articles.length=res.length;
       console.log(this.articles);
       this.indexFrom =this.indexFrom+1;
-      
+
     });
   }
 
@@ -59,25 +59,25 @@ export class ArticleListComponent implements OnInit {
   detailsArticle(id: number) {
     this.router.navigate(['articles', id])
   }
-// Requette qui renvoie la taille de la liste des articles du back
+// Requête qui renvoie la taille de la liste des articles du back
 getSizeAllArticlesListFromBack(): Promise<any> {
-  
+
   return this.articleService.getsizeAllArticlesList().then(res => {
     this.sizeListAllArticlesFromBack = res;
     console.log(this.sizeListAllArticlesFromBack );
-    
+
   });
 }
- // Methode pour mettre une condition sur la taille maximal qui est chargée% à la taille de la liste des articles du back
+ // Méthode pour mettre une condition sur la taille maximale qui est chargée à la taille de la liste des articles du back
 
 conditionToHideButton(){
   //this.getAllArticlesByClick();
-  //this.getSizeAllArticlesListFromBack()  
- 
+  //this.getSizeAllArticlesListFromBack()
+
   if ( this.length == this.sizeListAllArticlesFromBack  ) {
     return this.sizeListAllArticlesFromBack ;
-  } 
- 
+  }
+
 }
 
 
