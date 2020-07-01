@@ -3,7 +3,7 @@ export class Topic {
   private _id: number;
   private _name: string;
   private _articles: [];
-  private article: [];
+
 
   constructor(data: any) {
     this._id = data.id;

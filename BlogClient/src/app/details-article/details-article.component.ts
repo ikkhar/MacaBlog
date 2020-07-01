@@ -1,9 +1,8 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, HostListener } from '@angular/core';
 import { Article } from '../models/article';
 import { ArticleService } from '../services/articles.service';
 import { ActivatedRoute, Data, Router } from '@angular/router';
 import { HighlightService } from '../services/highlight.service';
-import { HostListener } from '@angular/core'
 import { Auteur } from '../models/auteur';
 import { Thematique } from '../models/thematique';
 import { TopicsService } from '../services/topics.service';
