@@ -45,7 +45,7 @@ export class ArticleService {
   }
 
 
- // requette pour charger 10 articles à chaque clique:
+ // requête pour charger 10 articles à chaque click:
 
 
 public getTenArticlesByClick(indexFrom:number): Promise<any> {

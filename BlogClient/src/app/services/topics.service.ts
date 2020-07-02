@@ -30,7 +30,8 @@ public findByName(name: string): Promise<any> {
   return this.api.get({endpoint: `/articles/thematiques/name/${name}`})
 }
 
-// Charger du back 10 articles à chaque click
+// Charger du back 10 articles à chaque click:
+
 public getTenArticlesByThematiqueByClick(id: number,nbElementToShow:number): Promise<any> {
   let promise = new Promise((resolve, reject) => {
       this.api.get({endpoint: `/articles/thematique/${id}/getAllArticlesByClick`, queryParams: { "clickShowMore":nbElementToShow} })

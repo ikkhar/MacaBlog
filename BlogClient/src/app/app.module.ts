@@ -1,5 +1,5 @@
 import { BrowserModule } from '@angular/platform-browser';
-import { NgModule } from '@angular/core';
+import { NgModule, LOCALE_ID } from '@angular/core';
 import { HttpClientModule } from '@angular/common/http';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AppRoutingModule } from '../app/app.routing.module';
@@ -9,7 +9,7 @@ import { ShareButtonsModule } from 'ngx-sharebuttons/buttons';
 import { registerLocaleData } from '@angular/common';
 import localeFr from '@angular/common/locales/fr';
 registerLocaleData(localeFr, 'fr');
-import { LOCALE_ID } from '@angular/core';
+
 
 // Partie Component //
 import { AppComponent } from './app.component';

@@ -14,7 +14,7 @@ export class ArticleListComponent implements OnInit {
   public isloading: boolean;
   public indexFrom: number = 0;
   public sizeListAllArticlesFromBack :number;
-  max = 10; // c'est à cause de ce petit coquin, il limité l'affichage à 10 ! à remplacer dans html par articles.length
+  max = 10; // Limite l'affichage à 10 ! à remplacer dans html par articles.length
 
   length: number;
   event: boolean = false;
@@ -22,15 +22,6 @@ export class ArticleListComponent implements OnInit {
     this.articles = [];
   }
 
-  //Methode Benoit avec findAll()
-  /*async ngOnInit(){
-
-    this.isloading=true;
-
-    await this.articleService.findAll()
-      .then((res) => this.articles = res)
-      .finally (()=> this.isloading=false);
-  }*/
 
   async ngOnInit() {
 
@@ -49,7 +40,7 @@ export class ArticleListComponent implements OnInit {
       this.articles = res;
      // this.articles.length=res.length;
       console.log(this.articles);
-      this.indexFrom =this.indexFrom+1;
+      this.indexFrom =this.indexFrom+10;
 
     });
   }
