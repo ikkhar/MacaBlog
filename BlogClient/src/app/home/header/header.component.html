@@ -1,40 +1,37 @@
 <header>
   <div>
-  <div class="logoMacablog" >
+    <div class="logoMacablog" >
       <a [routerLink]="['/home']"><img src="/assets/pictures/logoMacablog.jpg " class="img-fluid img-brand" alt= "logo " style="width: 45px; "></a>
 
-    <div class="menuTrigger">
-      <button mat-button [matMenuTriggerFor]="menu" class="boutonMenu"><i class="material-icons" >dehaze</i></button>
-      <mat-menu #menu="matMenu" class="menuHeader">
-          <a mat-menu-item [routerLink]="['/home']">Home</a>
-         
-      </mat-menu>
+      <div class="menuTrigger">
+        <button mat-button [matMenuTriggerFor]="menu" class="boutonMenu"><i class="material-icons" >dehaze</i></button>
+          <mat-menu #menu="matMenu" class="menuHeader">
+            <a mat-menu-item [routerLink]="['/home']">Home</a>
+          </mat-menu>
+      </div>
     </div>
-  </div>
       <div class="navbar">
-          <mat-toolbar class="toolbar positionToolbar" fxLayoutAlign="center center">
-              <div class="menu">
-                  <div class="menuDisp" fxLayoutAlign="center">
-                      <div class="button">
-                          <a [routerLink]="['/home']" mat-button>Home</a>
-                      </div>
-
-                  </div>
+        <mat-toolbar class="toolbar positionToolbar" fxLayoutAlign="center center">
+          <div class="menu">
+            <div class="menuDisp" fxLayoutAlign="center">
+              <div class="button">
+                <a [routerLink]="['/home']" mat-button>Home</a>
               </div>
-          </mat-toolbar>
+            </div>
+          </div>
+        </mat-toolbar>
       </div>
 
       <div class="navbar-right">
         <mat-toolbar class="toolbar positionToolbar" fxLayoutAlign="center center">
-            <div class="menu">
-                <div class="menuDisp" fxLayoutAlign="center">
-
-                    <div class="button floatRight">
-                        <a href="https://www.macademia.fr/contact" target="_blank"><img class="iconSocialHeader" src="/assets/pictures/icon-contact.png" alt="Contact" /></a>
-                  </div>
-                </div>
+          <div class="menu">
+            <div class="menuDisp" fxLayoutAlign="center">
+              <div class="button floatRight">
+                <a href="https://www.macademia.fr/contact" target="_blank"><img class="iconSocialHeader" src="/assets/pictures/icon-contact.png" alt="Contact" /></a>
+              </div>
             </div>
+          </div>
         </mat-toolbar>
-    </div>
-    </div>
+      </div>
+  </div>
 </header>

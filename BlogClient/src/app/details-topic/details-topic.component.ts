@@ -32,8 +32,8 @@ export class DetailsTopicComponent implements OnInit, AfterViewChecked {
 
   constructor(private articleService: ArticleService, private topicsService: TopicsService, private route: ActivatedRoute, private router: Router, private highlightService: HighlightService) {
 
-    this.clickShowMore = 0; // Je le met à 0 je sais pas si c'est une bonne idée ou pas
-  
+    this.clickShowMore = 0; // Je le mets à 0 je sais pas si c'est une bonne idée ou pas
+
 
   }
   /**
@@ -54,10 +54,6 @@ export class DetailsTopicComponent implements OnInit, AfterViewChecked {
       this.topic = await this.topicsService.findById(id)
         .finally (()=> this.isloading=false);
 
-      /*const id = this.route.snapshot.params['id'];
-    this.topic = await this.topicsService.findById(id).then(res => {
-      this.article = res;*/
-
     })
 
 
@@ -69,7 +65,6 @@ export class DetailsTopicComponent implements OnInit, AfterViewChecked {
   }
 
   getAllArticlesByThematiqueByClick(id: number): Promise<any> {
-   // const {id} = this.route.snapshot.params
     return this.topicsService.getTenArticlesByThematiqueByClick(this.topic.id,this.clickShowMore).then(res => {
       this.article = res;
       console.log(this.topic);
